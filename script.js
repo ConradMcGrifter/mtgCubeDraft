@@ -648,7 +648,7 @@ if (pack1.includes("Proud Mentor") && !pack1.includes("Impetuous Protege")) {
     let movedCard = pack1.shift();
     shuffled.push(movedCard);
     
-    shuffled.sort(() => 0.5 - Math.random());
+    // shuffled.sort(() => 0.5 - Math.random());
     console.log(movedCard);
     console.log(shuffled)
     
@@ -673,7 +673,7 @@ if (pack1.includes("Proud Mentor") && !pack1.includes("Impetuous Protege")) {
     let movedCard = pack1.shift();
     shuffled.push(movedCard);
     
-    shuffled.sort(() => 0.5 - Math.random());
+    // shuffled.sort(() => 0.5 - Math.random());
     console.log(movedCard);
     console.log(shuffled)
    
@@ -701,7 +701,7 @@ if (pack1.includes("Sylvia Brightspear") && !pack1.includes("Khorvath Brightflam
     let movedCard = pack1.shift();
     shuffled.push(movedCard);
     
-    shuffled.sort(() => 0.5 - Math.random());
+    // shuffled.sort(() => 0.5 - Math.random());
     console.log(movedCard);
     console.log(shuffled)
     
@@ -726,7 +726,7 @@ if (pack1.includes("Sylvia Brightspear") && !pack1.includes("Khorvath Brightflam
     let movedCard = pack1.shift();
     shuffled.push(movedCard);
     
-    shuffled.sort(() => 0.5 - Math.random());
+    // shuffled.sort(() => 0.5 - Math.random());
     console.log(movedCard);
     console.log(shuffled)
     
