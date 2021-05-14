@@ -617,11 +617,63 @@ let pack34 = []
 
 
 
+
+reset.addEventListener("click", ()=> {
+    cube = cube.concat(pack1, pack2, pack3, pack4, pack5, pack6, pack7, pack8, pack9, pack10,
+                        pack11, pack12, pack13, pack14, pack15, pack16, pack17, pack18, pack19, pack20,
+                        pack21, pack22, pack23, pack24, pack25, pack26, pack27, pack28, pack29, pack30,
+                        pack31, pack32, pack33, pack34)
+    
+
+    one.innerHTML = ""
+    two.innerHTML = ""
+    three.innerHTML = ""
+    four.innerHTML = ""
+    five.innerHTML = ""
+    six.innerHTML = ""
+    seven.innerHTML = ""
+    eight.innerHTML = ""
+    nine.innerHTML = ""
+    ten.innerHTML = ""
+    eleven.innerHTML = ""
+    twelve.innerHTML = ""
+    thirteen.innerHTML = ""
+    fourteen.innerHTML = ""
+    fifteen.innerHTML =""
+    sixteen.innerHTML = ""
+    seventeen.innerHTML = ""
+    eighteen.innerHTML = ""
+    nineteen.innerHTML = ""
+    twenty.innerHTML = ""
+    twentyOne.innerHTML = ""
+    twentyTwo.innerHTML = ""
+    twentyThree.innerHTML = ""
+    twentyFour.innerHTML = ""
+    twentyFive.innerHTML = ""
+    twentySix.innerHTML =""
+    twentySeven.innerHTML = ""
+    twentyEight.innerHTML = ""
+    twentyNine.innerHTML = ""
+    thirty.innerHTML = ""
+    thirtyOne.innerHTML = ""
+    thirtyTwo.innerHTML = ""
+    thirtyThree.innerHTML = ""
+    thirtyFour.innerHTML = ""
+
+})
+
 generate.addEventListener("click", shuffleCube)
+
+
+
+
+
 
 function shuffleCube() {
   // Shuffle array
-const shuffled = cube.sort(() => 0.5 - Math.random());
+
+  const shuffled = cube.sort(() => 0.5 - Math.random());
+
 
 
 // this is the first pack
@@ -648,9 +700,11 @@ if (pack1.includes("Proud Mentor") && !pack1.includes("Impetuous Protege")) {
     let movedCard = pack1.shift();
     shuffled.push(movedCard);
     
-    // shuffled.sort(() => 0.5 - Math.random());
-    console.log(movedCard);
-    console.log(shuffled)
+    console.log(movedCard + " pack 1");
+    // this shuffles the cube after the removed card is added to the bottom
+    shuffled.sort(() => 0.5 - Math.random());
+    
+   
     
    
 
@@ -673,9 +727,11 @@ if (pack1.includes("Proud Mentor") && !pack1.includes("Impetuous Protege")) {
     let movedCard = pack1.shift();
     shuffled.push(movedCard);
     
-    // shuffled.sort(() => 0.5 - Math.random());
-    console.log(movedCard);
-    console.log(shuffled)
+    console.log(movedCard + " pack 1");
+    // this shuffles the cube after the removed card is added to the bottom
+    shuffled.sort(() => 0.5 - Math.random());
+    
+    
    
    
 }
@@ -701,9 +757,11 @@ if (pack1.includes("Sylvia Brightspear") && !pack1.includes("Khorvath Brightflam
     let movedCard = pack1.shift();
     shuffled.push(movedCard);
     
-    // shuffled.sort(() => 0.5 - Math.random());
-    console.log(movedCard);
-    console.log(shuffled)
+    console.log(movedCard + " pack 1");
+    // this shuffles the cube after the removed card is added to the bottom
+    shuffled.sort(() => 0.5 - Math.random());
+    
+ 
     
    
 
@@ -726,9 +784,11 @@ if (pack1.includes("Sylvia Brightspear") && !pack1.includes("Khorvath Brightflam
     let movedCard = pack1.shift();
     shuffled.push(movedCard);
     
-    // shuffled.sort(() => 0.5 - Math.random());
-    console.log(movedCard);
-    console.log(shuffled)
+    console.log(movedCard + " pack 1");
+    // this shuffles the cube after the removed card is added to the bottom
+    shuffled.sort(() => 0.5 - Math.random());
+    
+    
     
    
 }
@@ -795,9 +855,11 @@ if (pack2.includes("Proud Mentor") && !pack2.includes("Impetuous Protege")) {
     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
     let movedCard = pack2.shift();
     shuffled.push(movedCard);
-    console.log(movedCard);
-    console.log("case1");
-    console.log(shuffled);
+    console.log(movedCard + " pack 2");
+
+    // this shuffles the cube after the removed card is added to the bottom
+    shuffled.sort(() => 0.5 - Math.random());
+   
 
 // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
 } else if (pack2.includes("Impetuous Protege") && !pack2.includes("Proud Mentor")) {
@@ -817,9 +879,10 @@ if (pack2.includes("Proud Mentor") && !pack2.includes("Impetuous Protege")) {
     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
     let movedCard = pack2.shift();
     shuffled.push(movedCard);
-    console.log(movedCard);
-    console.log("case2");
-    console.log(shuffled);
+    console.log(movedCard + " pack 2");
+
+    // this shuffles the cube after the removed card is added to the bottom
+    shuffled.sort(() => 0.5 - Math.random());
 }
 
 // 
@@ -843,9 +906,10 @@ if (pack2.includes("Sylvia Brightspear") && !pack2.includes("Khorvath Brightflam
     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
     let movedCard = pack2.shift();
     shuffled.push(movedCard);
-    console.log(movedCard);
-    console.log("case1");
-    console.log(shuffled);
+    console.log(movedCard + " pack 2");
+
+    // this shuffles the cube after the removed card is added to the bottom
+    shuffled.sort(() => 0.5 - Math.random());
 
 // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
 } else if (pack2.includes("Khorvath Brightflame") && !pack2.includes("Sylvia Brightspear")) {
@@ -865,9 +929,10 @@ if (pack2.includes("Sylvia Brightspear") && !pack2.includes("Khorvath Brightflam
     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
     let movedCard = pack2.shift();
     shuffled.push(movedCard);
-    console.log(movedCard);
-    console.log("case2");
-    console.log(shuffled);
+    console.log(movedCard + " pack 2");
+
+    // this shuffles the cube after the removed card is added to the bottom
+    shuffled.sort(() => 0.5 - Math.random());
 }
 
 
