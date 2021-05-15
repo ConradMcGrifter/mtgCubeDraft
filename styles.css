@@ -71,7 +71,7 @@ h3 {
     cursor: pointer;
     display:flex;
     justify-content: center;
-    
+    user-select: none;
     margin-right:4em;
    
 }
