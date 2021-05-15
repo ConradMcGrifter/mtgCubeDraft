@@ -646,24 +646,24 @@ reset.addEventListener("click", ()=> {
     fourteen.innerHTML = ""
     fifteen.innerHTML =""
     sixteen.innerHTML = ""
-    seventeen.innerHTML = ""
-    eighteen.innerHTML = ""
-    nineteen.innerHTML = ""
-    twenty.innerHTML = ""
-    twentyOne.innerHTML = ""
-    twentyTwo.innerHTML = ""
-    twentyThree.innerHTML = ""
-    twentyFour.innerHTML = ""
-    twentyFive.innerHTML = ""
-    twentySix.innerHTML = ""
-    twentySeven.innerHTML = ""
-    twentyEight.innerHTML = ""
-    twentyNine.innerHTML = ""
-    thirty.innerHTML = ""
-    thirtyOne.innerHTML = ""
-    thirtyTwo.innerHTML = ""
-    thirtyThree.innerHTML = ""
-    thirtyFour.innerHTML = ""
+    // seventeen.innerHTML = ""
+    // eighteen.innerHTML = ""
+    // nineteen.innerHTML = ""
+    // twenty.innerHTML = ""
+    // twentyOne.innerHTML = ""
+    // twentyTwo.innerHTML = ""
+    // twentyThree.innerHTML = ""
+    // twentyFour.innerHTML = ""
+    // twentyFive.innerHTML = ""
+    // twentySix.innerHTML = ""
+    // twentySeven.innerHTML = ""
+    // twentyEight.innerHTML = ""
+    // twentyNine.innerHTML = ""
+    // thirty.innerHTML = ""
+    // thirtyOne.innerHTML = ""
+    // thirtyTwo.innerHTML = ""
+    // thirtyThree.innerHTML = ""
+    // thirtyFour.innerHTML = ""
 
     // this hides the reset button and reveals the generate button
     generate.classList.remove("hide");
@@ -1341,65 +1341,30 @@ makePairs(pack34, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 34)
     fourteen.innerHTML = pack14.join(' <br /> ')
     fifteen.innerHTML = pack15.join(' <br /> ')
     sixteen.innerHTML = pack16.join(' <br /> ')
-    seventeen.innerHTML = pack17.join(' <br /> ')
-    eighteen.innerHTML = pack18.join(' <br /> ')
-    nineteen.innerHTML = pack19.join(' <br /> ')
-    twenty.innerHTML = pack20.join(' <br /> ')
-    twentyOne.innerHTML = pack21.join(' <br /> ')
-    twentyTwo.innerHTML = pack22.join(' <br /> ')
-    twentyThree.innerHTML = pack23.join(' <br /> ')
-    twentyFour.innerHTML = pack24.join(' <br /> ')
-    twentyFive.innerHTML = pack25.join(' <br /> ')
-    twentySix.innerHTML = pack26.join(' <br /> ')
-    twentySeven.innerHTML = pack27.join(' <br /> ')
-    twentyEight.innerHTML = pack28.join(' <br /> ')
-    twentyNine.innerHTML = pack29.join(' <br /> ')
-    thirty.innerHTML = pack30.join(' <br /> ')
-    thirtyOne.innerHTML = pack31.join(' <br /> ')
-    thirtyTwo.innerHTML = pack32.join(' <br /> ')
-    thirtyThree.innerHTML = pack33.join(' <br /> ')
-    thirtyFour.innerHTML = pack34.join(' <br /> ')
+    // seventeen.innerHTML = pack17.join(' <br /> ')
+    // eighteen.innerHTML = pack18.join(' <br /> ')
+    // nineteen.innerHTML = pack19.join(' <br /> ')
+    // twenty.innerHTML = pack20.join(' <br /> ')
+    // twentyOne.innerHTML = pack21.join(' <br /> ')
+    // twentyTwo.innerHTML = pack22.join(' <br /> ')
+    // twentyThree.innerHTML = pack23.join(' <br /> ')
+    // twentyFour.innerHTML = pack24.join(' <br /> ')
+    // twentyFive.innerHTML = pack25.join(' <br /> ')
+    // twentySix.innerHTML = pack26.join(' <br /> ')
+    // twentySeven.innerHTML = pack27.join(' <br /> ')
+    // twentyEight.innerHTML = pack28.join(' <br /> ')
+    // twentyNine.innerHTML = pack29.join(' <br /> ')
+    // thirty.innerHTML = pack30.join(' <br /> ')
+    // thirtyOne.innerHTML = pack31.join(' <br /> ')
+    // thirtyTwo.innerHTML = pack32.join(' <br /> ')
+    // thirtyThree.innerHTML = pack33.join(' <br /> ')
+    // thirtyFour.innerHTML = pack34.join(' <br /> ')
 
     console.log(cube);
 }
 // function ends 
 
 
-
-// pack1 = shuffled.slice(0, 16);
-// pack2 = shuffled.slice(16, 32);
-// pack3 = shuffled.slice(32, 48);
-// pack4 = shuffled.slice(48, 64);
-// pack5 = shuffled.slice(64, 80);
-// pack6 = shuffled.slice(80, 96);
-// pack7 = shuffled.slice(96, 112);
-// pack8 = shuffled.slice(112, 128);
-// pack9 = shuffled.slice(128, 144);
-// pack10 = shuffled.slice(144, 160);
-// pack11 = shuffled.slice(160, 176);
-// pack12 = shuffled.slice(176, 192);
-// pack13 = shuffled.slice(192, 208);
-// pack14 = shuffled.slice(208, 224);
-// pack15 = shuffled.slice(224, 240);
-// pack16 = shuffled.slice(240, 256);
-// pack17 = shuffled.slice(256, 272);
-// pack18 = shuffled.slice(272, 288);
-// pack19 = shuffled.slice(288, 304);
-// pack20 = shuffled.slice(304, 320);
-// pack21 = shuffled.slice(320, 336);
-// pack22 = shuffled.slice(336, 352);
-// pack23 = shuffled.slice(352, 368);
-// pack24 = shuffled.slice(368, 384);
-// pack25 = shuffled.slice(384, 400);
-// pack26 = shuffled.slice(400, 416);
-// pack27 = shuffled.slice(416, 432);
-// pack28 = shuffled.slice(432, 448);
-// pack29 = shuffled.slice(448, 464);
-// pack30 = shuffled.slice(464, 480);
-// pack31 = shuffled.slice(480, 496);
-// pack32 = shuffled.slice(496, 512);
-// pack33 = shuffled.slice(512, 528);
-// pack34 = shuffled.slice(528, 540);
 
 
 
