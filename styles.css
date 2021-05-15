@@ -29,7 +29,7 @@ body {
     flex-direction: row;
     flex-wrap:wrap;
     width:100%;
-    justify-content: space-around;
+    justify-content: center;
     padding:2em;
     color:white;
 }
@@ -102,3 +102,20 @@ a {
     display:none;
 }
 
+
+
+.player1 {
+    color:yellow;
+}
+
+.player2 {
+    color:red;
+}
+
+.player3 {
+    color:teal;
+}
+
+.player4 {
+    color:blueviolet
+}
