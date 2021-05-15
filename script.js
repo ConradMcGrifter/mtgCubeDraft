@@ -545,6 +545,9 @@ let cube = [
 let reset = document.getElementById("reset");
 let generate = document.getElementById("generate");
 
+
+
+
 let one = document.getElementById("pack1");
 let two = document.getElementById("pack2")
 let three = document.getElementById("pack3");
@@ -667,12 +670,12 @@ reset.addEventListener("click", ()=> {
 
 })
 
-// this shuffles the cube array and outputs the new random arrays to the webpage
+// this is the event listener for the generate button that runs the shuffleCube function
 generate.addEventListener("click", shuffleCube)
 
 
-
-function myFunc(pack,card1,card2) {
+// this function takes parameters to search through the card packs for partner cards then finds the partner in the cube and adds it to the pack
+function makePairs(pack,card1,card2,packNum) {
 
     const shuffled = cube.sort(() => 0.5 - Math.random());
 
@@ -694,7 +697,7 @@ function myFunc(pack,card1,card2) {
         // this removes the first card from the pack and puts it on the bottom of the shuffled cube
         let movedCard = pack.shift();
         shuffled.push(movedCard);
-        console.log(movedCard)
+        console.log(card1 + " " + card2 + " " + packNum)
     
         // this shuffles the cube after the removed card is added to the bottom
         shuffled.sort(() => 0.5 - Math.random());
@@ -712,13 +715,13 @@ function myFunc(pack,card1,card2) {
         // this adds the card to the end of the pack
         pack.push(card1);
     
-        let packIndex = pack.indexOf(card1)
+        let packIndex = pack.indexOf(card2)
         pack.push(pack.splice(packIndex, 1)[0]);
         
         // this removes the first card from the pack and puts it on the bottom of the shuffled cube
         let movedCard = pack.shift();
         shuffled.push(movedCard);
-        console.log(movedCard);
+        console.log(card1 + " " + card2 + " " + packNum)
     
         // this shuffles the cube after the removed card is added to the bottom
         shuffled.sort(() => 0.5 - Math.random());
@@ -726,7 +729,7 @@ function myFunc(pack,card1,card2) {
 }
 
 
-
+// this shuffles the cube array and outputs the new random arrays to the webpage
 function shuffleCube() {
 
 // this hides the generate button and reveals the reset button
@@ -739,480 +742,568 @@ function shuffleCube() {
 
 
 
-// this is the first pack
+
 pack1 = shuffled.splice(0, 16);
-myFunc(pack1,"Proud Mentor", "Impetuous Protege");
-myFunc(pack1,"Impetuous Protege", "Proud Mentor");
-myFunc(pack1,"Sylvia Brightspear", "Khorvath Brightflame");
-myFunc(pack1,"Khorvath Brightflame", "Sylvia Brightspear")
+makePairs(pack1, "Proud Mentor", "Impetuous Protege", 1);
+makePairs(pack1, "Sylvia Brightspear", "Khorvath Brightflame", 1);
+makePairs(pack1, "Blaring Recruiter", "Blaring Captain", 1);
+makePairs(pack1, "Regna, the Redeemer", "Krav, the Unredeemed", 1);
+makePairs(pack1, "Lore Weaver", "Ley Weaver", 1);
+makePairs(pack1, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 1);
+makePairs(pack1, "Chakram Retriever", "Chakram Slinger", 1);
+makePairs(pack1, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 1);
+makePairs(pack1, "Will Kenrith", "Rowan Kenrith", 1);
+makePairs(pack1, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 1);
+makePairs(pack1, "Virtus the Veiled", "Gorm the Great", 1);
+makePairs(pack1, "Soulblade Corrupter", "Soulblade Renewer");
+makePairs(pack1, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 1);
+makePairs(pack1, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 1);
 
-// 
-// PACK 1 - PROUD MENTOR & IMPETUOUS PROTEGE
-// 
-// if (pack1.includes("Proud Mentor") && !pack1.includes("Impetuous Protege")) {
-    
-//     // this finds the index of the card in the shuffled cube then removes it
-//     let index = shuffled.indexOf("Impetuous Protege");
-//     if(index > -1) {
-//         shuffled.splice(index, 1);
-       
-//     }
-//     // this adds the card to the end of the pack
-//     pack1.push("Impetuous Protege")
-   
-//     // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
-//     let packIndex = pack1.indexOf("Proud Mentor")
-//     pack1.push(pack1.splice(packIndex, 1)[0]);
-    
-//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-//     let movedCard = pack1.shift();
-//     shuffled.push(movedCard);
-    
-//     console.log(movedCard + " pack 1");
-//     // this shuffles the cube after the removed card is added to the bottom
-//     shuffled.sort(() => 0.5 - Math.random());
-    
-   
-    
-   
-
-// // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
-// } else if (pack1.includes("Impetuous Protege") && !pack1.includes("Proud Mentor")) {
-    
-//     // this finds the index of the card in the shuffled cube then removes it
-//     let index = shuffled.indexOf("Proud Mentor");
-//     if(index > -1) {
-//         shuffled.splice(index, 1);
-//     }
-   
-//     // this adds the card to the end of the pack
-//     pack1.push("Proud Mentor");
-
-//     let packIndex = pack1.indexOf("Impetuous Protege")
-//     pack1.push(pack1.splice(packIndex, 1)[0]);
-    
-//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-//     let movedCard = pack1.shift();
-//     shuffled.push(movedCard);
-    
-//     console.log(movedCard + " pack 1");
-//     // this shuffles the cube after the removed card is added to the bottom
-//     shuffled.sort(() => 0.5 - Math.random());
-    
-    
-   
-   
-// }
-// // 
-// // PACK 1 - SYLVIA BRIGHTSPEAR & KHORVATH BRIGHTFLAME
-// // 
-// if (pack1.includes("Sylvia Brightspear") && !pack1.includes("Khorvath Brightflame")) {
-    
-//     // this finds the index of the card in the shuffled cube then removes it
-//     let index = shuffled.indexOf("Khorvath Brightflame");
-//     if(index > -1) {
-//         shuffled.splice(index, 1);
-       
-//     }
-//     // this adds the card to the end of the pack
-//     pack1.push("Khorvath Brightflame")
-   
-//     // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
-//     let packIndex = pack1.indexOf("Sylvia Brightspear")
-//     pack1.push(pack1.splice(packIndex, 1)[0]);
-    
-//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-//     let movedCard = pack1.shift();
-//     shuffled.push(movedCard);
-    
-//     console.log(movedCard + " pack 1");
-//     // this shuffles the cube after the removed card is added to the bottom
-//     shuffled.sort(() => 0.5 - Math.random());
-
-   
-
-// // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
-// } else if (pack1.includes("Khorvath Brightflame") && !pack1.includes("Sylvia Brightspear")) {
-    
-//     // this finds the index of the card in the shuffled cube then removes it
-//     let index = shuffled.indexOf("Sylvia Brightspear");
-//     if(index > -1) {
-//         shuffled.splice(index, 1);
-//     }
-   
-//     // this adds the partner cards to the end of the pack
-//     pack1.push("Sylvia Brightspear");
-
-//     let packIndex = pack1.indexOf("Khorvath Brightflame")
-//     pack1.push(pack1.splice(packIndex, 1)[0]);
-    
-//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-//     let movedCard = pack1.shift();
-//     shuffled.push(movedCard);
-    
-//     console.log(movedCard + " pack 1");
-//     // this shuffles the cube after the removed card is added to the bottom
-//     shuffled.sort(() => 0.5 - Math.random());  
-   
-// }
-
-// // 
-// // PACK 1 - BLARING RECRUITER & BLARING CAPTAIN
-// // 
-// if (pack1.includes("Blaring Recruiter") && !pack1.includes("Blaring Captain")) {
-    
-//     // this finds the index of the card in the shuffled cube then removes it
-//     let index = shuffled.indexOf("Blaring Captain");
-//     if(index > -1) {
-//         shuffled.splice(index, 1);
-       
-//     }
-//     // this adds the card to the end of the pack
-//     pack1.push("Blaring Captain")
-   
-//     // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
-//     let packIndex = pack1.indexOf("Blaring Recruiter")
-//     pack1.push(pack1.splice(packIndex, 1)[0]);
-    
-//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-//     let movedCard = pack1.shift();
-//     shuffled.push(movedCard);
-    
-//     console.log(movedCard + " pack 1");
-//     // this shuffles the cube after the removed card is added to the bottom
-//     shuffled.sort(() => 0.5 - Math.random());
-
-   
-
-// // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
-// } else if (pack1.includes("Blaring Captain") && !pack1.includes("Blaring Recruiter")) {
-    
-//     // this finds the index of the card in the shuffled cube then removes it
-//     let index = shuffled.indexOf("Blaring Recruiter");
-//     if(index > -1) {
-//         shuffled.splice(index, 1);
-//     }
-   
-//     // this adds the partner cards to the end of the pack
-//     pack1.push("Blaring Recruiter");
-
-//     let packIndex = pack1.indexOf("Blaring Captain")
-//     pack1.push(pack1.splice(packIndex, 1)[0]);
-    
-//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-//     let movedCard = pack1.shift();
-//     shuffled.push(movedCard);
-    
-//     console.log(movedCard + " pack 1");
-//     // this shuffles the cube after the removed card is added to the bottom
-//     shuffled.sort(() => 0.5 - Math.random());  
-   
-// }
-
-// // 
-// // PACK 1 - REGNA, THE REDEEMER & KRAV, THE UNREDEEMED
-// // 
-// if (pack1.includes("Regna, the Redeemer") && !pack1.includes("Krav, the Unredeemed")) {
-    
-//     // this finds the index of the card in the shuffled cube then removes it
-//     let index = shuffled.indexOf("Krav, the Unredeemed");
-//     if(index > -1) {
-//         shuffled.splice(index, 1);
-       
-//     }
-//     // this adds the card to the end of the pack
-//     pack1.push("Krav, the Unredeemed")
-   
-//     // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
-//     let packIndex = pack1.indexOf("Regna, the Redeemer")
-//     pack1.push(pack1.splice(packIndex, 1)[0]);
-    
-//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-//     let movedCard = pack1.shift();
-//     shuffled.push(movedCard);
-    
-//     console.log(movedCard + " pack 1");
-//     // this shuffles the cube after the removed card is added to the bottom
-//     shuffled.sort(() => 0.5 - Math.random());
-
-   
-
-// // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
-// } else if (pack1.includes("Krav, the Unredeemed") && !pack1.includes("Regna, the Redeemer")) {
-    
-//     // this finds the index of the card in the shuffled cube then removes it
-//     let index = shuffled.indexOf("Regna, the Redeemer");
-//     if(index > -1) {
-//         shuffled.splice(index, 1);
-//     }
-   
-//     // this adds the partner cards to the end of the pack
-//     pack1.push("Regna, the Redeemer");
-
-//     let packIndex = pack1.indexOf("Krav, the Unredeemed")
-//     pack1.push(pack1.splice(packIndex, 1)[0]);
-    
-//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-//     let movedCard = pack1.shift();
-//     shuffled.push(movedCard);
-    
-//     console.log(movedCard + " pack 1");
-//     // this shuffles the cube after the removed card is added to the bottom
-//     shuffled.sort(() => 0.5 - Math.random());  
-   
-// }
 
 
 pack2 = shuffled.splice(0, 16);
-myFunc(pack2,"Proud Mentor", "Impetuous Protege");
-myFunc(pack2,"Impetuous Protege", "Proud Mentor");
-myFunc(pack2,"Sylvia Brightspear", "Khorvath Brightflame");
-myFunc(pack2,"Khorvath Brightflame", "Sylvia Brightspear")
-// 
-// PACK 2 - PROUD MENTOR & IMPETUOUS PROTEGE
-// 
-// if (pack2.includes("Proud Mentor") && !pack2.includes("Impetuous Protege")) {
-    
-//     // this finds the index of the card in the shuffled cube then removes it
-//     let index = shuffled.indexOf("Impetuous Protege");
-//     if(index > -1) {
-//         shuffled.splice(index, 1);
-       
-//     }
-//     // this adds the card to the end of the pack
-//     pack2.push("Impetuous Protege")
-   
-//     // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
-//     let packIndex = pack2.indexOf("Proud Mentor")
-//     pack2.push(pack2.splice(packIndex, 1)[0]);
-    
-//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-//     let movedCard = pack2.shift();
-//     shuffled.push(movedCard);
-//     console.log(movedCard + " pack 2");
-
-//     // this shuffles the cube after the removed card is added to the bottom
-//     shuffled.sort(() => 0.5 - Math.random());
-   
-
-// // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
-// } else if (pack2.includes("Impetuous Protege") && !pack2.includes("Proud Mentor")) {
-    
-//     // this finds the index of the card in the shuffled cube then removes it
-//     let index = shuffled.indexOf("Proud Mentor");
-//     if(index > -1) {
-//         shuffled.splice(index, 1);
-//     }
-   
-//     // this adds the card to the end of the pack
-//     pack2.push("Proud Mentor");
-
-//     let packIndex = pack2.indexOf("Impetuous Protege")
-//     pack2.push(pack2.splice(packIndex, 1)[0]);
-    
-//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-//     let movedCard = pack2.shift();
-//     shuffled.push(movedCard);
-//     console.log(movedCard + " pack 2");
-
-//     // this shuffles the cube after the removed card is added to the bottom
-//     shuffled.sort(() => 0.5 - Math.random());
-// }
-
-// // 
-// // PACK 2 - SYLVIA BRIGHTSPEAR & KHORVATH BRIGHTFLAME
-// // 
-// if (pack2.includes("Sylvia Brightspear") && !pack2.includes("Khorvath Brightflame")) {
-    
-//     // this finds the index of the card in the shuffled cube then removes it
-//     let index = shuffled.indexOf("Khorvath Brightflame");
-//     if(index > -1) {
-//         shuffled.splice(index, 1);
-       
-//     }
-//     // this adds the card to the end of the pack
-//     pack2.push("Khorvath Brightflame")
-   
-//     // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
-//     let packIndex = pack2.indexOf("Sylvia Brightspear")
-//     pack2.push(pack2.splice(packIndex, 1)[0]);
-    
-//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-//     let movedCard = pack2.shift();
-//     shuffled.push(movedCard);
-//     console.log(movedCard + " pack 2");
-
-//     // this shuffles the cube after the removed card is added to the bottom
-//     shuffled.sort(() => 0.5 - Math.random());
-
-// // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
-// } else if (pack2.includes("Khorvath Brightflame") && !pack2.includes("Sylvia Brightspear")) {
-    
-//     // this finds the index of the card in the shuffled cube then removes it
-//     let index = shuffled.indexOf("Sylvia Brightspear");
-//     if(index > -1) {
-//         shuffled.splice(index, 1);
-//     }
-   
-//     // this adds the partner cards to the end of the pack
-//     pack2.push("Sylvia Brightspear");
-
-//     let packIndex = pack2.indexOf("Khorvath Brightflame")
-//     pack2.push(pack2.splice(packIndex, 1)[0]);
-    
-//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-//     let movedCard = pack2.shift();
-//     shuffled.push(movedCard);
-//     console.log(movedCard + " pack 2");
-
-//     // this shuffles the cube after the removed card is added to the bottom
-//     shuffled.sort(() => 0.5 - Math.random());
-// }
+makePairs(pack2, "Proud Mentor", "Impetuous Protege", 2);
+makePairs(pack2, "Sylvia Brightspear", "Khorvath Brightflame", 2);
+makePairs(pack2, "Blaring Recruiter", "Blaring Captain", 2);
+makePairs(pack2, "Regna, the Redeemer", "Krav, the Unredeemed", 2);
+makePairs(pack2, "Lore Weaver", "Ley Weaver", 2);
+makePairs(pack2, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 2);
+makePairs(pack2, "Chakram Retriever", "Chakram Slinger", 2);
+makePairs(pack2, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 2);
+makePairs(pack2, "Will Kenrith", "Rowan Kenrith", 2);
+makePairs(pack2, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 2);
+makePairs(pack2, "Virtus the Veiled", "Gorm the Great", 2);
+makePairs(pack2, "Soulblade Corrupter", "Soulblade Renewer", 2);
+makePairs(pack2, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 2);
+makePairs(pack2, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 2);
 
 
 pack3 = shuffled.splice(0, 16);
-myFunc(pack3,"Proud Mentor", "Impetuous Protege");
-// 
-// PACK 3 - PROUD MENTOR & IMPETUOUS PROTEGE
-// 
-// if (pack3.includes("Proud Mentor") && !pack3.includes("Impetuous Protege")) {
-    
-//     // this finds the index of the card in the shuffled cube then removes it
-//     let index = shuffled.indexOf("Impetuous Protege");
-//     if(index > -1) {
-//         shuffled.splice(index, 1);
-       
-//     }
-//     // this adds the card to the end of the pack
-//     pack3.push("Impetuous Protege")
-   
-//     // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
-//     let packIndex = pack3.indexOf("Proud Mentor")
-//     pack3.push(pack3.splice(packIndex, 1)[0]);
-    
-//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-//     let movedCard = pack3.shift();
-//     shuffled.push(movedCard);
-//     console.log(movedCard + " pack 3");
-
-//     // this shuffles the cube after the removed card is added to the bottom
-//     shuffled.sort(() => 0.5 - Math.random());
-   
-
-// // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
-// } else if (pack3.includes("Impetuous Protege") && !pack3.includes("Proud Mentor")) {
-    
-//     // this finds the index of the card in the shuffled cube then removes it
-//     let index = shuffled.indexOf("Proud Mentor");
-//     if(index > -1) {
-//         shuffled.splice(index, 1);
-//     }
-   
-//     // this adds the card to the end of the pack
-//     pack3.push("Proud Mentor");
-
-//     let packIndex = pack3.indexOf("Impetuous Protege")
-//     pack3.push(pack3.splice(packIndex, 1)[0]);
-    
-//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-//     let movedCard = pack3.shift();
-//     shuffled.push(movedCard);
-//     console.log(movedCard + " pack 3");
-
-//     // this shuffles the cube after the removed card is added to the bottom
-//     shuffled.sort(() => 0.5 - Math.random());
-// }
-
-// // 
-// // PACK 3 - SYLVIA BRIGHTSPEAR & KHORVATH BRIGHTFLAME
-// // 
-// if (pack3.includes("Sylvia Brightspear") && !pack3.includes("Khorvath Brightflame")) {
-    
-//     // this finds the index of the card in the shuffled cube then removes it
-//     let index = shuffled.indexOf("Khorvath Brightflame");
-//     if(index > -1) {
-//         shuffled.splice(index, 1);
-       
-//     }
-//     // this adds the card to the end of the pack
-//     pack3.push("Khorvath Brightflame")
-   
-//     // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
-//     let packIndex = pack3.indexOf("Sylvia Brightspear")
-//     pack3.push(pack3.splice(packIndex, 1)[0]);
-    
-//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-//     let movedCard = pack3.shift();
-//     shuffled.push(movedCard);
-//     console.log(movedCard + " pack 3");
-
-//     // this shuffles the cube after the removed card is added to the bottom
-//     shuffled.sort(() => 0.5 - Math.random());
-
-// // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
-// } else if (pack3.includes("Khorvath Brightflame") && !pack3.includes("Sylvia Brightspear")) {
-    
-//     // this finds the index of the card in the shuffled cube then removes it
-//     let index = shuffled.indexOf("Sylvia Brightspear");
-//     if(index > -1) {
-//         shuffled.splice(index, 1);
-//     }
-   
-//     // this adds the partner cards to the end of the pack
-//     pack3.push("Sylvia Brightspear");
-
-//     let packIndex = pack3.indexOf("Khorvath Brightflame")
-//     pack3.push(pack3.splice(packIndex, 1)[0]);
-    
-//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-//     let movedCard = pack3.shift();
-//     shuffled.push(movedCard);
-//     console.log(movedCard + " pack 3");
-
-//     // this shuffles the cube after the removed card is added to the bottom
-//     shuffled.sort(() => 0.5 - Math.random());
-// }
-
-
-
-
+makePairs(pack3, "Proud Mentor", "Impetuous Protege", 3);
+makePairs(pack3, "Sylvia Brightspear", "Khorvath Brightflame", 3);
+makePairs(pack3, "Blaring Recruiter", "Blaring Captain", 3);
+makePairs(pack3, "Regna, the Redeemer", "Krav, the Unredeemed", 3);
+makePairs(pack3, "Lore Weaver", "Ley Weaver", 3);
+makePairs(pack3, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 3);
+makePairs(pack3, "Chakram Retriever", "Chakram Slinger", 3);
+makePairs(pack3, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 3);
+makePairs(pack3, "Will Kenrith", "Rowan Kenrith", 3);
+makePairs(pack3, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 3);
+makePairs(pack3, "Virtus the Veiled", "Gorm the Great", 3);
+makePairs(pack3, "Soulblade Corrupter", "Soulblade Renewer", 3);
+makePairs(pack3, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 3);
+makePairs(pack3, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 3);
 
 pack4 = shuffled.splice(0, 16);
+makePairs(pack4, "Proud Mentor", "Impetuous Protege", 4);
+makePairs(pack4, "Sylvia Brightspear", "Khorvath Brightflame", 4);
+makePairs(pack4, "Blaring Recruiter", "Blaring Captain", 4);
+makePairs(pack4, "Regna, the Redeemer", "Krav, the Unredeemed", 4);
+makePairs(pack4, "Lore Weaver", "Ley Weaver", 4);
+makePairs(pack4, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 4);
+makePairs(pack4, "Chakram Retriever", "Chakram Slinger", 4);
+makePairs(pack4, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 4);
+makePairs(pack4, "Will Kenrith", "Rowan Kenrith", 4);
+makePairs(pack4, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 4);
+makePairs(pack4, "Virtus the Veiled", "Gorm the Great", 4);
+makePairs(pack4, "Soulblade Corrupter", "Soulblade Renewer", 4);
+makePairs(pack4, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 4);
+makePairs(pack4, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 4);
+
+
 pack5 = shuffled.splice(0, 16);
+makePairs(pack5, "Proud Mentor", "Impetuous Protege", 5);
+makePairs(pack5, "Sylvia Brightspear", "Khorvath Brightflame", 5);
+makePairs(pack5, "Blaring Recruiter", "Blaring Captain", 5);
+makePairs(pack5, "Regna, the Redeemer", "Krav, the Unredeemed", 5);
+makePairs(pack5, "Lore Weaver", "Ley Weaver", 5);
+makePairs(pack5, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 5);
+makePairs(pack5, "Chakram Retriever", "Chakram Slinger", 5);
+makePairs(pack5, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 5);
+makePairs(pack5, "Will Kenrith", "Rowan Kenrith", 5);
+makePairs(pack5, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 5);
+makePairs(pack5, "Virtus the Veiled", "Gorm the Great", 5);
+makePairs(pack5, "Soulblade Corrupter", "Soulblade Renewer", 5);
+makePairs(pack5, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 5);
+makePairs(pack5, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 5);
+
+
 pack6 = shuffled.splice(0, 16);
+makePairs(pack6, "Proud Mentor", "Impetuous Protege", 6);
+makePairs(pack6, "Sylvia Brightspear", "Khorvath Brightflame", 6);
+makePairs(pack6, "Blaring Recruiter", "Blaring Captain", 6);
+makePairs(pack6, "Regna, the Redeemer", "Krav, the Unredeemed", 6);
+makePairs(pack6, "Lore Weaver", "Ley Weaver", 6);
+makePairs(pack6, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 6);
+makePairs(pack6, "Chakram Retriever", "Chakram Slinger", 6);
+makePairs(pack6, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 6);
+makePairs(pack6, "Will Kenrith", "Rowan Kenrith", 6);
+makePairs(pack6, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 6);
+makePairs(pack6, "Virtus the Veiled", "Gorm the Great", 6);
+makePairs(pack6, "Soulblade Corrupter", "Soulblade Renewer", 6);
+makePairs(pack6, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 6);
+makePairs(pack6, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 6);
+
+
+
 pack7 = shuffled.splice(0, 16);
+makePairs(pack7, "Proud Mentor", "Impetuous Protege", 7);
+makePairs(pack7, "Sylvia Brightspear", "Khorvath Brightflame", 7);
+makePairs(pack7, "Blaring Recruiter", "Blaring Captain", 7);
+makePairs(pack7, "Regna, the Redeemer", "Krav, the Unredeemed", 7);
+makePairs(pack7, "Lore Weaver", "Ley Weaver", 7);
+makePairs(pack7, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 7);
+makePairs(pack7, "Chakram Retriever", "Chakram Slinger", 7);
+makePairs(pack7, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 7);
+makePairs(pack7, "Will Kenrith", "Rowan Kenrith", 7);
+makePairs(pack7, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 7);
+makePairs(pack7, "Virtus the Veiled", "Gorm the Great", 7);
+makePairs(pack7, "Soulblade Corrupter", "Soulblade Renewer", 7);
+makePairs(pack7, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 7);
+makePairs(pack7, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 7)
+
 pack8 = shuffled.splice(0, 16);
+makePairs(pack8, "Proud Mentor", "Impetuous Protege", 8);
+makePairs(pack8, "Sylvia Brightspear", "Khorvath Brightflame", 8);
+makePairs(pack8, "Blaring Recruiter", "Blaring Captain", 8);
+makePairs(pack8, "Regna, the Redeemer", "Krav, the Unredeemed", 8);
+makePairs(pack8, "Lore Weaver", "Ley Weaver", 8);
+makePairs(pack8, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 8);
+makePairs(pack8, "Chakram Retriever", "Chakram Slinger", 8);
+makePairs(pack8, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 8);
+makePairs(pack8, "Will Kenrith", "Rowan Kenrith", 8);
+makePairs(pack8, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 8);
+makePairs(pack8, "Virtus the Veiled", "Gorm the Great", 8);
+makePairs(pack8, "Soulblade Corrupter", "Soulblade Renewer", 8);
+makePairs(pack8, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 8);
+makePairs(pack8, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 8)
+
+
 pack9 = shuffled.splice(0, 16);
+makePairs(pack9, "Proud Mentor", "Impetuous Protege", 9);
+makePairs(pack9, "Sylvia Brightspear", "Khorvath Brightflame", 9);
+makePairs(pack9, "Blaring Recruiter", "Blaring Captain", 9);
+makePairs(pack9, "Regna, the Redeemer", "Krav, the Unredeemed", 9);
+makePairs(pack9, "Lore Weaver", "Ley Weaver", 9);
+makePairs(pack9, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 9);
+makePairs(pack9, "Chakram Retriever", "Chakram Slinger", 9);
+makePairs(pack9, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 9);
+makePairs(pack9, "Will Kenrith", "Rowan Kenrith", 9);
+makePairs(pack9, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 9);
+makePairs(pack9, "Virtus the Veiled", "Gorm the Great", 9);
+makePairs(pack9, "Soulblade Corrupter", "Soulblade Renewer", 9);
+makePairs(pack9, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 9);
+makePairs(pack9, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 9)
+
 pack10 = shuffled.splice(0, 16);
+makePairs(pack10, "Proud Mentor", "Impetuous Protege", 10);
+makePairs(pack10, "Sylvia Brightspear", "Khorvath Brightflame", 10);
+makePairs(pack10, "Blaring Recruiter", "Blaring Captain", 10);
+makePairs(pack10, "Regna, the Redeemer", "Krav, the Unredeemed", 10);
+makePairs(pack10, "Lore Weaver", "Ley Weaver", 10);
+makePairs(pack10, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 10);
+makePairs(pack10, "Chakram Retriever", "Chakram Slinger", 10);
+makePairs(pack10, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 10);
+makePairs(pack10, "Will Kenrith", "Rowan Kenrith", 10);
+makePairs(pack10, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 10);
+makePairs(pack10, "Virtus the Veiled", "Gorm the Great", 10);
+makePairs(pack10, "Soulblade Corrupter", "Soulblade Renewer", 10);
+makePairs(pack10, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 10);
+makePairs(pack10, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 10)
+
 pack11 = shuffled.splice(0, 16);
+makePairs(pack11, "Proud Mentor", "Impetuous Protege", 11);
+makePairs(pack11, "Sylvia Brightspear", "Khorvath Brightflame", 11);
+makePairs(pack11, "Blaring Recruiter", "Blaring Captain", 11);
+makePairs(pack11, "Regna, the Redeemer", "Krav, the Unredeemed", 11);
+makePairs(pack11, "Lore Weaver", "Ley Weaver", 11);
+makePairs(pack11, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 11);
+makePairs(pack11, "Chakram Retriever", "Chakram Slinger", 11);
+makePairs(pack11, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 11);
+makePairs(pack11, "Will Kenrith", "Rowan Kenrith", 11);
+makePairs(pack11, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 11);
+makePairs(pack11, "Virtus the Veiled", "Gorm the Great", 11);
+makePairs(pack11, "Soulblade Corrupter", "Soulblade Renewer", 11);
+makePairs(pack11, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 11);
+makePairs(pack11, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 11)
+
+
 pack12 = shuffled.splice(0, 16);
+makePairs(pack12, "Proud Mentor", "Impetuous Protege", 12);
+makePairs(pack12, "Sylvia Brightspear", "Khorvath Brightflame", 12);
+makePairs(pack12, "Blaring Recruiter", "Blaring Captain", 12);
+makePairs(pack12, "Regna, the Redeemer", "Krav, the Unredeemed", 12);
+makePairs(pack12, "Lore Weaver", "Ley Weaver", 12);
+makePairs(pack12, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 12);
+makePairs(pack12, "Chakram Retriever", "Chakram Slinger", 12);
+makePairs(pack12, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 12);
+makePairs(pack12, "Will Kenrith", "Rowan Kenrith", 12);
+makePairs(pack12, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 12);
+makePairs(pack12, "Virtus the Veiled", "Gorm the Great", 12);
+makePairs(pack12, "Soulblade Corrupter", "Soulblade Renewer", 12);
+makePairs(pack12, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 12);
+makePairs(pack12, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 12)
+
 pack13 = shuffled.splice(0, 16);
+makePairs(pack13, "Proud Mentor", "Impetuous Protege", 13);
+makePairs(pack13, "Sylvia Brightspear", "Khorvath Brightflame", 13);
+makePairs(pack13, "Blaring Recruiter", "Blaring Captain", 13);
+makePairs(pack13, "Regna, the Redeemer", "Krav, the Unredeemed", 13);
+makePairs(pack13, "Lore Weaver", "Ley Weaver", 13);
+makePairs(pack13, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 13);
+makePairs(pack13, "Chakram Retriever", "Chakram Slinger", 13);
+makePairs(pack13, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 13);
+makePairs(pack13, "Will Kenrith", "Rowan Kenrith", 13);
+makePairs(pack13, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 13);
+makePairs(pack13, "Virtus the Veiled", "Gorm the Great", 13);
+makePairs(pack13, "Soulblade Corrupter", "Soulblade Renewer", 13);
+makePairs(pack13, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 13);
+makePairs(pack13, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 13)
+
 pack14 = shuffled.splice(0, 16);
+makePairs(pack14, "Proud Mentor", "Impetuous Protege", 14);
+makePairs(pack14, "Sylvia Brightspear", "Khorvath Brightflame", 14);
+makePairs(pack14, "Blaring Recruiter", "Blaring Captain", 14);
+makePairs(pack14, "Regna, the Redeemer", "Krav, the Unredeemed", 14);
+makePairs(pack14, "Lore Weaver", "Ley Weaver", 14);
+makePairs(pack14, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 14);
+makePairs(pack14, "Chakram Retriever", "Chakram Slinger", 14);
+makePairs(pack14, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 14);
+makePairs(pack14, "Will Kenrith", "Rowan Kenrith", 14);
+makePairs(pack14, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 14);
+makePairs(pack14, "Virtus the Veiled", "Gorm the Great", 14);
+makePairs(pack14, "Soulblade Corrupter", "Soulblade Renewer", 14);
+makePairs(pack14, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 14);
+makePairs(pack14, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 14)
+
 pack15 = shuffled.splice(0, 16);
+makePairs(pack15, "Proud Mentor", "Impetuous Protege", 15);
+makePairs(pack15, "Sylvia Brightspear", "Khorvath Brightflame", 15);
+makePairs(pack15, "Blaring Recruiter", "Blaring Captain", 15);
+makePairs(pack15, "Regna, the Redeemer", "Krav, the Unredeemed", 15);
+makePairs(pack15, "Lore Weaver", "Ley Weaver", 15);
+makePairs(pack15, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 15);
+makePairs(pack15, "Chakram Retriever", "Chakram Slinger", 15);
+makePairs(pack15, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 15);
+makePairs(pack15, "Will Kenrith", "Rowan Kenrith", 15);
+makePairs(pack15, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 15);
+makePairs(pack15, "Virtus the Veiled", "Gorm the Great", 15);
+makePairs(pack15, "Soulblade Corrupter", "Soulblade Renewer", 15);
+makePairs(pack15, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 15);
+makePairs(pack15, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 15)
+
+
 pack16 = shuffled.splice(0, 16);
+makePairs(pack16, "Proud Mentor", "Impetuous Protege", 16);
+makePairs(pack16, "Sylvia Brightspear", "Khorvath Brightflame", 16);
+makePairs(pack16, "Blaring Recruiter", "Blaring Captain", 16);
+makePairs(pack16, "Regna, the Redeemer", "Krav, the Unredeemed", 16);
+makePairs(pack16, "Lore Weaver", "Ley Weaver", 16);
+makePairs(pack16, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 16);
+makePairs(pack16, "Chakram Retriever", "Chakram Slinger", 16);
+makePairs(pack16, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 16);
+makePairs(pack16, "Will Kenrith", "Rowan Kenrith", 16);
+makePairs(pack16, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 16);
+makePairs(pack16, "Virtus the Veiled", "Gorm the Great", 16);
+makePairs(pack16, "Soulblade Corrupter", "Soulblade Renewer", 16);
+makePairs(pack16, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 16);
+makePairs(pack16, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 16)
+
 pack17 = shuffled.splice(0, 16);
+makePairs(pack17, "Proud Mentor", "Impetuous Protege", 17);
+makePairs(pack17, "Sylvia Brightspear", "Khorvath Brightflame", 17);
+makePairs(pack17, "Blaring Recruiter", "Blaring Captain", 17);
+makePairs(pack17, "Regna, the Redeemer", "Krav, the Unredeemed", 17);
+makePairs(pack17, "Lore Weaver", "Ley Weaver", 17);
+makePairs(pack17, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 17);
+makePairs(pack17, "Chakram Retriever", "Chakram Slinger", 17);
+makePairs(pack17, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 17);
+makePairs(pack17, "Will Kenrith", "Rowan Kenrith", 17);
+makePairs(pack17, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 17);
+makePairs(pack17, "Virtus the Veiled", "Gorm the Great", 17);
+makePairs(pack17, "Soulblade Corrupter", "Soulblade Renewer", 17);
+makePairs(pack17, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 17);
+makePairs(pack17, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 17)
+
+
 pack18 = shuffled.splice(0, 16);
+makePairs(pack18, "Proud Mentor", "Impetuous Protege", 18);
+makePairs(pack18, "Sylvia Brightspear", "Khorvath Brightflame", 18);
+makePairs(pack18, "Blaring Recruiter", "Blaring Captain", 18);
+makePairs(pack18, "Regna, the Redeemer", "Krav, the Unredeemed", 18);
+makePairs(pack18, "Lore Weaver", "Ley Weaver", 18);
+makePairs(pack18, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 18);
+makePairs(pack18, "Chakram Retriever", "Chakram Slinger", 18);
+makePairs(pack18, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 18);
+makePairs(pack18, "Will Kenrith", "Rowan Kenrith", 18);
+makePairs(pack18, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 18);
+makePairs(pack18, "Virtus the Veiled", "Gorm the Great", 18);
+makePairs(pack18, "Soulblade Corrupter", "Soulblade Renewer", 18);
+makePairs(pack18, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 18);
+makePairs(pack18, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 18)
+
+
 pack19 = shuffled.splice(0, 16);
+makePairs(pack19, "Proud Mentor", "Impetuous Protege", 19);
+makePairs(pack19, "Sylvia Brightspear", "Khorvath Brightflame", 19);
+makePairs(pack19, "Blaring Recruiter", "Blaring Captain", 19);
+makePairs(pack19, "Regna, the Redeemer", "Krav, the Unredeemed", 19);
+makePairs(pack19, "Lore Weaver", "Ley Weaver", 19);
+makePairs(pack19, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 19);
+makePairs(pack19, "Chakram Retriever", "Chakram Slinger", 19);
+makePairs(pack19, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 19);
+makePairs(pack19, "Will Kenrith", "Rowan Kenrith", 19);
+makePairs(pack19, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 19);
+makePairs(pack19, "Virtus the Veiled", "Gorm the Great", 19);
+makePairs(pack19, "Soulblade Corrupter", "Soulblade Renewer", 19);
+makePairs(pack19, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 19);
+makePairs(pack19, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 19)
+
+
 pack20 = shuffled.splice(0, 16);
+makePairs(pack20, "Proud Mentor", "Impetuous Protege", 20);
+makePairs(pack20, "Sylvia Brightspear", "Khorvath Brightflame", 20);
+makePairs(pack20, "Blaring Recruiter", "Blaring Captain", 20);
+makePairs(pack20, "Regna, the Redeemer", "Krav, the Unredeemed", 20);
+makePairs(pack20, "Lore Weaver", "Ley Weaver", 20);
+makePairs(pack20, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 20);
+makePairs(pack20, "Chakram Retriever", "Chakram Slinger", 20);
+makePairs(pack20, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 20);
+makePairs(pack20, "Will Kenrith", "Rowan Kenrith", 20);
+makePairs(pack20, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 20);
+makePairs(pack20, "Virtus the Veiled", "Gorm the Great", 20);
+makePairs(pack20, "Soulblade Corrupter", "Soulblade Renewer", 20);
+makePairs(pack20, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 20);
+makePairs(pack20, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 20)
+
 pack21 = shuffled.splice(0, 16);
+makePairs(pack21, "Proud Mentor", "Impetuous Protege", 21);
+makePairs(pack21, "Sylvia Brightspear", "Khorvath Brightflame", 21);
+makePairs(pack21, "Blaring Recruiter", "Blaring Captain", 21);
+makePairs(pack21, "Regna, the Redeemer", "Krav, the Unredeemed", 21);
+makePairs(pack21, "Lore Weaver", "Ley Weaver", 21);
+makePairs(pack21, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 21);
+makePairs(pack21, "Chakram Retriever", "Chakram Slinger", 21);
+makePairs(pack21, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 21);
+makePairs(pack21, "Will Kenrith", "Rowan Kenrith", 21);
+makePairs(pack21, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 21);
+makePairs(pack21, "Virtus the Veiled", "Gorm the Great", 21);
+makePairs(pack21, "Soulblade Corrupter", "Soulblade Renewer", 21);
+makePairs(pack21, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 21);
+makePairs(pack21, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 21)
+
 pack22 = shuffled.splice(0, 16);
+makePairs(pack22, "Proud Mentor", "Impetuous Protege", 22);
+makePairs(pack22, "Sylvia Brightspear", "Khorvath Brightflame", 22);
+makePairs(pack22, "Blaring Recruiter", "Blaring Captain", 22);
+makePairs(pack22, "Regna, the Redeemer", "Krav, the Unredeemed", 22);
+makePairs(pack22, "Lore Weaver", "Ley Weaver", 22);
+makePairs(pack22, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 22);
+makePairs(pack22, "Chakram Retriever", "Chakram Slinger", 22);
+makePairs(pack22, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 22);
+makePairs(pack22, "Will Kenrith", "Rowan Kenrith", 22);
+makePairs(pack22, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 22);
+makePairs(pack22, "Virtus the Veiled", "Gorm the Great", 22);
+makePairs(pack22, "Soulblade Corrupter", "Soulblade Renewer", 22);
+makePairs(pack22, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 22);
+makePairs(pack22, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 22)
+
 pack23 = shuffled.splice(0, 16);
+makePairs(pack23, "Proud Mentor", "Impetuous Protege", 23);
+makePairs(pack23, "Sylvia Brightspear", "Khorvath Brightflame", 23);
+makePairs(pack23, "Blaring Recruiter", "Blaring Captain", 23);
+makePairs(pack23, "Regna, the Redeemer", "Krav, the Unredeemed", 23);
+makePairs(pack23, "Lore Weaver", "Ley Weaver", 23);
+makePairs(pack23, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 23);
+makePairs(pack23, "Chakram Retriever", "Chakram Slinger", 23);
+makePairs(pack23, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 23);
+makePairs(pack23, "Will Kenrith", "Rowan Kenrith", 23);
+makePairs(pack23, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 23);
+makePairs(pack23, "Virtus the Veiled", "Gorm the Great", 23);
+makePairs(pack23, "Soulblade Corrupter", "Soulblade Renewer", 23);
+makePairs(pack23, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 23);
+makePairs(pack23, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 23)
+
 pack24 = shuffled.splice(0, 16);
+makePairs(pack24, "Proud Mentor", "Impetuous Protege", 24);
+makePairs(pack24, "Sylvia Brightspear", "Khorvath Brightflame", 24);
+makePairs(pack24, "Blaring Recruiter", "Blaring Captain", 24);
+makePairs(pack24, "Regna, the Redeemer", "Krav, the Unredeemed", 24);
+makePairs(pack24, "Lore Weaver", "Ley Weaver", 24);
+makePairs(pack24, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 24);
+makePairs(pack24, "Chakram Retriever", "Chakram Slinger", 24);
+makePairs(pack24, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 24);
+makePairs(pack24, "Will Kenrith", "Rowan Kenrith", 24);
+makePairs(pack24, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 24);
+makePairs(pack24, "Virtus the Veiled", "Gorm the Great", 24);
+makePairs(pack24, "Soulblade Corrupter", "Soulblade Renewer", 24);
+makePairs(pack24, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 24);
+makePairs(pack24, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 24)
+
 pack25 = shuffled.splice(0, 16);
+makePairs(pack25, "Proud Mentor", "Impetuous Protege", 25);
+makePairs(pack25, "Sylvia Brightspear", "Khorvath Brightflame", 25);
+makePairs(pack25, "Blaring Recruiter", "Blaring Captain", 25);
+makePairs(pack25, "Regna, the Redeemer", "Krav, the Unredeemed", 25);
+makePairs(pack25, "Lore Weaver", "Ley Weaver", 25);
+makePairs(pack25, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 25);
+makePairs(pack25, "Chakram Retriever", "Chakram Slinger", 25);
+makePairs(pack25, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 25);
+makePairs(pack25, "Will Kenrith", "Rowan Kenrith", 25);
+makePairs(pack25, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 25);
+makePairs(pack25, "Virtus the Veiled", "Gorm the Great", 25);
+makePairs(pack25, "Soulblade Corrupter", "Soulblade Renewer", 22);
+makePairs(pack25, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 25);
+makePairs(pack25, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 25)
+
 pack26 = shuffled.splice(0, 16);
+makePairs(pack26, "Proud Mentor", "Impetuous Protege", 26);
+makePairs(pack26, "Sylvia Brightspear", "Khorvath Brightflame", 26);
+makePairs(pack26, "Blaring Recruiter", "Blaring Captain", 26);
+makePairs(pack26, "Regna, the Redeemer", "Krav, the Unredeemed", 26);
+makePairs(pack26, "Lore Weaver", "Ley Weaver", 26);
+makePairs(pack26, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 26);
+makePairs(pack26, "Chakram Retriever", "Chakram Slinger", 26);
+makePairs(pack26, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 26);
+makePairs(pack26, "Will Kenrith", "Rowan Kenrith", 26);
+makePairs(pack26, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 26);
+makePairs(pack26, "Virtus the Veiled", "Gorm the Great", 26);
+makePairs(pack26, "Soulblade Corrupter", "Soulblade Renewer", 26);
+makePairs(pack26, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 26);
+makePairs(pack26, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 26)
+
 pack27 = shuffled.splice(0, 16);
+makePairs(pack27, "Proud Mentor", "Impetuous Protege", 27);
+makePairs(pack27, "Sylvia Brightspear", "Khorvath Brightflame", 27);
+makePairs(pack27, "Blaring Recruiter", "Blaring Captain", 27);
+makePairs(pack27, "Regna, the Redeemer", "Krav, the Unredeemed", 27);
+makePairs(pack27, "Lore Weaver", "Ley Weaver", 27);
+makePairs(pack27, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 27);
+makePairs(pack27, "Chakram Retriever", "Chakram Slinger", 27);
+makePairs(pack27, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 27);
+makePairs(pack27, "Will Kenrith", "Rowan Kenrith", 27);
+makePairs(pack27, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 27);
+makePairs(pack27, "Virtus the Veiled", "Gorm the Great", 27);
+makePairs(pack27, "Soulblade Corrupter", "Soulblade Renewer", 27);
+makePairs(pack27, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 27);
+makePairs(pack27, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 27)
+
 pack28 = shuffled.splice(0, 16);
+makePairs(pack28, "Proud Mentor", "Impetuous Protege", 28);
+makePairs(pack28, "Sylvia Brightspear", "Khorvath Brightflame", 28);
+makePairs(pack28, "Blaring Recruiter", "Blaring Captain", 28);
+makePairs(pack28, "Regna, the Redeemer", "Krav, the Unredeemed", 28);
+makePairs(pack28, "Lore Weaver", "Ley Weaver", 28);
+makePairs(pack28, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 28);
+makePairs(pack28, "Chakram Retriever", "Chakram Slinger", 28);
+makePairs(pack28, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 28);
+makePairs(pack28, "Will Kenrith", "Rowan Kenrith", 28);
+makePairs(pack28, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 28);
+makePairs(pack28, "Virtus the Veiled", "Gorm the Great", 28);
+makePairs(pack28, "Soulblade Corrupter", "Soulblade Renewer", 28);
+makePairs(pack28, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 28);
+makePairs(pack28, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 28)
+
 pack29 = shuffled.splice(0, 16);
+makePairs(pack29, "Proud Mentor", "Impetuous Protege", 29);
+makePairs(pack29, "Sylvia Brightspear", "Khorvath Brightflame", 29);
+makePairs(pack29, "Blaring Recruiter", "Blaring Captain", 29);
+makePairs(pack29, "Regna, the Redeemer", "Krav, the Unredeemed", 29);
+makePairs(pack29, "Lore Weaver", "Ley Weaver", 29);
+makePairs(pack29, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 29);
+makePairs(pack29, "Chakram Retriever", "Chakram Slinger", 29);
+makePairs(pack29, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 29);
+makePairs(pack29, "Will Kenrith", "Rowan Kenrith", 29);
+makePairs(pack29, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 29);
+makePairs(pack29, "Virtus the Veiled", "Gorm the Great", 29);
+makePairs(pack29, "Soulblade Corrupter", "Soulblade Renewer", 29);
+makePairs(pack29, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 29);
+makePairs(pack29, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 29)
+
 pack30 = shuffled.splice(0, 16);
+makePairs(pack30, "Proud Mentor", "Impetuous Protege", 30);
+makePairs(pack30, "Sylvia Brightspear", "Khorvath Brightflame", 30);
+makePairs(pack30, "Blaring Recruiter", "Blaring Captain", 30);
+makePairs(pack30, "Regna, the Redeemer", "Krav, the Unredeemed", 30);
+makePairs(pack30, "Lore Weaver", "Ley Weaver", 30);
+makePairs(pack30, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 30);
+makePairs(pack30, "Chakram Retriever", "Chakram Slinger", 30);
+makePairs(pack30, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 30);
+makePairs(pack30, "Will Kenrith", "Rowan Kenrith", 30);
+makePairs(pack30, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 30);
+makePairs(pack30, "Virtus the Veiled", "Gorm the Great", 30);
+makePairs(pack30, "Soulblade Corrupter", "Soulblade Renewer", 30);
+makePairs(pack30, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 30);
+makePairs(pack30, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 30)
+
 pack31 = shuffled.splice(0, 16);
+makePairs(pack31, "Proud Mentor", "Impetuous Protege", 31);
+makePairs(pack31, "Sylvia Brightspear", "Khorvath Brightflame", 31);
+makePairs(pack31, "Blaring Recruiter", "Blaring Captain", 31);
+makePairs(pack31, "Regna, the Redeemer", "Krav, the Unredeemed", 31);
+makePairs(pack31, "Lore Weaver", "Ley Weaver", 31);
+makePairs(pack31, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 31);
+makePairs(pack31, "Chakram Retriever", "Chakram Slinger", 31);
+makePairs(pack31, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 31);
+makePairs(pack31, "Will Kenrith", "Rowan Kenrith", 31);
+makePairs(pack31, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 31);
+makePairs(pack31, "Virtus the Veiled", "Gorm the Great", 31);
+makePairs(pack31, "Soulblade Corrupter", "Soulblade Renewer", 31);
+makePairs(pack31, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 31);
+makePairs(pack31, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 31)
+
 pack32 = shuffled.splice(0, 16);
+makePairs(pack32, "Proud Mentor", "Impetuous Protege", 32);
+makePairs(pack32, "Sylvia Brightspear", "Khorvath Brightflame", 32);
+makePairs(pack32, "Blaring Recruiter", "Blaring Captain", 32);
+makePairs(pack32, "Regna, the Redeemer", "Krav, the Unredeemed", 32);
+makePairs(pack32, "Lore Weaver", "Ley Weaver", 32);
+makePairs(pack32, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 32);
+makePairs(pack32, "Chakram Retriever", "Chakram Slinger", 32);
+makePairs(pack32, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 32);
+makePairs(pack32, "Will Kenrith", "Rowan Kenrith", 32);
+makePairs(pack32, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 32);
+makePairs(pack32, "Virtus the Veiled", "Gorm the Great", 32);
+makePairs(pack32, "Soulblade Corrupter", "Soulblade Renewer", 32);
+makePairs(pack32, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 32);
+makePairs(pack32, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 32)
+
 pack33 = shuffled.splice(0, 16);
+makePairs(pack33, "Proud Mentor", "Impetuous Protege", 33);
+makePairs(pack33, "Sylvia Brightspear", "Khorvath Brightflame", 33);
+makePairs(pack33, "Blaring Recruiter", "Blaring Captain", 33);
+makePairs(pack33, "Regna, the Redeemer", "Krav, the Unredeemed", 33);
+makePairs(pack33, "Lore Weaver", "Ley Weaver", 33);
+makePairs(pack33, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 33);
+makePairs(pack33, "Chakram Retriever", "Chakram Slinger", 33);
+makePairs(pack33, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 33);
+makePairs(pack33, "Will Kenrith", "Rowan Kenrith", 33);
+makePairs(pack33, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 33);
+makePairs(pack33, "Virtus the Veiled", "Gorm the Great", 33);
+makePairs(pack33, "Soulblade Corrupter", "Soulblade Renewer", 33);
+makePairs(pack33, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 33);
+makePairs(pack33, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 33)
+
 pack34 = shuffled.splice(0, 16);
+makePairs(pack34, "Proud Mentor", "Impetuous Protege", 34);
+makePairs(pack34, "Sylvia Brightspear", "Khorvath Brightflame", 34);
+makePairs(pack34, "Blaring Recruiter", "Blaring Captain", 34);
+makePairs(pack34, "Regna, the Redeemer", "Krav, the Unredeemed", 34);
+makePairs(pack34, "Lore Weaver", "Ley Weaver", 34);
+makePairs(pack34, "Toothy, Imaginary Friend", "Pir, Imaginative Rascal", 34);
+makePairs(pack34, "Chakram Retriever", "Chakram Slinger", 34);
+makePairs(pack34, "Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos", 34);
+makePairs(pack34, "Will Kenrith", "Rowan Kenrith", 34);
+makePairs(pack34, "Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel", 34);
+makePairs(pack34, "Virtus the Veiled", "Gorm the Great", 34);
+makePairs(pack34, "Soulblade Corrupter", "Soulblade Renewer", 34);
+makePairs(pack34, "Brallin, Skyshark Rider", "Shabraz, the Skyshark", 34);
+makePairs(pack34, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 34)
 
 
 
 
-
+// output the results to HTML
     one.innerHTML = pack1.join(' <br /> ')
     two.innerHTML = pack2.join(' <br /> ')
     three.innerHTML = pack3.join(' <br /> ')
