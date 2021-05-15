@@ -1,3 +1,4 @@
+
 let cube = [
 "Crush of Tentacles",
 "Fall of the Titans",
@@ -650,7 +651,7 @@ reset.addEventListener("click", ()=> {
     twentyThree.innerHTML = ""
     twentyFour.innerHTML = ""
     twentyFive.innerHTML = ""
-    twentySix.innerHTML =""
+    twentySix.innerHTML = ""
     twentySeven.innerHTML = ""
     twentyEight.innerHTML = ""
     twentyNine.innerHTML = ""
@@ -660,139 +661,595 @@ reset.addEventListener("click", ()=> {
     thirtyThree.innerHTML = ""
     thirtyFour.innerHTML = ""
 
+    // this hides the reset button and reveals the generate button
+    generate.classList.remove("hide");
+    reset.classList.remove("display");
+
 })
 
+// this shuffles the cube array and outputs the new random arrays to the webpage
 generate.addEventListener("click", shuffleCube)
 
 
 
+function myFunc(pack,card1,card2) {
+
+    const shuffled = cube.sort(() => 0.5 - Math.random());
+
+    if (pack.includes(card1) && !pack.includes(card2)) {
+    
+        // this finds the index of the card in the shuffled cube then removes it
+        let index = shuffled.indexOf(card2);
+        if(index > -1) {
+            shuffled.splice(index, 1);
+           
+        }
+        // this adds the card to the end of the pack
+        pack.push(card2)
+       
+        // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
+        let packIndex = pack.indexOf(card1)
+        pack.push(pack.splice(packIndex, 1)[0]);
+        
+        // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+        let movedCard = pack.shift();
+        shuffled.push(movedCard);
+        console.log(movedCard)
+    
+        // this shuffles the cube after the removed card is added to the bottom
+        shuffled.sort(() => 0.5 - Math.random());
+       
+    
+    // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
+    } else if (pack.includes(card2) && !pack.includes(card1)) {
+        
+        // this finds the index of the card in the shuffled cube then removes it
+        let index = shuffled.indexOf(card1);
+        if(index > -1) {
+            shuffled.splice(index, 1);
+        }
+       
+        // this adds the card to the end of the pack
+        pack.push(card1);
+    
+        let packIndex = pack.indexOf(card1)
+        pack.push(pack.splice(packIndex, 1)[0]);
+        
+        // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+        let movedCard = pack.shift();
+        shuffled.push(movedCard);
+        console.log(movedCard);
+    
+        // this shuffles the cube after the removed card is added to the bottom
+        shuffled.sort(() => 0.5 - Math.random());
+    }
+}
 
 
 
 function shuffleCube() {
-  // Shuffle array
 
+// this hides the generate button and reveals the reset button
+  reset.classList.add("display");
+  generate.classList.toggle("hide");
+  
+  
+    // Shuffle array
   const shuffled = cube.sort(() => 0.5 - Math.random());
 
 
 
 // this is the first pack
 pack1 = shuffled.splice(0, 16);
+myFunc(pack1,"Proud Mentor", "Impetuous Protege");
+myFunc(pack1,"Impetuous Protege", "Proud Mentor");
+myFunc(pack1,"Sylvia Brightspear", "Khorvath Brightflame");
+myFunc(pack1,"Khorvath Brightflame", "Sylvia Brightspear")
+
 // 
 // PACK 1 - PROUD MENTOR & IMPETUOUS PROTEGE
 // 
-if (pack1.includes("Proud Mentor") && !pack1.includes("Impetuous Protege")) {
+// if (pack1.includes("Proud Mentor") && !pack1.includes("Impetuous Protege")) {
     
-    // this finds the index of the card in the shuffled cube then removes it
-    let index = shuffled.indexOf("Impetuous Protege");
-    if(index > -1) {
-        shuffled.splice(index, 1);
+//     // this finds the index of the card in the shuffled cube then removes it
+//     let index = shuffled.indexOf("Impetuous Protege");
+//     if(index > -1) {
+//         shuffled.splice(index, 1);
        
-    }
-    // this adds the card to the end of the pack
-    pack1.push("Impetuous Protege")
+//     }
+//     // this adds the card to the end of the pack
+//     pack1.push("Impetuous Protege")
    
-    // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
-    let packIndex = pack1.indexOf("Proud Mentor")
-    pack1.push(pack1.splice(packIndex, 1)[0]);
+//     // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
+//     let packIndex = pack1.indexOf("Proud Mentor")
+//     pack1.push(pack1.splice(packIndex, 1)[0]);
     
-    // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-    let movedCard = pack1.shift();
-    shuffled.push(movedCard);
+//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+//     let movedCard = pack1.shift();
+//     shuffled.push(movedCard);
     
-    console.log(movedCard + " pack 1");
-    // this shuffles the cube after the removed card is added to the bottom
-    shuffled.sort(() => 0.5 - Math.random());
+//     console.log(movedCard + " pack 1");
+//     // this shuffles the cube after the removed card is added to the bottom
+//     shuffled.sort(() => 0.5 - Math.random());
     
    
     
    
 
-// this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
-} else if (pack1.includes("Impetuous Protege") && !pack1.includes("Proud Mentor")) {
+// // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
+// } else if (pack1.includes("Impetuous Protege") && !pack1.includes("Proud Mentor")) {
     
-    // this finds the index of the card in the shuffled cube then removes it
-    let index = shuffled.indexOf("Proud Mentor");
-    if(index > -1) {
-        shuffled.splice(index, 1);
-    }
+//     // this finds the index of the card in the shuffled cube then removes it
+//     let index = shuffled.indexOf("Proud Mentor");
+//     if(index > -1) {
+//         shuffled.splice(index, 1);
+//     }
    
-    // this adds the card to the end of the pack
-    pack1.push("Proud Mentor");
+//     // this adds the card to the end of the pack
+//     pack1.push("Proud Mentor");
 
-    let packIndex = pack1.indexOf("Impetuous Protege")
-    pack1.push(pack1.splice(packIndex, 1)[0]);
+//     let packIndex = pack1.indexOf("Impetuous Protege")
+//     pack1.push(pack1.splice(packIndex, 1)[0]);
     
-    // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-    let movedCard = pack1.shift();
-    shuffled.push(movedCard);
+//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+//     let movedCard = pack1.shift();
+//     shuffled.push(movedCard);
     
-    console.log(movedCard + " pack 1");
-    // this shuffles the cube after the removed card is added to the bottom
-    shuffled.sort(() => 0.5 - Math.random());
+//     console.log(movedCard + " pack 1");
+//     // this shuffles the cube after the removed card is added to the bottom
+//     shuffled.sort(() => 0.5 - Math.random());
     
     
    
    
-}
-// 
-// PACK 1 - SYLVIA BRIGHTSPEAR & KHORVATH BRIGHTFLAME
-// 
-if (pack1.includes("Sylvia Brightspear") && !pack1.includes("Khorvath Brightflame")) {
+// }
+// // 
+// // PACK 1 - SYLVIA BRIGHTSPEAR & KHORVATH BRIGHTFLAME
+// // 
+// if (pack1.includes("Sylvia Brightspear") && !pack1.includes("Khorvath Brightflame")) {
     
-    // this finds the index of the card in the shuffled cube then removes it
-    let index = shuffled.indexOf("Khorvath Brightflame");
-    if(index > -1) {
-        shuffled.splice(index, 1);
+//     // this finds the index of the card in the shuffled cube then removes it
+//     let index = shuffled.indexOf("Khorvath Brightflame");
+//     if(index > -1) {
+//         shuffled.splice(index, 1);
        
-    }
-    // this adds the card to the end of the pack
-    pack1.push("Khorvath Brightflame")
+//     }
+//     // this adds the card to the end of the pack
+//     pack1.push("Khorvath Brightflame")
    
-    // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
-    let packIndex = pack1.indexOf("Sylvia Brightspear")
-    pack1.push(pack1.splice(packIndex, 1)[0]);
+//     // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
+//     let packIndex = pack1.indexOf("Sylvia Brightspear")
+//     pack1.push(pack1.splice(packIndex, 1)[0]);
     
-    // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-    let movedCard = pack1.shift();
-    shuffled.push(movedCard);
+//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+//     let movedCard = pack1.shift();
+//     shuffled.push(movedCard);
     
-    console.log(movedCard + " pack 1");
-    // this shuffles the cube after the removed card is added to the bottom
-    shuffled.sort(() => 0.5 - Math.random());
-    
- 
-    
+//     console.log(movedCard + " pack 1");
+//     // this shuffles the cube after the removed card is added to the bottom
+//     shuffled.sort(() => 0.5 - Math.random());
+
    
 
-// this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
-} else if (pack1.includes("Khorvath Brightflame") && !pack1.includes("Sylvia Brightspear")) {
+// // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
+// } else if (pack1.includes("Khorvath Brightflame") && !pack1.includes("Sylvia Brightspear")) {
     
-    // this finds the index of the card in the shuffled cube then removes it
-    let index = shuffled.indexOf("Sylvia Brightspear");
-    if(index > -1) {
-        shuffled.splice(index, 1);
-    }
+//     // this finds the index of the card in the shuffled cube then removes it
+//     let index = shuffled.indexOf("Sylvia Brightspear");
+//     if(index > -1) {
+//         shuffled.splice(index, 1);
+//     }
    
-    // this adds the partner cards to the end of the pack
-    pack1.push("Sylvia Brightspear");
+//     // this adds the partner cards to the end of the pack
+//     pack1.push("Sylvia Brightspear");
 
-    let packIndex = pack1.indexOf("Khorvath Brightflame")
-    pack1.push(pack1.splice(packIndex, 1)[0]);
+//     let packIndex = pack1.indexOf("Khorvath Brightflame")
+//     pack1.push(pack1.splice(packIndex, 1)[0]);
     
-    // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-    let movedCard = pack1.shift();
-    shuffled.push(movedCard);
+//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+//     let movedCard = pack1.shift();
+//     shuffled.push(movedCard);
     
-    console.log(movedCard + " pack 1");
-    // this shuffles the cube after the removed card is added to the bottom
-    shuffled.sort(() => 0.5 - Math.random());
-    
-    
-    
+//     console.log(movedCard + " pack 1");
+//     // this shuffles the cube after the removed card is added to the bottom
+//     shuffled.sort(() => 0.5 - Math.random());  
    
+// }
+
+// // 
+// // PACK 1 - BLARING RECRUITER & BLARING CAPTAIN
+// // 
+// if (pack1.includes("Blaring Recruiter") && !pack1.includes("Blaring Captain")) {
+    
+//     // this finds the index of the card in the shuffled cube then removes it
+//     let index = shuffled.indexOf("Blaring Captain");
+//     if(index > -1) {
+//         shuffled.splice(index, 1);
+       
+//     }
+//     // this adds the card to the end of the pack
+//     pack1.push("Blaring Captain")
+   
+//     // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
+//     let packIndex = pack1.indexOf("Blaring Recruiter")
+//     pack1.push(pack1.splice(packIndex, 1)[0]);
+    
+//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+//     let movedCard = pack1.shift();
+//     shuffled.push(movedCard);
+    
+//     console.log(movedCard + " pack 1");
+//     // this shuffles the cube after the removed card is added to the bottom
+//     shuffled.sort(() => 0.5 - Math.random());
+
+   
+
+// // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
+// } else if (pack1.includes("Blaring Captain") && !pack1.includes("Blaring Recruiter")) {
+    
+//     // this finds the index of the card in the shuffled cube then removes it
+//     let index = shuffled.indexOf("Blaring Recruiter");
+//     if(index > -1) {
+//         shuffled.splice(index, 1);
+//     }
+   
+//     // this adds the partner cards to the end of the pack
+//     pack1.push("Blaring Recruiter");
+
+//     let packIndex = pack1.indexOf("Blaring Captain")
+//     pack1.push(pack1.splice(packIndex, 1)[0]);
+    
+//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+//     let movedCard = pack1.shift();
+//     shuffled.push(movedCard);
+    
+//     console.log(movedCard + " pack 1");
+//     // this shuffles the cube after the removed card is added to the bottom
+//     shuffled.sort(() => 0.5 - Math.random());  
+   
+// }
+
+// // 
+// // PACK 1 - REGNA, THE REDEEMER & KRAV, THE UNREDEEMED
+// // 
+// if (pack1.includes("Regna, the Redeemer") && !pack1.includes("Krav, the Unredeemed")) {
+    
+//     // this finds the index of the card in the shuffled cube then removes it
+//     let index = shuffled.indexOf("Krav, the Unredeemed");
+//     if(index > -1) {
+//         shuffled.splice(index, 1);
+       
+//     }
+//     // this adds the card to the end of the pack
+//     pack1.push("Krav, the Unredeemed")
+   
+//     // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
+//     let packIndex = pack1.indexOf("Regna, the Redeemer")
+//     pack1.push(pack1.splice(packIndex, 1)[0]);
+    
+//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+//     let movedCard = pack1.shift();
+//     shuffled.push(movedCard);
+    
+//     console.log(movedCard + " pack 1");
+//     // this shuffles the cube after the removed card is added to the bottom
+//     shuffled.sort(() => 0.5 - Math.random());
+
+   
+
+// // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
+// } else if (pack1.includes("Krav, the Unredeemed") && !pack1.includes("Regna, the Redeemer")) {
+    
+//     // this finds the index of the card in the shuffled cube then removes it
+//     let index = shuffled.indexOf("Regna, the Redeemer");
+//     if(index > -1) {
+//         shuffled.splice(index, 1);
+//     }
+   
+//     // this adds the partner cards to the end of the pack
+//     pack1.push("Regna, the Redeemer");
+
+//     let packIndex = pack1.indexOf("Krav, the Unredeemed")
+//     pack1.push(pack1.splice(packIndex, 1)[0]);
+    
+//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+//     let movedCard = pack1.shift();
+//     shuffled.push(movedCard);
+    
+//     console.log(movedCard + " pack 1");
+//     // this shuffles the cube after the removed card is added to the bottom
+//     shuffled.sort(() => 0.5 - Math.random());  
+   
+// }
+
+
+pack2 = shuffled.splice(0, 16);
+myFunc(pack2,"Proud Mentor", "Impetuous Protege");
+myFunc(pack2,"Impetuous Protege", "Proud Mentor");
+myFunc(pack2,"Sylvia Brightspear", "Khorvath Brightflame");
+myFunc(pack2,"Khorvath Brightflame", "Sylvia Brightspear")
+// 
+// PACK 2 - PROUD MENTOR & IMPETUOUS PROTEGE
+// 
+// if (pack2.includes("Proud Mentor") && !pack2.includes("Impetuous Protege")) {
+    
+//     // this finds the index of the card in the shuffled cube then removes it
+//     let index = shuffled.indexOf("Impetuous Protege");
+//     if(index > -1) {
+//         shuffled.splice(index, 1);
+       
+//     }
+//     // this adds the card to the end of the pack
+//     pack2.push("Impetuous Protege")
+   
+//     // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
+//     let packIndex = pack2.indexOf("Proud Mentor")
+//     pack2.push(pack2.splice(packIndex, 1)[0]);
+    
+//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+//     let movedCard = pack2.shift();
+//     shuffled.push(movedCard);
+//     console.log(movedCard + " pack 2");
+
+//     // this shuffles the cube after the removed card is added to the bottom
+//     shuffled.sort(() => 0.5 - Math.random());
+   
+
+// // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
+// } else if (pack2.includes("Impetuous Protege") && !pack2.includes("Proud Mentor")) {
+    
+//     // this finds the index of the card in the shuffled cube then removes it
+//     let index = shuffled.indexOf("Proud Mentor");
+//     if(index > -1) {
+//         shuffled.splice(index, 1);
+//     }
+   
+//     // this adds the card to the end of the pack
+//     pack2.push("Proud Mentor");
+
+//     let packIndex = pack2.indexOf("Impetuous Protege")
+//     pack2.push(pack2.splice(packIndex, 1)[0]);
+    
+//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+//     let movedCard = pack2.shift();
+//     shuffled.push(movedCard);
+//     console.log(movedCard + " pack 2");
+
+//     // this shuffles the cube after the removed card is added to the bottom
+//     shuffled.sort(() => 0.5 - Math.random());
+// }
+
+// // 
+// // PACK 2 - SYLVIA BRIGHTSPEAR & KHORVATH BRIGHTFLAME
+// // 
+// if (pack2.includes("Sylvia Brightspear") && !pack2.includes("Khorvath Brightflame")) {
+    
+//     // this finds the index of the card in the shuffled cube then removes it
+//     let index = shuffled.indexOf("Khorvath Brightflame");
+//     if(index > -1) {
+//         shuffled.splice(index, 1);
+       
+//     }
+//     // this adds the card to the end of the pack
+//     pack2.push("Khorvath Brightflame")
+   
+//     // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
+//     let packIndex = pack2.indexOf("Sylvia Brightspear")
+//     pack2.push(pack2.splice(packIndex, 1)[0]);
+    
+//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+//     let movedCard = pack2.shift();
+//     shuffled.push(movedCard);
+//     console.log(movedCard + " pack 2");
+
+//     // this shuffles the cube after the removed card is added to the bottom
+//     shuffled.sort(() => 0.5 - Math.random());
+
+// // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
+// } else if (pack2.includes("Khorvath Brightflame") && !pack2.includes("Sylvia Brightspear")) {
+    
+//     // this finds the index of the card in the shuffled cube then removes it
+//     let index = shuffled.indexOf("Sylvia Brightspear");
+//     if(index > -1) {
+//         shuffled.splice(index, 1);
+//     }
+   
+//     // this adds the partner cards to the end of the pack
+//     pack2.push("Sylvia Brightspear");
+
+//     let packIndex = pack2.indexOf("Khorvath Brightflame")
+//     pack2.push(pack2.splice(packIndex, 1)[0]);
+    
+//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+//     let movedCard = pack2.shift();
+//     shuffled.push(movedCard);
+//     console.log(movedCard + " pack 2");
+
+//     // this shuffles the cube after the removed card is added to the bottom
+//     shuffled.sort(() => 0.5 - Math.random());
+// }
+
+
+pack3 = shuffled.splice(0, 16);
+myFunc(pack3,"Proud Mentor", "Impetuous Protege");
+// 
+// PACK 3 - PROUD MENTOR & IMPETUOUS PROTEGE
+// 
+// if (pack3.includes("Proud Mentor") && !pack3.includes("Impetuous Protege")) {
+    
+//     // this finds the index of the card in the shuffled cube then removes it
+//     let index = shuffled.indexOf("Impetuous Protege");
+//     if(index > -1) {
+//         shuffled.splice(index, 1);
+       
+//     }
+//     // this adds the card to the end of the pack
+//     pack3.push("Impetuous Protege")
+   
+//     // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
+//     let packIndex = pack3.indexOf("Proud Mentor")
+//     pack3.push(pack3.splice(packIndex, 1)[0]);
+    
+//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+//     let movedCard = pack3.shift();
+//     shuffled.push(movedCard);
+//     console.log(movedCard + " pack 3");
+
+//     // this shuffles the cube after the removed card is added to the bottom
+//     shuffled.sort(() => 0.5 - Math.random());
+   
+
+// // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
+// } else if (pack3.includes("Impetuous Protege") && !pack3.includes("Proud Mentor")) {
+    
+//     // this finds the index of the card in the shuffled cube then removes it
+//     let index = shuffled.indexOf("Proud Mentor");
+//     if(index > -1) {
+//         shuffled.splice(index, 1);
+//     }
+   
+//     // this adds the card to the end of the pack
+//     pack3.push("Proud Mentor");
+
+//     let packIndex = pack3.indexOf("Impetuous Protege")
+//     pack3.push(pack3.splice(packIndex, 1)[0]);
+    
+//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+//     let movedCard = pack3.shift();
+//     shuffled.push(movedCard);
+//     console.log(movedCard + " pack 3");
+
+//     // this shuffles the cube after the removed card is added to the bottom
+//     shuffled.sort(() => 0.5 - Math.random());
+// }
+
+// // 
+// // PACK 3 - SYLVIA BRIGHTSPEAR & KHORVATH BRIGHTFLAME
+// // 
+// if (pack3.includes("Sylvia Brightspear") && !pack3.includes("Khorvath Brightflame")) {
+    
+//     // this finds the index of the card in the shuffled cube then removes it
+//     let index = shuffled.indexOf("Khorvath Brightflame");
+//     if(index > -1) {
+//         shuffled.splice(index, 1);
+       
+//     }
+//     // this adds the card to the end of the pack
+//     pack3.push("Khorvath Brightflame")
+   
+//     // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
+//     let packIndex = pack3.indexOf("Sylvia Brightspear")
+//     pack3.push(pack3.splice(packIndex, 1)[0]);
+    
+//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+//     let movedCard = pack3.shift();
+//     shuffled.push(movedCard);
+//     console.log(movedCard + " pack 3");
+
+//     // this shuffles the cube after the removed card is added to the bottom
+//     shuffled.sort(() => 0.5 - Math.random());
+
+// // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
+// } else if (pack3.includes("Khorvath Brightflame") && !pack3.includes("Sylvia Brightspear")) {
+    
+//     // this finds the index of the card in the shuffled cube then removes it
+//     let index = shuffled.indexOf("Sylvia Brightspear");
+//     if(index > -1) {
+//         shuffled.splice(index, 1);
+//     }
+   
+//     // this adds the partner cards to the end of the pack
+//     pack3.push("Sylvia Brightspear");
+
+//     let packIndex = pack3.indexOf("Khorvath Brightflame")
+//     pack3.push(pack3.splice(packIndex, 1)[0]);
+    
+//     // this removes the first card from the pack and puts it on the bottom of the shuffled cube
+//     let movedCard = pack3.shift();
+//     shuffled.push(movedCard);
+//     console.log(movedCard + " pack 3");
+
+//     // this shuffles the cube after the removed card is added to the bottom
+//     shuffled.sort(() => 0.5 - Math.random());
+// }
+
+
+
+
+
+pack4 = shuffled.splice(0, 16);
+pack5 = shuffled.splice(0, 16);
+pack6 = shuffled.splice(0, 16);
+pack7 = shuffled.splice(0, 16);
+pack8 = shuffled.splice(0, 16);
+pack9 = shuffled.splice(0, 16);
+pack10 = shuffled.splice(0, 16);
+pack11 = shuffled.splice(0, 16);
+pack12 = shuffled.splice(0, 16);
+pack13 = shuffled.splice(0, 16);
+pack14 = shuffled.splice(0, 16);
+pack15 = shuffled.splice(0, 16);
+pack16 = shuffled.splice(0, 16);
+pack17 = shuffled.splice(0, 16);
+pack18 = shuffled.splice(0, 16);
+pack19 = shuffled.splice(0, 16);
+pack20 = shuffled.splice(0, 16);
+pack21 = shuffled.splice(0, 16);
+pack22 = shuffled.splice(0, 16);
+pack23 = shuffled.splice(0, 16);
+pack24 = shuffled.splice(0, 16);
+pack25 = shuffled.splice(0, 16);
+pack26 = shuffled.splice(0, 16);
+pack27 = shuffled.splice(0, 16);
+pack28 = shuffled.splice(0, 16);
+pack29 = shuffled.splice(0, 16);
+pack30 = shuffled.splice(0, 16);
+pack31 = shuffled.splice(0, 16);
+pack32 = shuffled.splice(0, 16);
+pack33 = shuffled.splice(0, 16);
+pack34 = shuffled.splice(0, 16);
+
+
+
+
+
+    one.innerHTML = pack1.join(' <br /> ')
+    two.innerHTML = pack2.join(' <br /> ')
+    three.innerHTML = pack3.join(' <br /> ')
+    four.innerHTML = pack4.join(' <br /> ')
+    five.innerHTML = pack5.join(' <br /> ')
+    six.innerHTML = pack6.join(' <br /> ')
+    seven.innerHTML = pack7.join(' <br /> ')
+    eight.innerHTML = pack8.join(' <br /> ')
+    nine.innerHTML = pack9.join(' <br /> ')
+    ten.innerHTML = pack10.join(' <br /> ')
+    eleven.innerHTML = pack11.join(' <br /> ')
+    twelve.innerHTML = pack12.join(' <br /> ')
+    thirteen.innerHTML = pack13.join(' <br /> ')
+    fourteen.innerHTML = pack14.join(' <br /> ')
+    fifteen.innerHTML = pack15.join(' <br /> ')
+    sixteen.innerHTML = pack16.join(' <br /> ')
+    seventeen.innerHTML = pack17.join(' <br /> ')
+    eighteen.innerHTML = pack18.join(' <br /> ')
+    nineteen.innerHTML = pack19.join(' <br /> ')
+    twenty.innerHTML = pack20.join(' <br /> ')
+    twentyOne.innerHTML = pack21.join(' <br /> ')
+    twentyTwo.innerHTML = pack22.join(' <br /> ')
+    twentyThree.innerHTML = pack23.join(' <br /> ')
+    twentyFour.innerHTML = pack24.join(' <br /> ')
+    twentyFive.innerHTML = pack25.join(' <br /> ')
+    twentySix.innerHTML = pack26.join(' <br /> ')
+    twentySeven.innerHTML = pack27.join(' <br /> ')
+    twentyEight.innerHTML = pack28.join(' <br /> ')
+    twentyNine.innerHTML = pack29.join(' <br /> ')
+    thirty.innerHTML = pack30.join(' <br /> ')
+    thirtyOne.innerHTML = pack31.join(' <br /> ')
+    thirtyTwo.innerHTML = pack32.join(' <br /> ')
+    thirtyThree.innerHTML = pack33.join(' <br /> ')
+    thirtyFour.innerHTML = pack34.join(' <br /> ')
+
 }
-
+// function ends 
 
 
 
@@ -830,440 +1287,6 @@ if (pack1.includes("Sylvia Brightspear") && !pack1.includes("Khorvath Brightflam
 // pack32 = shuffled.slice(496, 512);
 // pack33 = shuffled.slice(512, 528);
 // pack34 = shuffled.slice(528, 540);
-
-
-
-pack2 = shuffled.splice(0, 16);
-// 
-// PACK 2 - PROUD MENTOR & IMPETUOUS PROTEGE
-// 
-if (pack2.includes("Proud Mentor") && !pack2.includes("Impetuous Protege")) {
-    
-    // this finds the index of the card in the shuffled cube then removes it
-    let index = shuffled.indexOf("Impetuous Protege");
-    if(index > -1) {
-        shuffled.splice(index, 1);
-       
-    }
-    // this adds the card to the end of the pack
-    pack2.push("Impetuous Protege")
-   
-    // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
-    let packIndex = pack2.indexOf("Proud Mentor")
-    pack2.push(pack2.splice(packIndex, 1)[0]);
-    
-    // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-    let movedCard = pack2.shift();
-    shuffled.push(movedCard);
-    console.log(movedCard + " pack 2");
-
-    // this shuffles the cube after the removed card is added to the bottom
-    shuffled.sort(() => 0.5 - Math.random());
-   
-
-// this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
-} else if (pack2.includes("Impetuous Protege") && !pack2.includes("Proud Mentor")) {
-    
-    // this finds the index of the card in the shuffled cube then removes it
-    let index = shuffled.indexOf("Proud Mentor");
-    if(index > -1) {
-        shuffled.splice(index, 1);
-    }
-   
-    // this adds the card to the end of the pack
-    pack2.push("Proud Mentor");
-
-    let packIndex = pack2.indexOf("Impetuous Protege")
-    pack2.push(pack2.splice(packIndex, 1)[0]);
-    
-    // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-    let movedCard = pack2.shift();
-    shuffled.push(movedCard);
-    console.log(movedCard + " pack 2");
-
-    // this shuffles the cube after the removed card is added to the bottom
-    shuffled.sort(() => 0.5 - Math.random());
-}
-
-// 
-// PACK 2 - SYLVIA BRIGHTSPEAR & KHORVATH BRIGHTFLAME
-// 
-if (pack2.includes("Sylvia Brightspear") && !pack2.includes("Khorvath Brightflame")) {
-    
-    // this finds the index of the card in the shuffled cube then removes it
-    let index = shuffled.indexOf("Khorvath Brightflame");
-    if(index > -1) {
-        shuffled.splice(index, 1);
-       
-    }
-    // this adds the card to the end of the pack
-    pack2.push("Khorvath Brightflame")
-   
-    // this finds the index of the partner card that already exists in the array and moves it to the end (so we can shift off the first card back to the shuffled cube)
-    let packIndex = pack2.indexOf("Sylvia Brightspear")
-    pack2.push(pack2.splice(packIndex, 1)[0]);
-    
-    // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-    let movedCard = pack2.shift();
-    shuffled.push(movedCard);
-    console.log(movedCard + " pack 2");
-
-    // this shuffles the cube after the removed card is added to the bottom
-    shuffled.sort(() => 0.5 - Math.random());
-
-// this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
-} else if (pack2.includes("Khorvath Brightflame") && !pack2.includes("Sylvia Brightspear")) {
-    
-    // this finds the index of the card in the shuffled cube then removes it
-    let index = shuffled.indexOf("Sylvia Brightspear");
-    if(index > -1) {
-        shuffled.splice(index, 1);
-    }
-   
-    // this adds the partner cards to the end of the pack
-    pack2.push("Sylvia Brightspear");
-
-    let packIndex = pack2.indexOf("Khorvath Brightflame")
-    pack2.push(pack2.splice(packIndex, 1)[0]);
-    
-    // this removes the first card from the pack and puts it on the bottom of the shuffled cube
-    let movedCard = pack2.shift();
-    shuffled.push(movedCard);
-    console.log(movedCard + " pack 2");
-
-    // this shuffles the cube after the removed card is added to the bottom
-    shuffled.sort(() => 0.5 - Math.random());
-}
-
-
-
-
-
-
-
-pack3 = shuffled.splice(0, 16);
-pack4 = shuffled.splice(0, 16);
-pack5 = shuffled.splice(0, 16);
-pack6 = shuffled.splice(0, 16);
-pack7 = shuffled.splice(0, 16);
-pack8 = shuffled.splice(0, 16);
-pack9 = shuffled.splice(0, 16);
-pack10 = shuffled.splice(0, 16);
-pack11 = shuffled.splice(0, 16);
-pack12 = shuffled.splice(0, 16);
-pack13 = shuffled.splice(0, 16);
-pack14 = shuffled.splice(0, 16);
-pack15 = shuffled.splice(0, 16);
-pack16 = shuffled.splice(0, 16);
-pack17 = shuffled.splice(0, 16);
-pack18 = shuffled.splice(0, 16);
-pack19 = shuffled.splice(0, 16);
-pack20 = shuffled.splice(0, 16);
-pack21 = shuffled.splice(0, 16);
-pack22 = shuffled.splice(0, 16);
-pack23 = shuffled.splice(0, 16);
-pack24 = shuffled.splice(0, 16);
-pack25 = shuffled.splice(0, 16);
-pack26 = shuffled.splice(0, 16);
-pack27 = shuffled.splice(0, 16);
-pack28 = shuffled.splice(0, 16);
-pack29 = shuffled.splice(0, 16);
-pack30 = shuffled.splice(0, 16);
-pack31 = shuffled.splice(0, 16);
-pack32 = shuffled.splice(0, 16);
-pack33 = shuffled.splice(0, 16);
-pack34 = shuffled.splice(0, 16);
-
-
-
-
-
-
-
-
-
-
-
-
-// for (let i = 0; i < 16; i++) {
-    
-//    if(pack1.length < 16) {
-//         let card = shuffled.pop();
-//         pack1.push(card); 
-
-//         // if(pack1.includes("Vault of Champions")) {
-//         //     console.log("test");
-//         // }
-     
-//    }
-  
-//     if (pack2.length < 16) {
-//         let card = shuffled.pop();
-//         pack2.push(card);
-   
-//     }
-
-//     if (pack3.length < 16) {
-//         let card = shuffled.pop();
-//         pack3.push(card);
-//     }
-
-//     if (pack4.length < 16) {
-//         let card = shuffled.pop();
-//         pack4.push(card);
-//     }
-
-//     if (pack5.length < 16) {
-//         let card = shuffled.pop();
-//         pack5.push(card);
-//     }
-
-//     if (pack6.length < 16) {
-//         let card = shuffled.pop();
-//         pack6.push(card);
-//     }
-
-//     if (pack7.length < 16) {
-//         let card = shuffled.pop();
-//         pack7.push(card);
-//     }
-
-//     if (pack8.length < 16) {
-//         let card = shuffled.pop();
-//         pack8.push(card);
-//     }
-
-//     if (pack9.length < 16) {
-//         let card = shuffled.pop();
-//         pack9.push(card);
-//     }
-
-//     if (pack10.length < 16) {
-//         let card = shuffled.pop();
-//         pack10.push(card);
-//     }
-
-//     if (pack11.length < 16) {
-//         let card = shuffled.pop();
-//         pack11.push(card);
-//     }
-
-//     if (pack12.length < 16) {
-//         let card = shuffled.pop();
-//         pack12.push(card);
-//     }
-
-//     if (pack13.length < 16) {
-//         let card = shuffled.pop();
-//         pack13.push(card);
-//     }
-
-//     if (pack14.length < 16) {
-//         let card = shuffled.pop();
-//         pack14.push(card);
-//     }
-
-//     if (pack15.length < 16) {
-//         let card = shuffled.pop();
-//         pack15.push(card);
-//     }
-
-//     if (pack16.length < 16) {
-//         let card = shuffled.pop();
-//         pack16.push(card);
-//     }
-
-//     if (pack17.length < 16) {
-//         let card = shuffled.pop();
-//         pack17.push(card);
-//     }
-
-//     if (pack18.length < 16) {
-//         let card = shuffled.pop();
-//         pack18.push(card);
-//     }
-
-//     if (pack19.length < 16) {
-//         let card = shuffled.pop();
-//         pack19.push(card);
-//     }
-
-//     if (pack20.length < 16) {
-//         let card = shuffled.pop();
-//         pack20.push(card);
-//     }
-
-//     if (pack21.length < 16) {
-//         let card = shuffled.pop();
-//         pack21.push(card);
-//     }
-
-//     if (pack22.length < 16) {
-//         let card = shuffled.pop();
-//         pack22.push(card);
-//     }
-
-//     if (pack23.length < 16) {
-//         let card = shuffled.pop();
-//         pack23.push(card);
-//     }
-
-//     if (pack24.length < 16) {
-//         let card = shuffled.pop();
-//         pack24.push(card);
-//     }
-
-//     if (pack25.length < 16) {
-//         let card = shuffled.pop();
-//         pack25.push(card);
-//     }
-
-//     if (pack26.length < 16) {
-//         let card = shuffled.pop();
-//         pack26.push(card);
-//     }
-
-//     if (pack27.length < 16) {
-//         let card = shuffled.pop();
-//         pack27.push(card);
-//     }
-
-//     if (pack28.length < 16) {
-//         let card = shuffled.pop();
-//         pack28.push(card);
-//     }
-
-//     if (pack29.length < 16) {
-//         let card = shuffled.pop();
-//         pack29.push(card);
-//     }
-
-//     if (pack30.length < 16) {
-//         let card = shuffled.pop();
-//         pack30.push(card);
-//     }
-
-//     if (pack31.length < 16) {
-//         let card = shuffled.pop();
-//         pack31.push(card);
-//     }
-
-//     if (pack32.length < 16) {
-//         let card = shuffled.pop();
-//         pack32.push(card);
-//     }
-
-//     if (pack33.length < 16) {
-//         let card = shuffled.pop();
-//         pack33.push(card);
-//     }
-// }
-
-// console.log(pack1, pack2, pack3, pack4, pack5, pack6, pack7, pack8, pack9, pack10, pack11, pack12, pack13, pack14, pack15, pack16, pack17, pack18, pack19,
-//     pack20, pack21, pack22, pack23, pack24, pack25, pack26, pack27, pack28, pack29, pack30, pack31, pack32, pack33, shuffled)
-
-    one.innerHTML = pack1.join(' <br /> ')
-    two.innerHTML = pack2.join(' <br /> ')
-    three.innerHTML = pack3.join(' <br /> ')
-    four.innerHTML = pack4.join(' <br /> ')
-    five.innerHTML = pack5.join(' <br /> ')
-    six.innerHTML = pack6.join(' <br /> ')
-    seven.innerHTML = pack7.join(' <br /> ')
-    eight.innerHTML = pack8.join(' <br /> ')
-    nine.innerHTML = pack9.join(' <br /> ')
-    ten.innerHTML = pack10.join(' <br /> ')
-    eleven.innerHTML = pack11.join(' <br /> ')
-    twelve.innerHTML = pack12.join(' <br /> ')
-    thirteen.innerHTML = pack13.join(' <br /> ')
-    fourteen.innerHTML = pack14.join(' <br /> ')
-    fifteen.innerHTML = pack15.join(' <br /> ')
-    sixteen.innerHTML = pack16.join(' <br /> ')
-    seventeen.innerHTML = pack17.join(' <br /> ')
-    eighteen.innerHTML = pack18.join(' <br /> ')
-    nineteen.innerHTML = pack19.join(' <br /> ')
-    twenty.innerHTML = pack20.join(' <br /> ')
-    twentyOne.innerHTML = pack21.join(' <br /> ')
-    twentyTwo.innerHTML = pack22.join(' <br /> ')
-    twentyThree.innerHTML = pack23.join(' <br /> ')
-    twentyFour.innerHTML = pack24.join(' <br /> ')
-    twentyFive.innerHTML = pack25.join(' <br /> ')
-    twentySix.innerHTML = pack26.join(' <br /> ')
-    twentySeven.innerHTML = pack27.join(' <br /> ')
-    twentyEight.innerHTML = pack28.join(' <br /> ')
-    twentyNine.innerHTML = pack29.join(' <br /> ')
-    thirty.innerHTML = pack30.join(' <br /> ')
-    thirtyOne.innerHTML = pack31.join(' <br /> ')
-    thirtyTwo.innerHTML = pack32.join(' <br /> ')
-    thirtyThree.innerHTML = pack33.join(' <br /> ')
-    thirtyFour.innerHTML = pack34.join(' <br /> ')
-
-
-}
-// function ends 
-
-
-
-
-
-// let randomCard = cube[Math.floor(Math.random() * cube.length)];
-// const generatePacks = ()=> {
-//     for (let i = 0; i < 16; i++) {
-    
-//         let card = cube.pop(randomCard);
-        
-//         if (pack1.length === 16) {
-//             return pack1;
-//         }
-        
-//         pack1.push(card)
-        
-      
-//     }
-    
-//     for (let i = 0; i < 16; i++) {
-//         let card = cube.pop(randomCard);
-        
-//         if (pack2.length === 16) {
-//             return pack1;
-//         }
-        
-//         pack2.push(card)
-
-      
-//     }
-
-    // console.log(cube);
-    // console.log(pack1);
-    // console.log(pack2);
-// }
-
-
-
-
-// reset.addEventListener("click", ()=> {
-   
-//    if(cube.length == 540) {
-//        return cube
-//    } else {
-    
-//     for (let i = 0; i < 16; i++) {
-//         pack1.pop([i]);
-//         cube.push([i]);
-//         pack2.pop([i]);
-//         cube.push([i]);
-//     }
-//    }
-   
-   
-  
-//    console.log(cube);
-   
-// })
-
-// generate.addEventListener("click", generatePacks)
-
-
-
 
 
 

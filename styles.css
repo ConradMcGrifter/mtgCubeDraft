@@ -21,3 +21,15 @@ body {
 p {
     margin-top: 2em;
 }
+
+#reset {
+    display:none;
+}
+
+#reset.display {
+    display:block;
+}
+
+#generate.hide {
+    display:none;
+}
