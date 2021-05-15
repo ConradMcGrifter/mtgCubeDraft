@@ -64,6 +64,10 @@ a {
     font-size:1.4rem;
 }
 
+h3 {
+    user-select: none;
+}
+
 #reset, #generate {
     width:150px;
     padding:.75em;
