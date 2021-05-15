@@ -710,7 +710,7 @@ function makePairs(pack,card1,card2,packNum) {
         // this removes the first card from the pack and puts it on the bottom of the shuffled cube
         let movedCard = pack.shift();
         shuffled.push(movedCard);
-        console.log(movedCard + " " + packNum)
+        console.log(packNum)
         
     
         // this shuffles the cube after the removed card is added to the bottom
@@ -737,7 +737,7 @@ function makePairs(pack,card1,card2,packNum) {
         // this removes the first card from the pack and puts it on the bottom of the shuffled cube
         let movedCard = pack.shift();
         shuffled.push(movedCard);
-        console.log(movedCard + " " + packNum)
+        console.log(packNum)
     
         // this shuffles the cube after the removed card is added to the bottom
         // shuffled.sort(() => 0.5 - Math.random());
