@@ -620,9 +620,6 @@ let pack33 = []
 let pack34 = []
 
 
-console.log(cube);
-
-
 reset.addEventListener("click", ()=> {
     cube = cube.concat(pack1, pack2, pack3, pack4, pack5, pack6, pack7, pack8, pack9, pack10,
                         pack11, pack12, pack13, pack14, pack15, pack16, pack17, pack18, pack19, pack20,
@@ -761,7 +758,7 @@ function shuffleCube() {
     // Shuffle array
   const shuffled = shuffle(cube);
 
-console.log(shuffled);
+
 
 
 pack1 = shuffled.splice(0, 16);
@@ -1360,7 +1357,7 @@ makePairs(pack34, "Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow", 34)
     // thirtyThree.innerHTML = pack33.join(' <br /> ')
     // thirtyFour.innerHTML = pack34.join(' <br /> ')
 
-    console.log(cube);
+   
 }
 // function ends 
 
