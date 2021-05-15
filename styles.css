@@ -56,11 +56,12 @@ p {
     line-height:1.4rem;
 }
 
-h3 {
+a {
     margin:0;
     padding:0;
     user-select: none;
     color:aquamarine;
+    font-size:1.4rem;
 }
 
 #reset, #generate {
