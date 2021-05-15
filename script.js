@@ -674,10 +674,25 @@ reset.addEventListener("click", ()=> {
 generate.addEventListener("click", shuffleCube)
 
 
+// Fisher-Yates shuffle function
+function shuffle(array) {
+    for(let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+
+    return array
+}
+
+
+
+
 // this function takes parameters to search through the card packs for partner cards then finds the partner in the cube and adds it to the pack
 function makePairs(pack,card1,card2,packNum) {
 
-    const shuffled = cube.sort(() => 0.5 - Math.random());
+    const shuffled = shuffle(cube);
+  
+
 
     if (pack.includes(card1) && !pack.includes(card2)) {
     
@@ -697,10 +712,13 @@ function makePairs(pack,card1,card2,packNum) {
         // this removes the first card from the pack and puts it on the bottom of the shuffled cube
         let movedCard = pack.shift();
         shuffled.push(movedCard);
-        console.log(card1 + " " + card2 + " " + packNum)
+        console.log(movedCard + " " + packNum)
+        
     
         // this shuffles the cube after the removed card is added to the bottom
-        shuffled.sort(() => 0.5 - Math.random());
+        // shuffled.sort(() => 0.5 - Math.random());
+        shuffle(shuffled);
+        
        
     
     // this else statement is for if the opposite partner card already exists in the pack -- it does everything the first if statement does
@@ -721,10 +739,12 @@ function makePairs(pack,card1,card2,packNum) {
         // this removes the first card from the pack and puts it on the bottom of the shuffled cube
         let movedCard = pack.shift();
         shuffled.push(movedCard);
-        console.log(card1 + " " + card2 + " " + packNum)
+        console.log(movedCard + " " + packNum)
     
         // this shuffles the cube after the removed card is added to the bottom
-        shuffled.sort(() => 0.5 - Math.random());
+        // shuffled.sort(() => 0.5 - Math.random());
+        shuffle(shuffled);
+       
     }
 }
 
@@ -738,7 +758,7 @@ function shuffleCube() {
   
   
     // Shuffle array
-  const shuffled = cube.sort(() => 0.5 - Math.random());
+  const shuffled = shuffle(cube);
 
 
 
