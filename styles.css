@@ -23,7 +23,7 @@ body {
     background-attachment: fixed;
     
     width:100%;
-   
+    height: 100%;
     margin:0;
     padding:0;
     display:flex;
@@ -40,15 +40,16 @@ body {
     display:flex;
     flex-direction: row;
     flex-wrap:wrap;
-    width:100%;
-    justify-content: space-evenly;
-    padding:2em;
+    /* width:60%; */
+    justify-content: space-between;
+   
     color:white;
+    
 }
 
 .wrap {
     
-    margin: 0 1em 0 1em
+    margin: 2em 1em 0 1em
 }
 
 .info-wrap {
@@ -151,5 +152,9 @@ h3 {
 .wrap {
     background:rgba(20, 20, 20, 0.897);
     border-radius:5px;
+}
+
+.team1, .team2 {
+    padding:0;
 }
 
