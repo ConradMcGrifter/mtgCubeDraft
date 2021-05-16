@@ -516,6 +516,7 @@ let reset = document.getElementById("reset");
 let generate = document.getElementById("generate");
 let team1 = document.getElementById("team1");
 let team2 = document.getElementById("team2");
+let team3 = document.getElementById("team3")
 
 let container = document.querySelector(".container");
 
@@ -530,6 +531,10 @@ let five = document.getElementById("pack5");
 let six = document.getElementById("pack6");
 let seven = document.getElementById("pack7")
 let eight = document.getElementById("pack8");
+let nine = document.getElementById("pack9");
+let ten = document.getElementById("pack10")
+let eleven = document.getElementById("pack11");
+let twelve = document.getElementById("pack12");
 
 
 let pack1 = []
@@ -540,32 +545,32 @@ let pack5 = []
 let pack6 = []
 let pack7 = []
 let pack8 = []
-// let pack9 = []
-// let pack10 = []
-// let pack11 = []
-// let pack12 = []
-// let pack13 = []
-// let pack14 = []
-// let pack15 = []
-// let pack16 = []
-// let pack17 = []
-// let pack18 = []
-// let pack19 = []
-// let pack20 = []
-// let pack21 = []
-// let pack22 = []
-// let pack23 = []
-// let pack24 = []
-// let pack25 = []
-// let pack26 = []
-// let pack27 = []
-// let pack28 = []
-// let pack29 = []
-// let pack30 = []
-// let pack31 = []
-// let pack32 = []
-// let pack33 = []
-// let pack34 = []
+let pack9 = []
+let pack10 = []
+let pack11 = []
+let pack12 = []
+let pack13 = []
+let pack14 = []
+let pack15 = []
+let pack16 = []
+let pack17 = []
+let pack18 = []
+let pack19 = []
+let pack20 = []
+let pack21 = []
+let pack22 = []
+let pack23 = []
+let pack24 = []
+let pack25 = []
+let pack26 = []
+let pack27 = []
+let pack28 = []
+let pack29 = []
+let pack30 = []
+let pack31 = []
+let pack32 = []
+let pack33 = []
+let pack34 = []
 
 
 reset.addEventListener("click", ()=> {
@@ -1092,7 +1097,10 @@ reset.addEventListener("click", ()=> {
     six.innerHTML = ""
     seven.innerHTML = ""
     eight.innerHTML = ""
-
+    nine.innerHTML = ""
+    ten.innerHTML = ""
+    eleven.innerHTML = ""
+    twelve.innerHTML = ""
 
     // this hides the reset button and reveals the generate button
     container.style.opacity = "0";
@@ -1100,6 +1108,7 @@ reset.addEventListener("click", ()=> {
     reset.classList.remove("display");
     team1.classList.toggle("display");
     team2.classList.toggle("display");
+    team3.classList.toggle("display");
     
 
 
@@ -1158,6 +1167,7 @@ function outputPacks() {
   generate.classList.toggle("hide");
   team1.classList.toggle("display");
   team2.classList.toggle("display");
+  team3.classList.toggle("display");
   container.style.opacity = "1";
 
   
@@ -1172,25 +1182,55 @@ pack5 = makePacks(pack5, cube, partners);
 pack6 = makePacks(pack6, cube, partners);
 pack7 = makePacks(pack7, cube, partners);
 pack8 = makePacks(pack8, cube, partners);
+pack9 = makePacks(pack9, cube, partners);
+pack10 = makePacks(pack10, cube, partners);
+pack11 = makePacks(pack11, cube, partners);
+pack12 = makePacks(pack12, cube, partners);
+pack13 = makePacks(pack13, cube, partners);
+pack14 = makePacks(pack14, cube, partners);
+pack15 = cube.splice(0, 16);
+pack16 = cube.splice(0, 16);
+pack17 = cube.splice(0, 16);
+pack18 = cube.splice(0, 16);
+pack19 = cube.splice(0, 16);
+pack20 = cube.splice(0, 16);
+pack21 = cube.splice(0, 16);
+pack22 = cube.splice(0, 16);
+pack23 = cube.splice(0, 16);
+pack24 = cube.splice(0, 16);
+pack25 = cube.splice(0, 16);
+pack26 = cube.splice(0, 16);
+pack27 = cube.splice(0, 16);
+pack28 = cube.splice(0, 16);
+pack29 = cube.splice(0, 16);
+pack30 = cube.splice(0, 16);
 
+
+// pack array
+let packArray = [pack1, pack2, pack3, pack4, pack5, pack6, pack7, pack8, pack9, pack10, pack11, pack12, pack13, pack14, pack15, pack16, pack17, pack18, pack19, pack20, pack21, pack22, pack23, pack24, pack25, pack26, pack27, pack28, pack29, pack30];
+console.log(packArray)
+
+console.log(packArray[29])
+
+let shuffledPacks = shuffle(packArray);
+console.log(shuffledPacks[29])
 
 
 
 // output the results to HTML
-    one.innerHTML = pack1.join(' <br /> ')
-    two.innerHTML = pack2.join(' <br /> ')
-    three.innerHTML = pack3.join(' <br /> ')
-    four.innerHTML = pack4.join(' <br /> ')
-    five.innerHTML = pack5.join(' <br /> ')
-    six.innerHTML = pack6.join(' <br /> ')
-    seven.innerHTML = pack7.join(' <br /> ')
-    eight.innerHTML = pack8.join(' <br /> ')
-    
-    
-    // nine.innerHTML = pack9.join(' <br /> ')
-    // ten.innerHTML = pack10.join(' <br /> ')
-    // eleven.innerHTML = pack11.join(' <br /> ')
-    // twelve.innerHTML = pack12.join(' <br /> ')
+    one.innerHTML = shuffledPacks.pop().join(' <br /> ')
+    console.log(one);
+    two.innerHTML = shuffledPacks.pop().join(' <br /> ')
+    three.innerHTML = shuffledPacks.pop().join(' <br /> ')
+    four.innerHTML = shuffledPacks.pop().join(' <br /> ')
+    five.innerHTML = shuffledPacks.pop().join(' <br /> ')
+    six.innerHTML =shuffledPacks.pop().join(' <br /> ')
+    seven.innerHTML = shuffledPacks.pop().join(' <br /> ')
+    eight.innerHTML = shuffledPacks.pop().join(' <br /> ')
+    nine.innerHTML = shuffledPacks.pop().join(' <br /> ')
+    ten.innerHTML = shuffledPacks.pop().join(' <br /> ')
+    eleven.innerHTML = shuffledPacks.pop().join(' <br /> ')
+    twelve.innerHTML = shuffledPacks.pop().join(' <br /> ')
     // thirteen.innerHTML = pack13.join(' <br /> ')
     // fourteen.innerHTML = pack14.join(' <br /> ')
     // fifteen.innerHTML = pack15.join(' <br /> ')
