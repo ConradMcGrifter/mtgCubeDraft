@@ -163,3 +163,6 @@ span {
 }
 
 
+.removed {
+    font-style: italic;
+}
