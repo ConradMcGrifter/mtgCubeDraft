@@ -509,7 +509,7 @@ let cube = [
 
 let partners = [["Proud Mentor", "Impetuous Protege"], ["Sylvia Brightspear", "Khorvath Brightflame"], ["Blaring Recruiter", "Blaring Captain"], ["Regna, the Redeemer", "Krav, the Unredeemed"], ["Lore Weaver", "Ley Weaver"], ["Toothy, Imaginary Friend", "Pir, Imaginative Rascal"], ["Chakram Retriever", "Chakram Slinger"], ["Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos"], ["Will Kenrith", "Rowan Kenrith"], ["Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel"], ["Virtus the Veiled", "Gorm the Great"], ["Soulblade Corrupter", "Soulblade Renewer"], ["Brallin, Skyshark Rider", "Shabraz, the Skyshark"], ["Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow"]]
 
-console.log(cube);
+
 
 
 let reset = document.getElementById("reset");
@@ -1161,7 +1161,7 @@ function outputPacks() {
   
 
 
-
+// generate the packs
 pack1 = makePacks(pack1, cube, partners);
 pack2 = makePacks(pack2, cube, partners);
 pack3 = makePacks(pack3, cube, partners);
@@ -1171,7 +1171,7 @@ pack6 = makePacks(pack6, cube, partners);
 pack7 = makePacks(pack7, cube, partners);
 pack8 = makePacks(pack8, cube, partners);
 
-console.log(cube);
+
 
 
 // output the results to HTML
@@ -1183,6 +1183,8 @@ console.log(cube);
     six.innerHTML = pack6.join(' <br /> ')
     seven.innerHTML = pack7.join(' <br /> ')
     eight.innerHTML = pack8.join(' <br /> ')
+    
+    
     // nine.innerHTML = pack9.join(' <br /> ')
     // ten.innerHTML = pack10.join(' <br /> ')
     // eleven.innerHTML = pack11.join(' <br /> ')
