@@ -1208,18 +1208,15 @@ pack30 = cube.splice(0, 16);
 
 // pack array
 let packArray = [pack1, pack2, pack3, pack4, pack5, pack6, pack7, pack8, pack9, pack10, pack11, pack12, pack13, pack14, pack15, pack16, pack17, pack18, pack19, pack20, pack21, pack22, pack23, pack24, pack25, pack26, pack27, pack28, pack29, pack30];
-console.log(packArray)
 
-console.log(packArray[29])
 
 let shuffledPacks = shuffle(packArray);
-console.log(shuffledPacks[29])
+
 
 
 
 // output the results to HTML
     one.innerHTML = shuffledPacks.pop().join(' <br /> ')
-    console.log(one);
     two.innerHTML = shuffledPacks.pop().join(' <br /> ')
     three.innerHTML = shuffledPacks.pop().join(' <br /> ')
     four.innerHTML = shuffledPacks.pop().join(' <br /> ')
