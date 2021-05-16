@@ -521,6 +521,14 @@ let generate = document.getElementById("generate");
 let team1 = document.getElementById("team1");
 let team2 = document.getElementById("team2");
 
+let wrap1 = document.querySelector(".team1");
+let wrap2 = document.querySelector(".team2");
+
+
+
+
+
+
 let one = document.getElementById("pack1");
 let two = document.getElementById("pack2")
 let three = document.getElementById("pack3");
@@ -1108,6 +1116,10 @@ reset.addEventListener("click", ()=> {
     team1.classList.toggle("display");
     team2.classList.toggle("display");
 
+    wrap1.style.padding = "0"
+    wrap2.style.padding = "0"
+
+
 })
 
 // this is the event listener for the generate button that runs the shuffleCube function
@@ -1134,7 +1146,7 @@ function makePacks(pack, arr1, arr2) {
 
 
      pack = shuffledCube.splice(0, 14);
-     console.log(pack);
+     
      
      let partners = shuffledPairs.shift([0]);
     
@@ -1162,6 +1174,10 @@ function outputPacks() {
   generate.classList.toggle("hide");
   team1.classList.toggle("display");
   team2.classList.toggle("display");
+
+  wrap1.style.padding = "1em 3em 1em 3em"
+  wrap2.style.padding = "1em 3em 1em 3em"
+  
   
 
 

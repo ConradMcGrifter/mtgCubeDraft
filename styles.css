@@ -9,7 +9,15 @@ html {
 
 
 body {
-    background:rgb(31, 31, 31);
+   
+    background: 
+    /* top, transparent red, faked with gradient */ 
+    linear-gradient(
+      rgba(0, 0, 0, 0.904), 
+      rgba(0, 0, 0, 0.932)
+    ),
+    /* bottom, image */
+    url("https://external-preview.redd.it/uIvFOYYr9-rzIDRmTuFQeHKhBi_q6UV7XjiD00M0o2c.jpg?auto=webp&s=4f1149cb384bec2a2c27fd41168e95a4c1d264b9");
     width:100%;
     height:100%;
     margin:0;
@@ -40,7 +48,8 @@ body {
 }
 
 .info-wrap {
-    background:rgba(0, 255, 255, 0.062);
+    background:rgb(0, 43, 43);
+    border-radius:5px;
     padding:1em;
     width:100%;
     display:flex;
@@ -66,6 +75,7 @@ a {
 
 h3 {
     user-select: none;
+    margin:0 0 1em 0;
 }
 
 #reset, #generate {
@@ -133,3 +143,9 @@ h3 {
 .team2 {
     color:lightseagreen;
 }
+
+.wrap {
+    background:rgba(20, 20, 20, 0.897);
+    border-radius:5px;
+}
+
