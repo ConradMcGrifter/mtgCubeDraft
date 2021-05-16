@@ -517,6 +517,8 @@ let generate = document.getElementById("generate");
 let team1 = document.getElementById("team1");
 let team2 = document.getElementById("team2");
 
+let container = document.querySelector(".container");
+
 
 
 
@@ -538,32 +540,32 @@ let pack5 = []
 let pack6 = []
 let pack7 = []
 let pack8 = []
-let pack9 = []
-let pack10 = []
-let pack11 = []
-let pack12 = []
-let pack13 = []
-let pack14 = []
-let pack15 = []
-let pack16 = []
-let pack17 = []
-let pack18 = []
-let pack19 = []
-let pack20 = []
-let pack21 = []
-let pack22 = []
-let pack23 = []
-let pack24 = []
-let pack25 = []
-let pack26 = []
-let pack27 = []
-let pack28 = []
-let pack29 = []
-let pack30 = []
-let pack31 = []
-let pack32 = []
-let pack33 = []
-let pack34 = []
+// let pack9 = []
+// let pack10 = []
+// let pack11 = []
+// let pack12 = []
+// let pack13 = []
+// let pack14 = []
+// let pack15 = []
+// let pack16 = []
+// let pack17 = []
+// let pack18 = []
+// let pack19 = []
+// let pack20 = []
+// let pack21 = []
+// let pack22 = []
+// let pack23 = []
+// let pack24 = []
+// let pack25 = []
+// let pack26 = []
+// let pack27 = []
+// let pack28 = []
+// let pack29 = []
+// let pack30 = []
+// let pack31 = []
+// let pack32 = []
+// let pack33 = []
+// let pack34 = []
 
 
 reset.addEventListener("click", ()=> {
@@ -1093,14 +1095,13 @@ reset.addEventListener("click", ()=> {
 
 
     // this hides the reset button and reveals the generate button
+    container.style.opacity = "0";
     generate.classList.remove("hide");
     reset.classList.remove("display");
     team1.classList.toggle("display");
     team2.classList.toggle("display");
+    
 
- 
- 
-  
 
 
 })
@@ -1152,11 +1153,12 @@ function makePacks(pack, arr1, arr2) {
 // this shuffles the cube array and outputs the new random arrays to the webpage
 function outputPacks() {
 
-// this hides the generate button and reveals the reset button
+// this hides the generate button and reveals the reset button (also reveals the team name)
   reset.classList.add("display");
   generate.classList.toggle("hide");
   team1.classList.toggle("display");
   team2.classList.toggle("display");
+  container.style.opacity = "1";
 
   
 
