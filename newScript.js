@@ -521,9 +521,9 @@ let generate = document.getElementById("generate");
 let team1 = document.getElementById("team1");
 let team2 = document.getElementById("team2");
 
-let wrap = document.querySelector(".wrap");
-let team1Wrap = document.querySelector(".team1");
-let team2Wrap = document.querySelector(".team2");
+// let wrap = document.querySelector(".wrap");
+// let team1Wrap = document.querySelector(".team1");
+// let team2Wrap = document.querySelector(".team2");
 
 
 
@@ -1118,9 +1118,11 @@ reset.addEventListener("click", ()=> {
     team1.classList.toggle("display");
     team2.classList.toggle("display");
 
-    team1Wrap.style.padding = "0"
-    wrap.style.maxWidth = "0px"
-    wrap.style.padding = "0"
+    // team1Wrap.style.padding = "0"
+    // team2Wrap.style.padding = "0"
+    // wrap.style.maxWidth = "0px"
+    // wrap.style.padding = "0"
+ 
   
 
 
@@ -1179,12 +1181,10 @@ function outputPacks() {
   team1.classList.toggle("display");
   team2.classList.toggle("display");
 
-  wrap.style.maxWidth = "900px"
-  wrap.style.padding = "1em 2em 1em 2em"
-
- 
-  team1Wrap.style.padding = "3em"
-  team2Wrap.style.padding = "3em"
+//   wrap.style.maxWidth = "900px"
+//   wrap.style.padding = "1em 2em 1em 2em"
+//   team1Wrap.style.padding = "3em"
+//   team2Wrap.style.padding = "3em"
 
   
 
