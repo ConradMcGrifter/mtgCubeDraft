@@ -1163,10 +1163,8 @@ function outputPacks() {
   team1.classList.toggle("display");
   team2.classList.toggle("display");
   
-  
-//      Shuffle array
-//   const shuffledCube = shuffle(cube);
-//   const shuffledPairs = shuffle(partners);
+
+
 
 pack1 = makePacks(pack1, cube, partners);
 pack2 = makePacks(pack2, cube, partners);
@@ -1176,10 +1174,6 @@ pack5 = makePacks(pack5, cube, partners);
 pack6 = makePacks(pack6, cube, partners);
 pack7 = makePacks(pack7, cube, partners);
 pack8 = makePacks(pack8, cube, partners);
-
-
-
-
 
 
 

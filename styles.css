@@ -117,6 +117,7 @@ h3 {
 #team1 {
     color:white;
     display:none;
+    text-decoration: underline;
 }
 
 .team1 {
@@ -126,6 +127,7 @@ h3 {
 #team2 {
     color:white;
     display:none;
+    text-decoration: underline;
 }
 
 .team2 {
