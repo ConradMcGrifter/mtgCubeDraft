@@ -109,17 +109,11 @@ h3 {
 
 
 .player1 {
-    color:yellow;
+    color:rgb(204, 48, 48);
+   
 }
+
 
 .player2 {
-    color:red;
-}
-
-.player3 {
-    color:teal;
-}
-
-.player4 {
-    color:blueviolet
+    color:lightseagreen;
 }
