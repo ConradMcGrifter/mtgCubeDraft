@@ -518,6 +518,8 @@ let partners = [["Proud Mentor", "Impetuous Protege"], ["Sylvia Brightspear", "K
 
 let reset = document.getElementById("reset");
 let generate = document.getElementById("generate");
+let team1 = document.getElementById("team1");
+let team2 = document.getElementById("team2");
 
 let one = document.getElementById("pack1");
 let two = document.getElementById("pack2")
@@ -1103,6 +1105,8 @@ reset.addEventListener("click", ()=> {
     // this hides the reset button and reveals the generate button
     generate.classList.remove("hide");
     reset.classList.remove("display");
+    team1.classList.toggle("display");
+    team2.classList.toggle("display");
 
 })
 
@@ -1156,6 +1160,8 @@ function outputPacks() {
 // this hides the generate button and reveals the reset button
   reset.classList.add("display");
   generate.classList.toggle("hide");
+  team1.classList.toggle("display");
+  team2.classList.toggle("display");
   
   
 //      Shuffle array

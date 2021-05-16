@@ -102,18 +102,32 @@ h3 {
     display:flex;
 }
 
+#team1.display, #team2.display {
+    display:flex;
+}
+
+
+
 #generate.hide {
     display:none;
 }
 
 
 
-.player1 {
-    color:rgb(204, 48, 48);
-   
+#team1 {
+    color:white;
+    display:none;
 }
 
+.team1 {
+    color:rgb(204, 48, 48);
+}
 
-.player2 {
+#team2 {
+    color:white;
+    display:none;
+}
+
+.team2 {
     color:lightseagreen;
 }
