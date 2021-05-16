@@ -6,17 +6,13 @@ let cube = [
     "Nimbus Champion",
     "Rushblade Commander",
     "Thrasher Brute",
-    "Booster Tutor",
     "Buzzing Whack-a-Doodle",
     "Crow Storm",
     "Etali, Primal Storm",
     "Hunting Pack",
-    "Entirely Normal Armchair",
     "Everythingamajig",
     "Giant Fan",
-    "Modular Monstrosity",
     "Pointy Finger of Doom",
-    "Split Screen",
     "Sword of Dungeons & Dragons",
     "Urza, Academy Headmaster",
     "X",
@@ -405,8 +401,6 @@ let cube = [
     "Farfinder",
     "Evolving Wilds",
     "Terramorphic Expanse",
-    "Lore Seeker",
-    "Cogwork Librarian",
     "Roon of the Hidden Realm",
     "Vaevictis Asmadi, the Dire",
     "Gahiji, Honored One",
@@ -515,6 +509,8 @@ let cube = [
 
 let partners = [["Proud Mentor", "Impetuous Protege"], ["Sylvia Brightspear", "Khorvath Brightflame"], ["Blaring Recruiter", "Blaring Captain"], ["Regna, the Redeemer", "Krav, the Unredeemed"], ["Lore Weaver", "Ley Weaver"], ["Toothy, Imaginary Friend", "Pir, Imaginative Rascal"], ["Chakram Retriever", "Chakram Slinger"], ["Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos"], ["Will Kenrith", "Rowan Kenrith"], ["Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel"], ["Virtus the Veiled", "Gorm the Great"], ["Soulblade Corrupter", "Soulblade Renewer"], ["Brallin, Skyshark Rider", "Shabraz, the Skyshark"], ["Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow"]]
 
+console.log(cube);
+
 
 let reset = document.getElementById("reset");
 let generate = document.getElementById("generate");
@@ -579,17 +575,13 @@ reset.addEventListener("click", ()=> {
         "Nimbus Champion",
         "Rushblade Commander",
         "Thrasher Brute",
-        "Booster Tutor",
         "Buzzing Whack-a-Doodle",
         "Crow Storm",
         "Etali, Primal Storm",
         "Hunting Pack",
-        "Entirely Normal Armchair",
         "Everythingamajig",
         "Giant Fan",
-        "Modular Monstrosity",
         "Pointy Finger of Doom",
-        "Split Screen",
         "Sword of Dungeons & Dragons",
         "Urza, Academy Headmaster",
         "X",
@@ -978,8 +970,6 @@ reset.addEventListener("click", ()=> {
         "Farfinder",
         "Evolving Wilds",
         "Terramorphic Expanse",
-        "Lore Seeker",
-        "Cogwork Librarian",
         "Roon of the Hidden Realm",
         "Vaevictis Asmadi, the Dire",
         "Gahiji, Honored One",
@@ -1181,7 +1171,7 @@ pack6 = makePacks(pack6, cube, partners);
 pack7 = makePacks(pack7, cube, partners);
 pack8 = makePacks(pack8, cube, partners);
 
-
+console.log(cube);
 
 
 // output the results to HTML
