@@ -15,7 +15,7 @@ body {
       rgba(0, 0, 0, 0.904), 
       rgba(0, 0, 0, 0.932)
     ),
-    url(images/uIvFOYYr9-rzIDRmTuFQeHKhBi_q6UV7XjiD00M0o2c.webp);
+    url(images/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -73,6 +73,16 @@ a {
     user-select: none;
     color:aquamarine;
     font-size:1.4rem;
+}
+
+p a {
+    font-size:1rem;
+    text-decoration: none;
+    color:white;
+}
+
+p a:hover {
+    color:lightgreen;
 }
 
 h3 {
