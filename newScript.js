@@ -539,6 +539,7 @@ let wrap = document.querySelector(".wrap");
 let checkTeam3 = document.getElementById("revealTeam3");
 let checkTeam4 = document.getElementById("revealTeam4");
 let currentCount = document.getElementById("cardCount");
+let totalCards = document.getElementById("totalCards");
 
 let one = document.getElementById("pack1");
 let two = document.getElementById("pack2");
@@ -1221,6 +1222,7 @@ function makePacks(pack, arr1, arr2) {
 
 // this shuffles the cube array and outputs the new random arrays to the webpage
 function outputPacks() {
+    totalCards.style.display = "block";
     cardCount();
     // this hides the generate button and reveals the reset button (also reveals the team name)
     reset.classList.add("display");
