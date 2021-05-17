@@ -1097,35 +1097,36 @@ reset.addEventListener("click", ()=> {
      partners = [["Proud Mentor", "Impetuous Protege"], ["Sylvia Brightspear", "Khorvath Brightflame"], ["Blaring Recruiter", "Blaring Captain"], ["Regna, the Redeemer", "Krav, the Unredeemed"], ["Lore Weaver", "Ley Weaver"], ["Toothy, Imaginary Friend", "Pir, Imaginative Rascal"], ["Chakram Retriever", "Chakram Slinger"], ["Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos"], ["Will Kenrith", "Rowan Kenrith"], ["Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel"], ["Virtus the Veiled", "Gorm the Great"], ["Soulblade Corrupter", "Soulblade Renewer"], ["Brallin, Skyshark Rider", "Shabraz, the Skyshark"], ["Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow"]]
     
 
+   
+    outputPacks()
     
-
-    one.innerHTML = ""
-    two.innerHTML = ""
-    three.innerHTML = ""
-    four.innerHTML = ""
-    five.innerHTML = ""
-    six.innerHTML = ""
-    seven.innerHTML = ""
-    eight.innerHTML = ""
-    nine.innerHTML = ""
-    ten.innerHTML = ""
-    eleven.innerHTML = ""
-    twelve.innerHTML = ""
-    thirteen.innerHTML = ""
-    fourteen.innerHTML = ""
-    fifteen.innerHTML = ""
-    sixteen.innerHTML = ""
+    // one.innerHTML = ""
+    // two.innerHTML = ""
+    // three.innerHTML = ""
+    // four.innerHTML = ""
+    // five.innerHTML = ""
+    // six.innerHTML = ""
+    // seven.innerHTML = ""
+    // eight.innerHTML = ""
+    // nine.innerHTML = ""
+    // ten.innerHTML = ""
+    // eleven.innerHTML = ""
+    // twelve.innerHTML = ""
+    // thirteen.innerHTML = ""
+    // fourteen.innerHTML = ""
+    // fifteen.innerHTML = ""
+    // sixteen.innerHTML = ""
 
     // this hides the reset button and reveals the generate button
     
-    container.style.opacity = "0";
-    container.style.transition = "0s"
-    generate.classList.remove("hide");
-    reset.classList.remove("display");
-    team1header.classList.toggle("display");
-    team2header.classList.toggle("display");
-    team3header.classList.toggle("display");
-    team4header.classList.toggle("display");
+    // container.style.opacity = "0";
+    // container.style.transition = "0s"
+    // generate.classList.remove("hide");
+    // reset.classList.remove("display");
+    // team1header.classList.toggle("display");
+    // team2header.classList.toggle("display");
+    // team3header.classList.toggle("display");
+    // team4header.classList.toggle("display");
  
 
 
@@ -1180,11 +1181,11 @@ function outputPacks() {
 
 // this hides the generate button and reveals the reset button (also reveals the team name)
   reset.classList.add("display");
-  generate.classList.toggle("hide");
-  team1header.classList.toggle("display");
-  team2header.classList.toggle("display");
-  team3header.classList.toggle("display");
-  team4header.classList.toggle("display");
+  generate.classList.add("hide");
+  team1header.classList.add("display");
+  team2header.classList.add("display");
+  team3header.classList.add("display");
+  team4header.classList.add("display");
   container.style.opacity = "1";
   container.style.transition = ".5s"
 

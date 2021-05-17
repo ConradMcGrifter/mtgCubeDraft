@@ -115,7 +115,7 @@ span {
 }
 
 #reset, #generate {
-    width:150px;
+    width:auto;
     padding:.75em;
     border: solid white 2px;
     border-radius:999px;
