@@ -538,6 +538,7 @@ let container = document.querySelector(".container");
 let wrap = document.querySelector(".wrap");
 let checkTeam3 = document.getElementById("revealTeam3");
 let checkTeam4 = document.getElementById("revealTeam4");
+let currentCount = document.getElementById("cardCount");
 
 let one = document.getElementById("pack1");
 let two = document.getElementById("pack2");
@@ -595,17 +596,37 @@ function addTeam() {
     // If the checkbox is checked, display the output text
     if (checkTeam3.checked == true) {
         team3.style.display = "block";
+        cardCount();
         // checkTeam4.checked = false;
     } else {
         team3.style.display = "none";
+        cardCount();
     }
 
     if (checkTeam4.checked == true) {
+        cardCount();
         team3.style.display = "block";
         team4.style.display = "block";
         // checkTeam3.checked = false;
     } else {
         team4.style.display = "none";
+        cardCount();
+    }
+}
+
+function cardCount() {
+    currentCount.innerHTML = " 128";
+
+    if (checkTeam3.checked == true) {
+        currentCount.innerHTML = " 192";
+    } else {
+        currentCount.innerHTML = " 128";
+    }
+
+    if (checkTeam4.checked == true) {
+        currentCount.innerHTML = " 256";
+    } else {
+        currentCount.InnerHTML = " 128";
     }
 }
 
@@ -1200,6 +1221,7 @@ function makePacks(pack, arr1, arr2) {
 
 // this shuffles the cube array and outputs the new random arrays to the webpage
 function outputPacks() {
+    cardCount();
     // this hides the generate button and reveals the reset button (also reveals the team name)
     reset.classList.add("display");
     generate.classList.add("hide");
