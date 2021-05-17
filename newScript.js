@@ -504,13 +504,25 @@ let cube = [
     "Training Center",
     "Undergrowth Stadium",
     "Spectator Seating",
-    "Rejuvenating Springs"
-    ]
+    "Rejuvenating Springs",
+];
 
-let partners = [["Proud Mentor", "Impetuous Protege"], ["Sylvia Brightspear", "Khorvath Brightflame"], ["Blaring Recruiter", "Blaring Captain"], ["Regna, the Redeemer", "Krav, the Unredeemed"], ["Lore Weaver", "Ley Weaver"], ["Toothy, Imaginary Friend", "Pir, Imaginative Rascal"], ["Chakram Retriever", "Chakram Slinger"], ["Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos"], ["Will Kenrith", "Rowan Kenrith"], ["Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel"], ["Virtus the Veiled", "Gorm the Great"], ["Soulblade Corrupter", "Soulblade Renewer"], ["Brallin, Skyshark Rider", "Shabraz, the Skyshark"], ["Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow"]]
-
-
-
+let partners = [
+    ["Proud Mentor", "Impetuous Protege"],
+    ["Sylvia Brightspear", "Khorvath Brightflame"],
+    ["Blaring Recruiter", "Blaring Captain"],
+    ["Regna, the Redeemer", "Krav, the Unredeemed"],
+    ["Lore Weaver", "Ley Weaver"],
+    ["Toothy, Imaginary Friend", "Pir, Imaginative Rascal"],
+    ["Chakram Retriever", "Chakram Slinger"],
+    ["Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos"],
+    ["Will Kenrith", "Rowan Kenrith"],
+    ["Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel"],
+    ["Virtus the Veiled", "Gorm the Great"],
+    ["Soulblade Corrupter", "Soulblade Renewer"],
+    ["Brallin, Skyshark Rider", "Shabraz, the Skyshark"],
+    ["Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow"],
+];
 
 let reset = document.getElementById("reset");
 let generate = document.getElementById("generate");
@@ -522,68 +534,82 @@ let team1 = document.querySelector(".team1");
 let team2 = document.querySelector(".team2");
 let team3 = document.querySelector(".team3");
 let team4 = document.querySelector(".team4");
-
-
 let container = document.querySelector(".container");
 let wrap = document.querySelector(".wrap");
-
-
+let checkTeam3 = document.getElementById("revealTeam3");
+let checkTeam4 = document.getElementById("revealTeam4");
 
 let one = document.getElementById("pack1");
-let two = document.getElementById("pack2")
+let two = document.getElementById("pack2");
 let three = document.getElementById("pack3");
 let four = document.getElementById("pack4");
 let five = document.getElementById("pack5");
 let six = document.getElementById("pack6");
-let seven = document.getElementById("pack7")
+let seven = document.getElementById("pack7");
 let eight = document.getElementById("pack8");
 let nine = document.getElementById("pack9");
-let ten = document.getElementById("pack10")
+let ten = document.getElementById("pack10");
 let eleven = document.getElementById("pack11");
 let twelve = document.getElementById("pack12");
 let thirteen = document.getElementById("pack13");
-let fourteen = document.getElementById("pack14")
+let fourteen = document.getElementById("pack14");
 let fifteen = document.getElementById("pack15");
 let sixteen = document.getElementById("pack16");
 
+let pack1 = [];
+let pack2 = [];
+let pack3 = [];
+let pack4 = [];
+let pack5 = [];
+let pack6 = [];
+let pack7 = [];
+let pack8 = [];
+let pack9 = [];
+let pack10 = [];
+let pack11 = [];
+let pack12 = [];
+let pack13 = [];
+let pack14 = [];
+let pack15 = [];
+let pack16 = [];
+let pack17 = [];
+let pack18 = [];
+let pack19 = [];
+let pack20 = [];
+let pack21 = [];
+let pack22 = [];
+let pack23 = [];
+let pack24 = [];
+let pack25 = [];
+let pack26 = [];
+let pack27 = [];
+let pack28 = [];
+let pack29 = [];
+let pack30 = [];
+let pack31 = [];
+let pack32 = [];
+let pack33 = [];
+let pack34 = [];
 
-let pack1 = []
-let pack2 = []
-let pack3 = []
-let pack4 = []
-let pack5 = []
-let pack6 = []
-let pack7 = []
-let pack8 = []
-let pack9 = []
-let pack10 = []
-let pack11 = []
-let pack12 = []
-let pack13 = []
-let pack14 = []
-let pack15 = []
-let pack16 = []
-let pack17 = []
-let pack18 = []
-let pack19 = []
-let pack20 = []
-let pack21 = []
-let pack22 = []
-let pack23 = []
-let pack24 = []
-let pack25 = []
-let pack26 = []
-let pack27 = []
-let pack28 = []
-let pack29 = []
-let pack30 = []
-let pack31 = []
-let pack32 = []
-let pack33 = []
-let pack34 = []
+function addTeam() {
+    // If the checkbox is checked, display the output text
+    if (checkTeam3.checked == true) {
+        team3.style.display = "block";
+        // checkTeam4.checked = false;
+    } else {
+        team3.style.display = "none";
+    }
 
+    if (checkTeam4.checked == true) {
+        team3.style.display = "block";
+        team4.style.display = "block";
+        // checkTeam3.checked = false;
+    } else {
+        team4.style.display = "none";
+    }
+}
 
-reset.addEventListener("click", ()=> {
+reset.addEventListener("click", () => {
     cube = [
         "Crush of Tentacles",
         "Fall of the Titans",
@@ -1090,16 +1116,28 @@ reset.addEventListener("click", ()=> {
         "Training Center",
         "Undergrowth Stadium",
         "Spectator Seating",
-        "Rejuvenating Springs"
-        ]
-   
+        "Rejuvenating Springs",
+    ];
 
-     partners = [["Proud Mentor", "Impetuous Protege"], ["Sylvia Brightspear", "Khorvath Brightflame"], ["Blaring Recruiter", "Blaring Captain"], ["Regna, the Redeemer", "Krav, the Unredeemed"], ["Lore Weaver", "Ley Weaver"], ["Toothy, Imaginary Friend", "Pir, Imaginative Rascal"], ["Chakram Retriever", "Chakram Slinger"], ["Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos"], ["Will Kenrith", "Rowan Kenrith"], ["Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel"], ["Virtus the Veiled", "Gorm the Great"], ["Soulblade Corrupter", "Soulblade Renewer"], ["Brallin, Skyshark Rider", "Shabraz, the Skyshark"], ["Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow"]]
-    
+    partners = [
+        ["Proud Mentor", "Impetuous Protege"],
+        ["Sylvia Brightspear", "Khorvath Brightflame"],
+        ["Blaring Recruiter", "Blaring Captain"],
+        ["Regna, the Redeemer", "Krav, the Unredeemed"],
+        ["Lore Weaver", "Ley Weaver"],
+        ["Toothy, Imaginary Friend", "Pir, Imaginative Rascal"],
+        ["Chakram Retriever", "Chakram Slinger"],
+        ["Zndrsplt, Eye of Wisdom", "Okaun, Eye of Chaos"],
+        ["Will Kenrith", "Rowan Kenrith"],
+        ["Nikara, Lair Scavenger", "Yannik, Scavenging Sentinel"],
+        ["Virtus the Veiled", "Gorm the Great"],
+        ["Soulblade Corrupter", "Soulblade Renewer"],
+        ["Brallin, Skyshark Rider", "Shabraz, the Skyshark"],
+        ["Cazur, Ruthless Stalker", "Ukkima, Stalking Shadow"],
+    ];
 
-   
-    outputPacks()
-    
+    outputPacks();
+
     // one.innerHTML = ""
     // two.innerHTML = ""
     // three.innerHTML = ""
@@ -1118,7 +1156,7 @@ reset.addEventListener("click", ()=> {
     // sixteen.innerHTML = ""
 
     // this hides the reset button and reveals the generate button
-    
+
     // container.style.opacity = "0";
     // container.style.transition = "0s"
     // generate.classList.remove("hide");
@@ -1127,133 +1165,142 @@ reset.addEventListener("click", ()=> {
     // team2header.classList.toggle("display");
     // team3header.classList.toggle("display");
     // team4header.classList.toggle("display");
- 
-
-
-
-})
+});
 
 // this is the event listener for the generate button that runs the shuffleCube function
 generate.addEventListener("click", outputPacks);
 
 // Fisher-Yates shuffle function
 function shuffle(array) {
-    for(let i = array.length - 1; i > 0; i--) {
+    for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
 
-    return array
+    return array;
 }
-
 
 // this function takes parameters
 function makePacks(pack, arr1, arr2) {
-
-   
     const shuffledCube = shuffle(arr1);
     const shuffledPairs = shuffle(arr2);
 
+    pack = shuffledCube.splice(0, 14);
 
-     pack = shuffledCube.splice(0, 14);
-     
-     
-     let partners = shuffledPairs.shift([0]);
-    
-   
-     let partner1 = partners[0];
-     let partner2 = partners[1];
-   
-    
+    let partners = shuffledPairs.shift([0]);
 
-     pack.push(partner1);
-     pack.push(partner2);
+    let partner1 = partners[0];
+    let partner2 = partners[1];
 
+    pack.push(partner1);
+    pack.push(partner2);
 
-
-    return pack
+    return pack;
 }
-
-
 
 // this shuffles the cube array and outputs the new random arrays to the webpage
 function outputPacks() {
+    // this hides the generate button and reveals the reset button (also reveals the team name)
+    reset.classList.add("display");
+    generate.classList.add("hide");
+    //   team1header.classList.add("display");
+    //   team2header.classList.add("display");
+    //   team3header.classList.add("display");
+    //   team4header.classList.add("display");
+    wrap.style.opacity = "1";
+    wrap.style.transition = ".5s";
 
-// this hides the generate button and reveals the reset button (also reveals the team name)
-  reset.classList.add("display");
-  generate.classList.add("hide");
-  team1header.classList.add("display");
-  team2header.classList.add("display");
-  team3header.classList.add("display");
-  team4header.classList.add("display");
-  wrap.style.opacity = "1";
-  wrap.style.transition = ".5s"
+    // generate the packs
+    pack1 = makePacks(pack1, cube, partners);
+    pack2 = makePacks(pack2, cube, partners);
+    pack3 = makePacks(pack3, cube, partners);
+    pack4 = makePacks(pack4, cube, partners);
+    pack5 = makePacks(pack5, cube, partners);
+    pack6 = makePacks(pack6, cube, partners);
+    pack7 = makePacks(pack7, cube, partners);
+    pack8 = makePacks(pack8, cube, partners);
+    pack9 = makePacks(pack9, cube, partners);
+    pack10 = makePacks(pack10, cube, partners);
+    pack11 = makePacks(pack11, cube, partners);
+    pack12 = makePacks(pack12, cube, partners);
+    pack13 = makePacks(pack13, cube, partners);
+    pack14 = makePacks(pack14, cube, partners);
+    pack15 = cube.splice(0, 16);
+    pack16 = cube.splice(0, 16);
+    pack17 = cube.splice(0, 16);
+    pack18 = cube.splice(0, 16);
+    pack19 = cube.splice(0, 16);
+    pack20 = cube.splice(0, 16);
+    pack21 = cube.splice(0, 16);
+    pack22 = cube.splice(0, 16);
+    pack23 = cube.splice(0, 16);
+    pack24 = cube.splice(0, 16);
+    pack25 = cube.splice(0, 16);
+    pack26 = cube.splice(0, 16);
+    pack27 = cube.splice(0, 16);
+    pack28 = cube.splice(0, 16);
+    pack29 = cube.splice(0, 16);
+    pack30 = cube.splice(0, 16);
+    pack31 = cube.splice(0, 16);
+    pack32 = cube.splice(0, 16);
+    pack33 = cube.splice(0, 16);
 
-  
+    // pack array
+    let packArray = [
+        pack1,
+        pack2,
+        pack3,
+        pack4,
+        pack5,
+        pack6,
+        pack7,
+        pack8,
+        pack9,
+        pack10,
+        pack11,
+        pack12,
+        pack13,
+        pack14,
+        pack15,
+        pack16,
+        pack17,
+        pack18,
+        pack19,
+        pack20,
+        pack21,
+        pack22,
+        pack23,
+        pack24,
+        pack25,
+        pack26,
+        pack27,
+        pack28,
+        pack29,
+        pack30,
+        pack31,
+        pack32,
+        pack33,
+    ];
 
+    let shuffledPacks = shuffle(packArray);
 
-// generate the packs
-pack1 = makePacks(pack1, cube, partners);
-pack2 = makePacks(pack2, cube, partners);
-pack3 = makePacks(pack3, cube, partners);
-pack4 = makePacks(pack4, cube, partners);
-pack5 = makePacks(pack5, cube, partners);
-pack6 = makePacks(pack6, cube, partners);
-pack7 = makePacks(pack7, cube, partners);
-pack8 = makePacks(pack8, cube, partners);
-pack9 = makePacks(pack9, cube, partners);
-pack10 = makePacks(pack10, cube, partners);
-pack11 = makePacks(pack11, cube, partners);
-pack12 = makePacks(pack12, cube, partners);
-pack13 = makePacks(pack13, cube, partners);
-pack14 = makePacks(pack14, cube, partners);
-pack15 = cube.splice(0, 16);
-pack16 = cube.splice(0, 16);
-pack17 = cube.splice(0, 16);
-pack18 = cube.splice(0, 16);
-pack19 = cube.splice(0, 16);
-pack20 = cube.splice(0, 16);
-pack21 = cube.splice(0, 16);
-pack22 = cube.splice(0, 16);
-pack23 = cube.splice(0, 16);
-pack24 = cube.splice(0, 16);
-pack25 = cube.splice(0, 16);
-pack26 = cube.splice(0, 16);
-pack27 = cube.splice(0, 16);
-pack28 = cube.splice(0, 16);
-pack29 = cube.splice(0, 16);
-pack30 = cube.splice(0, 16);
-pack31 = cube.splice(0, 16);
-pack32 = cube.splice(0, 16);
-pack33 = cube.splice(0, 16);
-
-
-// pack array
-let packArray = [pack1, pack2, pack3, pack4, pack5, pack6, pack7, pack8, pack9, pack10, pack11, pack12, pack13, pack14, pack15, pack16, pack17, pack18, pack19, pack20, pack21, pack22, pack23, pack24, pack25, pack26, pack27, pack28, pack29, pack30, pack31, pack32, pack33];
-
-
-let shuffledPacks = shuffle(packArray);
-
-
-
-
-// output the results to HTML
-    one.innerHTML = shuffledPacks.pop().join(' <br /> ')
-    two.innerHTML = shuffledPacks.pop().join(' <br /> ')
-    three.innerHTML = shuffledPacks.pop().join(' <br /> ')
-    four.innerHTML = shuffledPacks.pop().join(' <br /> ')
-    five.innerHTML = shuffledPacks.pop().join(' <br /> ')
-    six.innerHTML =shuffledPacks.pop().join(' <br /> ')
-    seven.innerHTML = shuffledPacks.pop().join(' <br /> ')
-    eight.innerHTML = shuffledPacks.pop().join(' <br /> ')
-    nine.innerHTML = shuffledPacks.pop().join(' <br /> ')
-    ten.innerHTML = shuffledPacks.pop().join(' <br /> ')
-    eleven.innerHTML = shuffledPacks.pop().join(' <br /> ')
-    twelve.innerHTML = shuffledPacks.pop().join(' <br /> ')
-    thirteen.innerHTML = shuffledPacks.pop().join(' <br /> ')
-    fourteen.innerHTML = shuffledPacks.pop().join(' <br /> ')
-    fifteen.innerHTML = shuffledPacks.pop().join(' <br /> ')
-    sixteen.innerHTML = shuffledPacks.pop().join(' <br /> ')
+    // output the results to HTML
+    one.innerHTML = shuffledPacks.pop().join(" <br /> ");
+    two.innerHTML = shuffledPacks.pop().join(" <br /> ");
+    three.innerHTML = shuffledPacks.pop().join(" <br /> ");
+    four.innerHTML = shuffledPacks.pop().join(" <br /> ");
+    five.innerHTML = shuffledPacks.pop().join(" <br /> ");
+    six.innerHTML = shuffledPacks.pop().join(" <br /> ");
+    seven.innerHTML = shuffledPacks.pop().join(" <br /> ");
+    eight.innerHTML = shuffledPacks.pop().join(" <br /> ");
+    nine.innerHTML = shuffledPacks.pop().join(" <br /> ");
+    ten.innerHTML = shuffledPacks.pop().join(" <br /> ");
+    eleven.innerHTML = shuffledPacks.pop().join(" <br /> ");
+    twelve.innerHTML = shuffledPacks.pop().join(" <br /> ");
+    thirteen.innerHTML = shuffledPacks.pop().join(" <br /> ");
+    fourteen.innerHTML = shuffledPacks.pop().join(" <br /> ");
+    fifteen.innerHTML = shuffledPacks.pop().join(" <br /> ");
+    sixteen.innerHTML = shuffledPacks.pop().join(" <br /> ");
     // seventeen.innerHTML = pack17.join(' <br /> ')
     // eighteen.innerHTML = pack18.join(' <br /> ')
     // nineteen.innerHTML = pack19.join(' <br /> ')
@@ -1272,7 +1319,7 @@ let shuffledPacks = shuffle(packArray);
     // thirtyTwo.innerHTML = pack32.join(' <br /> ')
     // thirtyThree.innerHTML = pack33.join(' <br /> ')
     // thirtyFour.innerHTML = pack34.join(' <br /> ')
-
-   
 }
 
+checkTeam3.checked = false;
+checkTeam4.checked = false;

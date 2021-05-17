@@ -14,8 +14,16 @@
     </head>
     <body>
         <div class="info-wrap">
-            <div id="generate">make boosters</div>
-            <div id="reset">remake boosters</div>
+            <div class="checkboxes">
+                <label for"checkbox">Add Team 3</label>
+                <input type="checkbox" id="revealTeam3" onclick="addTeam()" />
+                <br />
+                <label for"checkbox">Add Team 4</label>
+                <input type="checkbox" id="revealTeam4" onclick="addTeam()" />
+              
+            </div>
+            <div id="generate">Make Booster Packs</div>
+            <div id="reset">Remake Booster Packs</div>
             <a
                 href="https://onlyontuesdays27.com/2020/06/10/tuesdaytastics-2-headed-giant-cube/"
                 target="_blank"
@@ -58,7 +66,7 @@
         </div>
 
         <div class="container">
-           <div class="wrap">
+            <div class="wrap">
                 <div class="team1">
                     <h3 id="team1">Team 1</h3>
                     <div class="pack-wrap">
