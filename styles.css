@@ -236,6 +236,7 @@ span {
 
 .checkboxes {
     margin-right: 2em;
+    user-select: none;
 }
 
 #totalCards {

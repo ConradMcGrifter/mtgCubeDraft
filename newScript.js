@@ -536,6 +536,7 @@ let team3 = document.querySelector(".team3");
 let team4 = document.querySelector(".team4");
 let container = document.querySelector(".container");
 let wrap = document.querySelector(".wrap");
+let defaultTeams = document.getElementById("revealTeam");
 let checkTeam3 = document.getElementById("revealTeam3");
 let checkTeam4 = document.getElementById("revealTeam4");
 let currentCount = document.getElementById("cardCount");
@@ -598,6 +599,7 @@ function addTeam() {
     if (checkTeam3.checked == true) {
         team3.style.display = "block";
         cardCount();
+
         // checkTeam4.checked = false;
     } else {
         team3.style.display = "none";
@@ -1345,5 +1347,4 @@ function outputPacks() {
     // thirtyFour.innerHTML = pack34.join(' <br /> ')
 }
 
-checkTeam3.checked = false;
-checkTeam4.checked = false;
+defaultTeams.checked = "true";
