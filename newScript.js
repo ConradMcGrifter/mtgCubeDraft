@@ -519,6 +519,7 @@ let team2 = document.getElementById("team2");
 let team3 = document.getElementById("team3");
 let team4 = document.getElementById("team4");
 
+
 let container = document.querySelector(".container");
 
 
@@ -1119,6 +1120,7 @@ reset.addEventListener("click", ()=> {
     team2.classList.toggle("display");
     team3.classList.toggle("display");
     team4.classList.toggle("display");
+   
 
 
 
@@ -1178,6 +1180,7 @@ function outputPacks() {
   team3.classList.toggle("display");
   team4.classList.toggle("display");
   container.style.opacity = "1";
+
 
   
 
