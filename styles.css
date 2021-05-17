@@ -15,9 +15,9 @@ body {
       rgba(0, 0, 0, 0.904), 
       rgba(0, 0, 0, 0.932)
     ),
-    url(images/hydra.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    url(images/simeanGruntsCard.jpg);
+    /* background-repeat: no-repeat;
+    background-size: cover; */
     background-attachment: fixed;
     
     width:100%;

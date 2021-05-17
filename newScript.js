@@ -1127,7 +1127,6 @@ reset.addEventListener("click", ()=> {
 // this is the event listener for the generate button that runs the shuffleCube function
 generate.addEventListener("click", outputPacks);
 
-
 // Fisher-Yates shuffle function
 function shuffle(array) {
     for(let i = array.length - 1; i > 0; i--) {
