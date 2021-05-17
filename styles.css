@@ -12,8 +12,8 @@ body {
    
     background: 
     linear-gradient(
-      rgba(0, 0, 0, 0.904), 
-      rgba(0, 0, 0, 0.932)
+      rgba(0, 0, 0, 0.781), 
+      rgba(0, 0, 0, 0.781)
     ),
     url(images/hydra.jpg);
     background-repeat: no-repeat;
@@ -43,7 +43,7 @@ body {
     justify-content: space-evenly;
     margin: 2em 1em 0 1em;
     color:white;
-    transition:.5s;
+   
     padding-bottom:2em;
     opacity:0;
  
@@ -57,8 +57,15 @@ body {
     display:flex;
     align-items: center;
     justify-content: center;
+    box-shadow:0px 5px 10px black;
+   
   
 }
+
+.info-wrap a:hover {
+    color:violet;
+}
+
 
 
 
@@ -74,7 +81,7 @@ p {
     min-width:275px;
     /* min-width:250px; */
     margin: 1em;
-    position:relative;
+    
 }
 
 a {
@@ -83,6 +90,7 @@ a {
     user-select: none;
     color:aquamarine;
     font-size:1.4rem;
+    transition:.25s;
 }
 
 p a {
@@ -98,7 +106,7 @@ p a:hover {
 h3 {
     user-select: none;
     margin: 1em 0 0 1em;
-   position:relative;
+  
     
 }
 
@@ -142,7 +150,7 @@ span {
 
 #team1.display, #team2.display, #team3.display, #team4.display{
     display:flex;
-
+    
 }
 
 
@@ -162,11 +170,17 @@ span {
 
 }
 
+.team1, .team2, .team3, .team4 {
+    background:rgba(15, 15, 15, 0.952);
+    
+}
+
+
 .team1 {
     color:rgb(204, 48, 48);
     /* display:flex;
     flex-direction: column; */
- 
+  
 }
 
 .team2 {
@@ -175,6 +189,7 @@ span {
     flex-direction: column;
     justify-content:space-evenly;
     width:100%; */
+
    
 }
 
@@ -184,6 +199,7 @@ span {
     flex-direction: column;
     justify-content:space-evenly;
     width:100%; */
+    
    
 }
 
@@ -193,6 +209,7 @@ span {
     flex-direction: column;
   
     width:100%; */
+  
 }
 
 .pack-wrap {
@@ -211,6 +228,7 @@ span {
     font-style: italic;
     user-select: none;
 }
+
 
 
 

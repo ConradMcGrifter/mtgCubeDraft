@@ -514,10 +514,14 @@ let partners = [["Proud Mentor", "Impetuous Protege"], ["Sylvia Brightspear", "K
 
 let reset = document.getElementById("reset");
 let generate = document.getElementById("generate");
-let team1 = document.getElementById("team1");
-let team2 = document.getElementById("team2");
-let team3 = document.getElementById("team3");
-let team4 = document.getElementById("team4");
+let team1header = document.getElementById("team1");
+let team2header = document.getElementById("team2");
+let team3header = document.getElementById("team3");
+let team4header = document.getElementById("team4");
+let team1 = document.querySelector(".team1");
+let team2 = document.querySelector(".team2");
+let team3 = document.querySelector(".team3");
+let team4 = document.querySelector(".team4");
 
 
 let container = document.querySelector(".container");
@@ -1113,14 +1117,16 @@ reset.addEventListener("click", ()=> {
     sixteen.innerHTML = ""
 
     // this hides the reset button and reveals the generate button
+    
     container.style.opacity = "0";
+    container.style.transition = "0s"
     generate.classList.remove("hide");
     reset.classList.remove("display");
-    team1.classList.toggle("display");
-    team2.classList.toggle("display");
-    team3.classList.toggle("display");
-    team4.classList.toggle("display");
-   
+    team1header.classList.toggle("display");
+    team2header.classList.toggle("display");
+    team3header.classList.toggle("display");
+    team4header.classList.toggle("display");
+ 
 
 
 
@@ -1175,12 +1181,12 @@ function outputPacks() {
 // this hides the generate button and reveals the reset button (also reveals the team name)
   reset.classList.add("display");
   generate.classList.toggle("hide");
-  team1.classList.toggle("display");
-  team2.classList.toggle("display");
-  team3.classList.toggle("display");
-  team4.classList.toggle("display");
+  team1header.classList.toggle("display");
+  team2header.classList.toggle("display");
+  team3header.classList.toggle("display");
+  team4header.classList.toggle("display");
   container.style.opacity = "1";
-
+  container.style.transition = ".5s"
 
   
 
