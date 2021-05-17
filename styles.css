@@ -38,7 +38,7 @@ body {
     color: white;
 
     padding-bottom: 2em;
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 .info-wrap {
@@ -160,11 +160,17 @@ span {
     justify-content: flex-start;
 }
 
-.team1,
+/* .team1,
 .team2,
 .team3,
 .team4 {
-    background: rgba(5, 5, 5, 0.959);
+    background: rgba(15, 15, 15, 0.959);
+} */
+
+.wrap {
+    background: rgba(15, 15, 15, 0.959);
+    border-radius: 10px;
+    opacity:0;
 }
 
 .team1 {
@@ -187,14 +193,15 @@ span {
     flex-direction: column;
     justify-content:space-evenly;
     width:100%; */
+    display:none;
 }
 
 .team4 {
     color: rgb(41, 155, 60);
     /* display:flex;
     flex-direction: column;
-  
     width:100%; */
+    display:none;
 }
 
 .pack-wrap {

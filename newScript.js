@@ -525,7 +525,7 @@ let team4 = document.querySelector(".team4");
 
 
 let container = document.querySelector(".container");
-
+let wrap = document.querySelector(".wrap");
 
 
 
@@ -1186,8 +1186,8 @@ function outputPacks() {
   team2header.classList.add("display");
   team3header.classList.add("display");
   team4header.classList.add("display");
-  container.style.opacity = "1";
-  container.style.transition = ".5s"
+  wrap.style.opacity = "1";
+  wrap.style.transition = ".5s"
 
   
 
