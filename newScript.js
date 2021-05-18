@@ -632,12 +632,27 @@ let wallpapers = [
         "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/mountain2.jpg) no-repeat fixed top",
         "cover",
     ],
-];
 
-let shuffledWallpapers = shuffle(wallpapers);
+    // [
+    //     "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/island1.jpg) no-repeat fixed top",
+    //     "cover",
+    // ],
+
+    [
+        "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/swamp2.jpg) no-repeat fixed top",
+        "cover",
+    ],
+
+    [
+        "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/truffleSnout.jpg) no-repeat fixed top",
+        "cover",
+    ],
+];
 
 defaultTeams.checked = true;
 label2.style.color = "var(--clr-highlight)";
+
+let shuffledWallpapers = shuffle(wallpapers);
 body.style.background = shuffledWallpapers[0][0];
 body.style.backgroundSize = shuffledWallpapers[0][1];
 
