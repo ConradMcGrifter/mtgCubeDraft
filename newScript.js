@@ -530,6 +530,7 @@ let generate = document.getElementById("generate");
 // let team2header = document.getElementById("team2");
 // let team3header = document.getElementById("team3");
 // let team4header = document.getElementById("team4");
+let body = document.querySelector("body");
 let team1 = document.querySelector(".team1");
 let team2 = document.querySelector(".team2");
 let team3 = document.querySelector(".team3");
@@ -598,8 +599,49 @@ let pack32 = [];
 let pack33 = [];
 let pack34 = [];
 
+let wallpapers = [
+    // [
+    //     "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/hydra.jpg)  no-repeat fixed center",
+    //     "cover",
+    // ],
+    [
+        "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/plains1.jpg) no-repeat fixed center",
+        "cover",
+    ],
+    [
+        "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/forrest1.jpg) no-repeat fixed top",
+        "cover",
+    ],
+    [
+        "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/simeanGruntsCard.jpg) repeat",
+        "auto",
+    ],
+    [
+        "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/forrest2.jpg) no-repeat fixed top",
+        "cover",
+    ],
+    [
+        "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/swamp1.jpg) no-repeat fixed top",
+        "cover",
+    ],
+    [
+        "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/mountain1.jpg) no-repeat fixed top",
+        "cover",
+    ],
+    [
+        "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/mountain2.jpg) no-repeat fixed top",
+        "cover",
+    ],
+];
+
+let shuffledWallpapers = shuffle(wallpapers);
+
 defaultTeams.checked = true;
 label2.style.color = "var(--clr-highlight)";
+body.style.background = shuffledWallpapers[0][0];
+body.style.backgroundSize = shuffledWallpapers[0][1];
+
+// body.style.backgroundSize = "cover";
 
 function addTeam() {
     // If the checkbox is checked, display the output text
