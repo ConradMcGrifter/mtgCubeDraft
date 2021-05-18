@@ -15,40 +15,46 @@
     <body>
         <header>
         <div class="info-wrap">
+            <div class="buttonAndTeams-wrap">
+                <div id="generate">Make Booster Packs</div>
+                <div id="reset">Remake Booster Packs</div>
 
-            <div id="generate">Make Booster Packs</div>
-            <div id="reset">Remake Booster Packs</div>
-
-            <h3 id="totalCards">Total Cards:<span id="cardCount"></span></h3>
-            <div class="checkboxes">
-                <label for"checkbox" class="numberOfTeams">Number of Teams:</label>
-                <div class="checkbox-container">
-                    <div class="label-wrap">
-                        <label for"checkbox">Two</label>
-                        <input type="radio" id="revealTeam" name = "addTeam" onclick="addTeam()" />
-                    </div>
-                        
-                    <div class="label-wrap">
-                        <label for"checkbox">Three</label>
-                        <input type="radio" id="revealTeam3" name = "addTeam" onclick="addTeam()" />
-                    </div>
                 
-                    <div class="label-wrap">
-                        <label for"checkbox">Four </label>
-                        <input type="radio" id="revealTeam4" name = "addTeam" onclick="addTeam()" />
+                <div class="checkboxes">
+                    <label for"checkbox" class="numberOfTeams">Number of Teams:</label>
+                    <div class="checkbox-container">
+                        <div class="label-wrap">
+                            <label for"checkbox">Two</label>
+                            <input type="radio" id="revealTeam" name = "addTeam" onclick="addTeam()" />
+                        </div>
+                            
+                        <div class="label-wrap">
+                            <label for"checkbox">Three</label>
+                            <input type="radio" id="revealTeam3" name = "addTeam" onclick="addTeam()" />
+                        </div>
+                    
+                        <div class="label-wrap">
+                            <label for"checkbox">Four </label>
+                            <input type="radio" id="revealTeam4" name = "addTeam" onclick="addTeam()" />
+                        </div>
                     </div>
+                    
                 </div>
-              
             </div>
+
+            <h3 id="totalCards">Card Count:<span id="cardCount"></span></h3>
+        
+
           
-            <a
-                href="https://onlyontuesdays27.com/2020/06/10/tuesdaytastics-2-headed-giant-cube/"
-                target="_blank"
-                >Link To Cube</a
-            >
         </div>
         <div class="removed">
             <p>
+                <a
+                href="https://onlyontuesdays27.com/2020/06/10/tuesdaytastics-2-headed-giant-cube/"
+                target="_blank"
+                >- Link To Cube - </a
+            >
+
                 <span>Removed cards: </span>
                 <a
                     href="https://gatherer.wizards.com/pages/Card/Details.aspx?multiverseid=439544"
@@ -77,8 +83,10 @@
                 /
                 <a
                     href="https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=382298"
-                    >Lore seeker</a
+                    >Lore seeker </a
                 >
+                /
+         
             </p>
         </div>
         </header>
