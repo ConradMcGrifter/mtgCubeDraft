@@ -34,7 +34,7 @@ body {
     flex-wrap: wrap;
 
     justify-content: space-evenly;
-    margin: 2em 1em 0 1em;
+    margin: 8em 0 0 0;
     color: white;
 
     padding-bottom: 2em;
@@ -276,4 +276,12 @@ input {
     justify-content: space-between;
     width: 50%;
     margin-right: 0.5em;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
 }
