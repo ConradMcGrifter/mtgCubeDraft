@@ -16,15 +16,23 @@
         <div class="info-wrap">
             <h3 id="totalCards">Total Cards:<span id="cardCount"></span></h3>
             <div class="checkboxes">
-                <label for"checkbox">Play with 2 teams</label>
-                <input type="radio" id="revealTeam" name = "addTeam" onclick="addTeam()" />
-                <br />
+                <label for"checkbox" class="numberOfTeams">Number of Teams:</label>
+                <div class="checkbox-container">
+                    <div class="label-wrap">
+                        <label for"checkbox">Two</label>
+                        <input type="radio" id="revealTeam" name = "addTeam" onclick="addTeam()" />
+                    </div>
+                        
+                    <div class="label-wrap">
+                        <label for"checkbox">Three</label>
+                        <input type="radio" id="revealTeam3" name = "addTeam" onclick="addTeam()" />
+                    </div>
                 
-                <label for"checkbox">Play with 3 teams</label>
-                <input type="radio" id="revealTeam3" name = "addTeam" onclick="addTeam()" />
-                <br />
-                <label for"checkbox">Play with 4 teams</label>
-                <input type="radio" id="revealTeam4" name = "addTeam" onclick="addTeam()" />
+                    <div class="label-wrap">
+                        <label for"checkbox">Four </label>
+                        <input type="radio" id="revealTeam4" name = "addTeam" onclick="addTeam()" />
+                    </div>
+                </div>
               
             </div>
             <div id="generate">Make Booster Packs</div>

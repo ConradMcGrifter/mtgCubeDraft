@@ -235,8 +235,11 @@ span {
 }
 
 .checkboxes {
-    margin-right: 2em;
+    margin-right: 3em;
     user-select: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 #totalCards {
@@ -244,4 +247,33 @@ span {
     /* outline: solid white 1px; */
     padding: 0.35em;
     display: none;
+}
+
+.teams {
+    margin: 0;
+}
+
+input {
+    margin: 0 0 0 0.25em;
+}
+
+.numberOfTeams {
+    display: block;
+    margin: 0 0 0.25em 0;
+    /* text-decoration: underline; */
+    display: flex;
+}
+
+.checkbox-container {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    /* outline: solid white 1px; */
+}
+
+.label-wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-right: 0.5em;
 }
