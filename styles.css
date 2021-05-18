@@ -183,7 +183,7 @@ span {
 .wrap {
     background: rgba(20, 20, 20, 0.651);
     /* box-shadow: 0 2px 15px black; */
-    border-radius: 10px;
+    /* border-radius: 10px; */
     opacity: 0;
     /* min-height: 750px;
     max-height: 770px; */
