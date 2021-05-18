@@ -526,10 +526,10 @@ let partners = [
 
 let reset = document.getElementById("reset");
 let generate = document.getElementById("generate");
-let team1header = document.getElementById("team1");
-let team2header = document.getElementById("team2");
-let team3header = document.getElementById("team3");
-let team4header = document.getElementById("team4");
+// let team1header = document.getElementById("team1");
+// let team2header = document.getElementById("team2");
+// let team3header = document.getElementById("team3");
+// let team4header = document.getElementById("team4");
 let team1 = document.querySelector(".team1");
 let team2 = document.querySelector(".team2");
 let team3 = document.querySelector(".team3");
