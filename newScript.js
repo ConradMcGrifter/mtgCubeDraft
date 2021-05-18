@@ -541,6 +541,9 @@ let checkTeam3 = document.getElementById("revealTeam3");
 let checkTeam4 = document.getElementById("revealTeam4");
 let currentCount = document.getElementById("cardCount");
 let totalCards = document.getElementById("totalCards");
+let label2 = document.querySelector(".label2");
+let label3 = document.querySelector(".label3");
+let label4 = document.querySelector(".label4");
 
 let one = document.getElementById("pack1");
 let two = document.getElementById("pack2");
@@ -595,12 +598,18 @@ let pack33 = [];
 let pack34 = [];
 
 defaultTeams.checked = true;
+label2.style.color = "var(--clr-highlight)";
 
 function addTeam() {
     // If the checkbox is checked, display the output text
     if (defaultTeams.checked == true) {
-        // wrap.style.overflow = "none";
+        // this hides the scroll bar for only 2 teams
         wrap.style.overflowY = "hidden";
+
+        // this changes the label color of the selected number of teams
+        label2.style.color = "var(--clr-highlight)";
+        label3.style.color = "white";
+        label4.style.color = "white";
     }
 
     if (checkTeam3.checked == true) {
@@ -609,6 +618,11 @@ function addTeam() {
         wrap.style.overflow = "scroll";
         wrap.style.overflowY = "scroll";
         wrap.style.overflowX = "hidden";
+
+        // this changes the label color of the selected number of teams
+        label2.style.color = "white";
+        label3.style.color = "var(--clr-highlight)";
+        label4.style.color = "white";
     } else {
         team3.style.display = "none";
 
@@ -622,7 +636,11 @@ function addTeam() {
         wrap.style.overflow = "scroll";
         wrap.style.overflowY = "scroll";
         wrap.style.overflowX = "hidden";
-        // checkTeam3.checked = false;
+
+        // this changes the label color of the selected number of teams
+        label2.style.color = "white";
+        label3.style.color = "white";
+        label4.style.color = "var(--clr-highlight)";
     } else {
         team4.style.display = "none";
 
