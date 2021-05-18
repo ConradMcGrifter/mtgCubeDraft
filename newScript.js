@@ -604,7 +604,7 @@ function addTeam() {
     // If the checkbox is checked, display the output text
     if (defaultTeams.checked == true) {
         // this hides the scroll bar for only 2 teams
-        wrap.style.overflowY = "hidden";
+        // wrap.style.overflowY = "hidden";
 
         // this changes the label color of the selected number of teams
         label2.style.color = "var(--clr-highlight)";
@@ -615,9 +615,9 @@ function addTeam() {
     if (checkTeam3.checked == true) {
         cardCount();
         team3.style.display = "block";
-        wrap.style.overflow = "scroll";
-        wrap.style.overflowY = "scroll";
-        wrap.style.overflowX = "hidden";
+        // wrap.style.overflow = "scroll";
+        // wrap.style.overflowY = "scroll";
+        // wrap.style.overflowX = "hidden";
 
         // this changes the label color of the selected number of teams
         label2.style.color = "white";
@@ -633,9 +633,9 @@ function addTeam() {
         cardCount();
         team3.style.display = "block";
         team4.style.display = "block";
-        wrap.style.overflow = "scroll";
-        wrap.style.overflowY = "scroll";
-        wrap.style.overflowX = "hidden";
+        // wrap.style.overflow = "scroll";
+        // wrap.style.overflowY = "scroll";
+        // wrap.style.overflowX = "hidden";
 
         // this changes the label color of the selected number of teams
         label2.style.color = "white";
