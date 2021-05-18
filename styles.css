@@ -9,6 +9,7 @@
 html {
     box-sizing: border-box;
     height: 100%;
+    background-color: rgb(33,33,33)
 }
 
 * {
@@ -194,7 +195,7 @@ span {
     /* overflow-x: hidden; */
     width: 100%;
     /* height: 100%; */
-    padding: 2em;
+    /* padding: 2em; */
 }
 
 .wrap-wrap {
@@ -392,6 +393,7 @@ header {
 @media only screen and (min-height: 2000px) {
     .wrap {
         justify-content: flex-start;
+        padding-top: 2em;
     }
 
     .container {
