@@ -353,6 +353,7 @@ header {
         width: 100%;
         overflow: unset;
         padding: 2em 1em;
+        justify-content: flex-start;
         /* height: auto; */
     }
 
