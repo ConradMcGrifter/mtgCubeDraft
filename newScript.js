@@ -594,15 +594,24 @@ let pack32 = [];
 let pack33 = [];
 let pack34 = [];
 
+defaultTeams.checked = true;
+
 function addTeam() {
     // If the checkbox is checked, display the output text
-    if (checkTeam3.checked == true) {
-        team3.style.display = "block";
-        cardCount();
+    if (defaultTeams.checked == true) {
+        // wrap.style.overflow = "none";
+        wrap.style.overflowY = "hidden";
+    }
 
-        // checkTeam4.checked = false;
+    if (checkTeam3.checked == true) {
+        cardCount();
+        team3.style.display = "block";
+        wrap.style.overflow = "scroll";
+        wrap.style.overflowY = "scroll";
+        wrap.style.overflowX = "hidden";
     } else {
         team3.style.display = "none";
+
         cardCount();
     }
 
@@ -610,9 +619,13 @@ function addTeam() {
         cardCount();
         team3.style.display = "block";
         team4.style.display = "block";
+        wrap.style.overflow = "scroll";
+        wrap.style.overflowY = "scroll";
+        wrap.style.overflowX = "hidden";
         // checkTeam3.checked = false;
     } else {
         team4.style.display = "none";
+
         cardCount();
     }
 }
@@ -1235,6 +1248,7 @@ function outputPacks() {
     //   team4header.classList.add("display");
     wrap.style.opacity = "1";
     wrap.style.transition = ".5s";
+    container.style.opacity = "1";
 
     // generate the packs
     pack1 = makePacks(pack1, cube, partners);
@@ -1346,5 +1360,3 @@ function outputPacks() {
     // thirtyThree.innerHTML = pack33.join(' <br /> ')
     // thirtyFour.innerHTML = pack34.join(' <br /> ')
 }
-
-defaultTeams.checked = "true";
