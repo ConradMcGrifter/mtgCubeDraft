@@ -9,7 +9,7 @@
 html {
     box-sizing: border-box;
     height: 100%;
-    background-color: rgb(33,33,33)
+    background-color: rgb(33, 33, 33);
 }
 
 * {
@@ -201,7 +201,7 @@ span {
 .wrap-wrap {
     background: rgba(0, 0, 0, 0.849);
     border-radius: 10px;
-    max-height: 750px;
+    max-height: 700px;
     overflow: scroll;
     padding: 1em;
     overflow-x: hidden;
