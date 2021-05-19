@@ -647,6 +647,11 @@ let wallpapers = [
         "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/truffleSnout.jpg) no-repeat fixed top",
         "cover",
     ],
+
+    // [
+    //     "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/goldat3.gif) repeat fixed center",
+    //     "auto",
+    // ],
 ];
 
 defaultTeams.checked = true;
@@ -656,7 +661,71 @@ let shuffledWallpapers = shuffle(wallpapers);
 body.style.background = shuffledWallpapers[0][0];
 body.style.backgroundSize = shuffledWallpapers[0][1];
 
-// body.style.backgroundSize = "cover";
+function copyText(htmlElement) {
+    let combinedText = "";
+    let inputElement = document.createElement("textarea");
+
+    // console.log(combinedText);
+
+    for (let i = 0; i < htmlElement.length; i++) {
+        combinedText += htmlElement[i].innerText;
+    }
+
+    // console.log(combinedText);
+    inputElement.value = combinedText;
+    document.body.appendChild(inputElement);
+    inputElement.style.opacity = "0";
+    inputElement.style.position = "absolute";
+
+    // this selects the text and copies it
+    inputElement.select();
+    document.execCommand("copy");
+}
+
+document.getElementById("copyButton").onclick = function () {
+    if (defaultTeams.checked == true) {
+        let coppiedPacks = [one, two, three, four, five, six, seven, eight];
+        copyText(coppiedPacks);
+        console.log("okok");
+    } else if (checkTeam3.checked == true) {
+        let coppiedPacks = [
+            one,
+            two,
+            three,
+            four,
+            five,
+            six,
+            seven,
+            eight,
+            nine,
+            ten,
+            eleven,
+            twelve,
+        ];
+        copyText(coppiedPacks);
+        console.log("lets go");
+    } else if (checkTeam4.checked == true) {
+        let coppiedPacks = [
+            one,
+            two,
+            three,
+            four,
+            five,
+            six,
+            seven,
+            eight,
+            nine,
+            ten,
+            eleven,
+            twelve,
+            thirteen,
+            fourteen,
+            fifteen,
+            sixteen,
+        ];
+        copyText(coppiedPacks);
+    }
+};
 
 function addTeam() {
     // If the checkbox is checked, display the output text
@@ -1401,22 +1470,40 @@ function outputPacks() {
     let shuffledPacks = shuffle(packArray);
 
     // output the results to HTML
-    one.innerHTML = shuffledPacks.pop().join(" <br /> ");
-    two.innerHTML = shuffledPacks.pop().join(" <br /> ");
-    three.innerHTML = shuffledPacks.pop().join(" <br /> ");
-    four.innerHTML = shuffledPacks.pop().join(" <br /> ");
-    five.innerHTML = shuffledPacks.pop().join(" <br /> ");
-    six.innerHTML = shuffledPacks.pop().join(" <br /> ");
-    seven.innerHTML = shuffledPacks.pop().join(" <br /> ");
-    eight.innerHTML = shuffledPacks.pop().join(" <br /> ");
-    nine.innerHTML = shuffledPacks.pop().join(" <br /> ");
-    ten.innerHTML = shuffledPacks.pop().join(" <br /> ");
-    eleven.innerHTML = shuffledPacks.pop().join(" <br /> ");
-    twelve.innerHTML = shuffledPacks.pop().join(" <br /> ");
-    thirteen.innerHTML = shuffledPacks.pop().join(" <br /> ");
-    fourteen.innerHTML = shuffledPacks.pop().join(" <br /> ");
-    fifteen.innerHTML = shuffledPacks.pop().join(" <br /> ");
-    sixteen.innerHTML = shuffledPacks.pop().join(" <br /> ");
+
+    shuffledPacks[0].push(" <br /> ");
+
+    one.innerHTML = shuffledPacks.shift().join(" <br /> ");
+    shuffledPacks[0].push(" <br /> ");
+    two.innerHTML = shuffledPacks.shift().join(" <br /> ");
+    shuffledPacks[0].push(" <br /> ");
+    three.innerHTML = shuffledPacks.shift().join(" <br /> ");
+    shuffledPacks[0].push(" <br /> ");
+    four.innerHTML = shuffledPacks.shift().join(" <br /> ");
+    shuffledPacks[0].push(" <br /> ");
+    five.innerHTML = shuffledPacks.shift().join(" <br /> ");
+    shuffledPacks[0].push(" <br /> ");
+    six.innerHTML = shuffledPacks.shift().join(" <br /> ");
+    shuffledPacks[0].push(" <br /> ");
+    seven.innerHTML = shuffledPacks.shift().join(" <br /> ");
+    shuffledPacks[0].push(" <br /> ");
+    eight.innerHTML = shuffledPacks.shift().join(" <br /> ");
+    shuffledPacks[0].push(" <br /> ");
+    nine.innerHTML = shuffledPacks.shift().join(" <br /> ");
+    shuffledPacks[0].push(" <br /> ");
+    ten.innerHTML = shuffledPacks.shift().join(" <br /> ");
+    shuffledPacks[0].push(" <br /> ");
+    eleven.innerHTML = shuffledPacks.shift().join(" <br /> ");
+    shuffledPacks[0].push(" <br /> ");
+    twelve.innerHTML = shuffledPacks.shift().join(" <br /> ");
+    shuffledPacks[0].push(" <br /> ");
+    thirteen.innerHTML = shuffledPacks.shift().join(" <br /> ");
+    shuffledPacks[0].push(" <br /> ");
+    fourteen.innerHTML = shuffledPacks.shift().join(" <br /> ");
+    shuffledPacks[0].push(" <br /> ");
+    fifteen.innerHTML = shuffledPacks.shift().join(" <br /> ");
+    shuffledPacks[0].push(" <br /> ");
+    sixteen.innerHTML = shuffledPacks.shift().join(" <br /> ");
     // seventeen.innerHTML = pack17.join(' <br /> ')
     // eighteen.innerHTML = pack18.join(' <br /> ')
     // nineteen.innerHTML = pack19.join(' <br /> ')
