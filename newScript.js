@@ -684,10 +684,13 @@ function copyText(htmlElement) {
 
 document.getElementById("copyButton").onclick = function () {
     if (defaultTeams.checked == true) {
+        this.innerHTML = "Copied!";
         let coppiedPacks = [one, two, three, four, five, six, seven, eight];
         copyText(coppiedPacks);
         console.log("okok");
     } else if (checkTeam3.checked == true) {
+        this.innerHTML = "Copied!";
+
         let coppiedPacks = [
             one,
             two,
@@ -705,6 +708,8 @@ document.getElementById("copyButton").onclick = function () {
         copyText(coppiedPacks);
         console.log("lets go");
     } else if (checkTeam4.checked == true) {
+        this.innerHTML = "Copied!";
+
         let coppiedPacks = [
             one,
             two,
@@ -730,6 +735,7 @@ document.getElementById("copyButton").onclick = function () {
 function addTeam() {
     // If the checkbox is checked, display the output text
     if (defaultTeams.checked == true) {
+        document.getElementById("copyButton").innerHTML = "Copy to clipboard";
         // this hides the scroll bar for only 2 teams
         wrapWrap.style.overflowY = "hidden";
 
@@ -740,6 +746,7 @@ function addTeam() {
     }
 
     if (checkTeam3.checked == true) {
+        document.getElementById("copyButton").innerHTML = "Copy to clipboard";
         cardCount();
         team3.style.display = "block";
         wrapWrap.style.overflow = "scroll";
@@ -757,6 +764,7 @@ function addTeam() {
     }
 
     if (checkTeam4.checked == true) {
+        document.getElementById("copyButton").innerHTML = "Copy to clipboard";
         cardCount();
         team3.style.display = "block";
         team4.style.display = "block";
