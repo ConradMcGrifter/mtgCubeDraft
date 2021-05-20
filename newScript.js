@@ -565,6 +565,7 @@ let fourteen = document.getElementById("pack14");
 let fifteen = document.getElementById("pack15");
 let sixteen = document.getElementById("pack16");
 
+// these are the arrays for the packs that get created when the cube and partner arrays and shuffled with the makepacks(pack,arr1,arr2) function
 let pack1 = [];
 let pack2 = [];
 let pack3 = [];
@@ -600,6 +601,7 @@ let pack32 = [];
 let pack33 = [];
 let pack34 = [];
 
+// these are the wallpapers that get randomly selected on each page refresh
 let wallpapers = [
     // [
     //     "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/hydra.jpg)  no-repeat fixed center",
@@ -654,14 +656,24 @@ let wallpapers = [
     //     "auto",
     // ],
 ];
-
+// ----------------------------------------------------------------------
+// THIS CODE RUNS ON PAGE LOAD
+// ----------------------------------------------------------------------
+// this sets the default team selection to 2 on page load
 defaultTeams.checked = true;
+// this sets the label color for default team selection to be highlighted
 label2.style.color = "var(--clr-highlight)";
 
+// this chooses a random wallpaper to load
 let shuffledWallpapers = shuffle(wallpapers);
 body.style.background = shuffledWallpapers[0][0];
 body.style.backgroundSize = shuffledWallpapers[0][1];
 
+// -----------------------------------------------------------------------
+// COPY TEXT
+// -----------------------------------------------------------------------
+
+// this is the copy text function used when the copyButton is clicked
 function copyText(htmlElement) {
     let combinedText = "";
     let inputElement = document.createElement("textarea");
@@ -680,6 +692,7 @@ function copyText(htmlElement) {
     document.execCommand("copy");
 }
 
+// this code gets executed when the copyButton is clicked
 copyButton.onclick = function () {
     if (defaultTeams.checked == true) {
         this.innerHTML = "Copied!";
@@ -734,16 +747,20 @@ copyButton.onclick = function () {
     }
 };
 
+//-------------------------------------------------------------------------------------------
+// ADD TEAM FUNCTION - detects what checkbox is selected and runs the appropriate code
+//-------------------------------------------------------------------------------------------
 function addTeam() {
     // If the checkbox is checked, display the output text
     if (defaultTeams.checked == true) {
+        // this chagnes the style of the copy to clipboard button when a new team option is clicked
         copyButton.innerHTML = "Copy to clipboard";
         copyButton.style.background = "var(--clr-primary)";
         copyButton.style.color = "white";
         // this hides the scroll bar for only 2 teams
         wrapWrap.style.overflowY = "hidden";
 
-        // this changes the label color of the selected number of teams
+        // this changes the label color of the selected number of teams checkbox
         label2.style.color = "var(--clr-highlight)";
         label3.style.color = "white";
         label4.style.color = "white";
