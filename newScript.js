@@ -665,16 +665,13 @@ function copyText(htmlElement) {
     let combinedText = "";
     let inputElement = document.createElement("textarea");
 
-    // console.log(combinedText);
-
     for (let i = 0; i < htmlElement.length; i++) {
         combinedText += htmlElement[i].innerText;
     }
 
-    // console.log(combinedText);
     inputElement.value = combinedText;
     document.body.appendChild(inputElement);
-    inputElement.style.opacity = "0";
+    // inputElement.style.opacity = "0";
     inputElement.style.position = "absolute";
 
     // this selects the text and copies it
@@ -687,7 +684,6 @@ document.getElementById("copyButton").onclick = function () {
         this.innerHTML = "Copied!";
         let coppiedPacks = [one, two, three, four, five, six, seven, eight];
         copyText(coppiedPacks);
-        console.log("okok");
     } else if (checkTeam3.checked == true) {
         this.innerHTML = "Copied!";
 
@@ -706,7 +702,6 @@ document.getElementById("copyButton").onclick = function () {
             twelve,
         ];
         copyText(coppiedPacks);
-        console.log("lets go");
     } else if (checkTeam4.checked == true) {
         this.innerHTML = "Copied!";
 
@@ -1390,6 +1385,7 @@ function makePacks(pack, arr1, arr2) {
 
 // this shuffles the cube array and outputs the new random arrays to the webpage
 function outputPacks() {
+    document.getElementById("copyButton").innerHTML = "Copy to clipboard";
     totalCards.style.display = "block";
     cardCount();
     // this hides the generate button and reveals the reset button (also reveals the team name)
