@@ -663,173 +663,20 @@ let wallpapers = [
 defaultTeams.checked = true;
 // this sets the label color for default team selection to be highlighted
 label2.style.color = "var(--clr-highlight)";
-
-// this chooses a random wallpaper to load
 let shuffledWallpapers = shuffle(wallpapers);
 body.style.background = shuffledWallpapers[0][0];
 body.style.backgroundSize = shuffledWallpapers[0][1];
 
-// -----------------------------------------------------------------------
-// COPY TEXT
-// -----------------------------------------------------------------------
+//------------------------------------
+// EVENT LISTENERS
+//------------------------------------
+// this chooses a random wallpaper to load
 
-// this is the copy text function used when the copyButton is clicked
-function copyText(htmlElement) {
-    let combinedText = "";
-    let inputElement = document.createElement("textarea");
+// this is the event listener for the generate button that runs the shuffleCube function
+generate.addEventListener("click", outputPacks);
 
-    for (let i = 0; i < htmlElement.length; i++) {
-        combinedText += htmlElement[i].innerText;
-    }
-
-    inputElement.value = combinedText;
-    document.body.appendChild(inputElement);
-    // inputElement.style.opacity = "0";
-    inputElement.style.position = "absolute";
-
-    // this selects the text and copies it
-    inputElement.select();
-    document.execCommand("copy");
-}
-
-// this code gets executed when the copyButton is clicked
-copyButton.onclick = function () {
-    if (defaultTeams.checked == true) {
-        this.innerHTML = "Copied!";
-        this.style.background = "var(--clr-highlight)";
-        this.style.color = "black";
-        let coppiedPacks = [one, two, three, four, five, six, seven, eight];
-        copyText(coppiedPacks);
-    } else if (checkTeam3.checked == true) {
-        this.innerHTML = "Copied!";
-        this.style.background = "var(--clr-highlight)";
-        this.style.color = "black";
-
-        let coppiedPacks = [
-            one,
-            two,
-            three,
-            four,
-            five,
-            six,
-            seven,
-            eight,
-            nine,
-            ten,
-            eleven,
-            twelve,
-        ];
-        copyText(coppiedPacks);
-    } else if (checkTeam4.checked == true) {
-        this.innerHTML = "Copied!";
-        this.style.background = "var(--clr-highlight)";
-        this.style.color = "black";
-
-        let coppiedPacks = [
-            one,
-            two,
-            three,
-            four,
-            five,
-            six,
-            seven,
-            eight,
-            nine,
-            ten,
-            eleven,
-            twelve,
-            thirteen,
-            fourteen,
-            fifteen,
-            sixteen,
-        ];
-        copyText(coppiedPacks);
-    }
-};
-
-// ----------------------------------------------------------------------------------------
-// CARD COUNT - this displays the current total number of cards in all the displayed packs
-// ----------------------------------------------------------------------------------------
-
-function cardCount() {
-    currentCount.innerHTML = " 128";
-
-    if (checkTeam3.checked == true) {
-        currentCount.innerHTML = " 192";
-    } else {
-        currentCount.innerHTML = " 128";
-    }
-
-    if (checkTeam4.checked == true) {
-        currentCount.innerHTML = " 256";
-    } else {
-        currentCount.InnerHTML = " 128";
-    }
-}
-
-//-------------------------------------------------------------------------------------------
-// ADD TEAM FUNCTION - detects what checkbox is selected and runs the appropriate code
-//-------------------------------------------------------------------------------------------
-function addTeam() {
-    // If the checkbox is checked, display the output text
-    if (defaultTeams.checked == true) {
-        // this changes the style of the "copy to clipboard" button when a new team option is clicked
-        copyButton.innerHTML = "Copy to clipboard";
-        copyButton.style.background = "var(--clr-primary)";
-        copyButton.style.color = "white";
-        // this hides the scroll bar for only 2 teams
-        wrapWrap.style.overflowY = "hidden";
-
-        // this changes the label color of the selected number of teams checkbox
-        label2.style.color = "var(--clr-highlight)";
-        label3.style.color = "white";
-        label4.style.color = "white";
-    }
-
-    if (checkTeam3.checked == true) {
-        // this changes the style of the "copy to clipboard" button when a new team option is clicked
-        copyButton.innerHTML = "Copy to clipboard";
-        copyButton.style.background = "var(--clr-primary)";
-        copyButton.style.color = "white";
-        cardCount();
-        team3.style.display = "block";
-        wrapWrap.style.overflow = "scroll";
-        wrapWrap.style.overflowY = "scroll";
-        wrapWrap.style.overflowX = "hidden";
-
-        // this changes the label color of the selected number of teams
-        label2.style.color = "white";
-        label3.style.color = "var(--clr-highlight)";
-        label4.style.color = "white";
-    } else {
-        team3.style.display = "none";
-
-        cardCount();
-    }
-
-    if (checkTeam4.checked == true) {
-        // this changes the style of the "copy to clipboard" button when a new team option is clicked
-        copyButton.innerHTML = "Copy to clipboard";
-        copyButton.style.background = "var(--clr-primary)";
-        copyButton.style.color = "white";
-        cardCount();
-        team3.style.display = "block";
-        team4.style.display = "block";
-        wrapWrap.style.overflow = "scroll";
-        wrapWrap.style.overflowY = "scroll";
-        wrapWrap.style.overflowX = "hidden";
-
-        // this changes the label color of the selected number of teams
-        label2.style.color = "white";
-        label3.style.color = "white";
-        label4.style.color = "var(--clr-highlight)";
-    } else {
-        team4.style.display = "none";
-
-        cardCount();
-    }
-}
-
+// this code runs when the reset button is click - it resets the cube and partner arrays then runs the output
+// packs function again
 reset.addEventListener("click", () => {
     cube = [
         "Crush of Tentacles",
@@ -1358,40 +1205,11 @@ reset.addEventListener("click", () => {
     ];
 
     outputPacks();
-
-    // one.innerHTML = ""
-    // two.innerHTML = ""
-    // three.innerHTML = ""
-    // four.innerHTML = ""
-    // five.innerHTML = ""
-    // six.innerHTML = ""
-    // seven.innerHTML = ""
-    // eight.innerHTML = ""
-    // nine.innerHTML = ""
-    // ten.innerHTML = ""
-    // eleven.innerHTML = ""
-    // twelve.innerHTML = ""
-    // thirteen.innerHTML = ""
-    // fourteen.innerHTML = ""
-    // fifteen.innerHTML = ""
-    // sixteen.innerHTML = ""
-
-    // this hides the reset button and reveals the generate button
-
-    // container.style.opacity = "0";
-    // container.style.transition = "0s"
-    // generate.classList.remove("hide");
-    // reset.classList.remove("display");
-    // team1header.classList.toggle("display");
-    // team2header.classList.toggle("display");
-    // team3header.classList.toggle("display");
-    // team4header.classList.toggle("display");
 });
 
-// this is the event listener for the generate button that runs the shuffleCube function
-generate.addEventListener("click", outputPacks);
-
-// Fisher-Yates shuffle function
+//------------------------------------------------------------------
+// Fisher-Yates shuffle function -- used to shuffle arrays
+//------------------------------------------------------------------
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -1419,8 +1237,176 @@ function makePacks(pack, arr1, arr2) {
     return pack;
 }
 
-// this shuffles the cube array and outputs the new random arrays to the webpage
+// ----------------------------------------------------------------------------------------------------------
+// COPY TEXT -- copies the text of the displayed packs and changes the text / style of the copy the clipboard
+// button
+// -----------------------------------------------------------------------------------------------------------
+
+// this is the copy text function used when the copyButton is clicked
+function copyText(htmlElement) {
+    let combinedText = "";
+    let inputElement = document.createElement("textarea");
+
+    for (let i = 0; i < htmlElement.length; i++) {
+        combinedText += htmlElement[i].innerText;
+    }
+
+    inputElement.value = combinedText;
+    document.body.appendChild(inputElement);
+    // inputElement.style.opacity = "0";
+    inputElement.style.position = "absolute";
+
+    // this selects the text and copies it
+    inputElement.select();
+    document.execCommand("copy");
+}
+
+// this code gets executed when the copyButton is clicked
+copyButton.onclick = function () {
+    if (defaultTeams.checked == true) {
+        this.innerHTML = "Copied!";
+        this.style.background = "var(--clr-highlight)";
+        this.style.color = "black";
+        let coppiedPacks = [one, two, three, four, five, six, seven, eight];
+        copyText(coppiedPacks);
+    } else if (checkTeam3.checked == true) {
+        this.innerHTML = "Copied!";
+        this.style.background = "var(--clr-highlight)";
+        this.style.color = "black";
+
+        let coppiedPacks = [
+            one,
+            two,
+            three,
+            four,
+            five,
+            six,
+            seven,
+            eight,
+            nine,
+            ten,
+            eleven,
+            twelve,
+        ];
+        copyText(coppiedPacks);
+    } else if (checkTeam4.checked == true) {
+        this.innerHTML = "Copied!";
+        this.style.background = "var(--clr-highlight)";
+        this.style.color = "black";
+
+        let coppiedPacks = [
+            one,
+            two,
+            three,
+            four,
+            five,
+            six,
+            seven,
+            eight,
+            nine,
+            ten,
+            eleven,
+            twelve,
+            thirteen,
+            fourteen,
+            fifteen,
+            sixteen,
+        ];
+        copyText(coppiedPacks);
+    }
+};
+
+// ----------------------------------------------------------------------------------------
+// CARD COUNT - this displays the current total number of cards in all the displayed packs
+// ----------------------------------------------------------------------------------------
+
+function cardCount() {
+    currentCount.innerHTML = " 128";
+
+    if (checkTeam3.checked == true) {
+        currentCount.innerHTML = " 192";
+    } else {
+        currentCount.innerHTML = " 128";
+    }
+
+    if (checkTeam4.checked == true) {
+        currentCount.innerHTML = " 256";
+    } else {
+        currentCount.InnerHTML = " 128";
+    }
+}
+
+//-------------------------------------------------------------------------------------------
+// ADD TEAM FUNCTION - detects what checkbox is selected and runs the appropriate code
+//-------------------------------------------------------------------------------------------
+function addTeam() {
+    // If the checkbox is checked, display the output text
+    if (defaultTeams.checked == true) {
+        // this changes the style of the "copy to clipboard" button when a new team option is clicked
+        copyButton.innerHTML = "Copy to clipboard";
+        copyButton.style.background = "var(--clr-primary)";
+        copyButton.style.color = "white";
+        // this hides the scroll bar for only 2 teams
+        wrapWrap.style.overflowY = "hidden";
+
+        // this changes the label color of the selected number of teams checkbox
+        label2.style.color = "var(--clr-highlight)";
+        label3.style.color = "white";
+        label4.style.color = "white";
+    }
+
+    if (checkTeam3.checked == true) {
+        // this changes the style of the "copy to clipboard" button when a new team option is clicked
+        copyButton.innerHTML = "Copy to clipboard";
+        copyButton.style.background = "var(--clr-primary)";
+        copyButton.style.color = "white";
+        cardCount();
+        team3.style.display = "block";
+        wrapWrap.style.overflow = "scroll";
+        wrapWrap.style.overflowY = "scroll";
+        wrapWrap.style.overflowX = "hidden";
+
+        // this changes the label color of the selected number of teams
+        label2.style.color = "white";
+        label3.style.color = "var(--clr-highlight)";
+        label4.style.color = "white";
+    } else {
+        team3.style.display = "none";
+
+        cardCount();
+    }
+
+    if (checkTeam4.checked == true) {
+        // this changes the style of the "copy to clipboard" button when a new team option is clicked
+        copyButton.innerHTML = "Copy to clipboard";
+        copyButton.style.background = "var(--clr-primary)";
+        copyButton.style.color = "white";
+        cardCount();
+        team3.style.display = "block";
+        team4.style.display = "block";
+        wrapWrap.style.overflow = "scroll";
+        wrapWrap.style.overflowY = "scroll";
+        wrapWrap.style.overflowX = "hidden";
+
+        // this changes the label color of the selected number of teams
+        label2.style.color = "white";
+        label3.style.color = "white";
+        label4.style.color = "var(--clr-highlight)";
+    } else {
+        team4.style.display = "none";
+
+        cardCount();
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------
+// SHUFFLE AND OUTPUT PACKS - this shuffles the cube array and outputs the new random array of cards to variables
+// pack1,  pack2, pack3 ...etc then it creates an array of the newly created packs and shuffles those then
+// outputs the new pack order to html through targeting the P element variables one, two, three,...etc
+//---------------------------------------------------------------------------------------------------------------
+
 function outputPacks() {
+    // this resets the "copy to clipboard" style to initial values
     copyButton.innerHTML = "Copy to clipboard";
     copyButton.style.background = "var(--clr-primary)";
     copyButton.style.color = "white";
@@ -1472,7 +1458,7 @@ function outputPacks() {
     pack32 = cube.splice(0, 16);
     pack33 = cube.splice(0, 16);
 
-    // pack array
+    // pack array to be shuffled
     let packArray = [
         pack1,
         pack2,
@@ -1510,11 +1496,16 @@ function outputPacks() {
     ];
 
     let shuffledPacks = shuffle(packArray);
-
-    // output the results to HTML
+    //------------------------------------------------------------------------------------------------------
+    // output the results to HTML -- the p element is targeted and innerHTML is the randomly chosen pack from
+    // the shuffled packArray. using join( "<br />") to add a break after each array item so they are
+    // output with each card being on its own line.
+    //
+    // each pack array is pushed an extra <br /> element so the packs will be seperated by a space when the
+    // copyText function is called and outputs the packs to the text area
+    //
 
     shuffledPacks[0].push(" <br /> ");
-
     one.innerHTML = shuffledPacks.shift().join(" <br /> ");
     shuffledPacks[0].push(" <br /> ");
     two.innerHTML = shuffledPacks.shift().join(" <br /> ");
