@@ -747,13 +747,33 @@ copyButton.onclick = function () {
     }
 };
 
+// ----------------------------------------------------------------------------------------
+// CARD COUNT - this displays the current total number of cards in all the displayed packs
+// ----------------------------------------------------------------------------------------
+
+function cardCount() {
+    currentCount.innerHTML = " 128";
+
+    if (checkTeam3.checked == true) {
+        currentCount.innerHTML = " 192";
+    } else {
+        currentCount.innerHTML = " 128";
+    }
+
+    if (checkTeam4.checked == true) {
+        currentCount.innerHTML = " 256";
+    } else {
+        currentCount.InnerHTML = " 128";
+    }
+}
+
 //-------------------------------------------------------------------------------------------
 // ADD TEAM FUNCTION - detects what checkbox is selected and runs the appropriate code
 //-------------------------------------------------------------------------------------------
 function addTeam() {
     // If the checkbox is checked, display the output text
     if (defaultTeams.checked == true) {
-        // this chagnes the style of the copy to clipboard button when a new team option is clicked
+        // this changes the style of the "copy to clipboard" button when a new team option is clicked
         copyButton.innerHTML = "Copy to clipboard";
         copyButton.style.background = "var(--clr-primary)";
         copyButton.style.color = "white";
@@ -767,6 +787,7 @@ function addTeam() {
     }
 
     if (checkTeam3.checked == true) {
+        // this changes the style of the "copy to clipboard" button when a new team option is clicked
         copyButton.innerHTML = "Copy to clipboard";
         copyButton.style.background = "var(--clr-primary)";
         copyButton.style.color = "white";
@@ -787,6 +808,7 @@ function addTeam() {
     }
 
     if (checkTeam4.checked == true) {
+        // this changes the style of the "copy to clipboard" button when a new team option is clicked
         copyButton.innerHTML = "Copy to clipboard";
         copyButton.style.background = "var(--clr-primary)";
         copyButton.style.color = "white";
@@ -805,22 +827,6 @@ function addTeam() {
         team4.style.display = "none";
 
         cardCount();
-    }
-}
-
-function cardCount() {
-    currentCount.innerHTML = " 128";
-
-    if (checkTeam3.checked == true) {
-        currentCount.innerHTML = " 192";
-    } else {
-        currentCount.innerHTML = " 128";
-    }
-
-    if (checkTeam4.checked == true) {
-        currentCount.innerHTML = " 256";
-    } else {
-        currentCount.InnerHTML = " 128";
     }
 }
 
