@@ -546,6 +546,7 @@ let totalCards = document.getElementById("totalCards");
 let label2 = document.querySelector(".label2");
 let label3 = document.querySelector(".label3");
 let label4 = document.querySelector(".label4");
+let copyButton = document.getElementById("copyButton");
 
 let one = document.getElementById("pack1");
 let two = document.getElementById("pack2");
@@ -679,13 +680,17 @@ function copyText(htmlElement) {
     document.execCommand("copy");
 }
 
-document.getElementById("copyButton").onclick = function () {
+copyButton.onclick = function () {
     if (defaultTeams.checked == true) {
         this.innerHTML = "Copied!";
+        this.style.background = "var(--clr-highlight)";
+        this.style.color = "black";
         let coppiedPacks = [one, two, three, four, five, six, seven, eight];
         copyText(coppiedPacks);
     } else if (checkTeam3.checked == true) {
         this.innerHTML = "Copied!";
+        this.style.background = "var(--clr-highlight)";
+        this.style.color = "black";
 
         let coppiedPacks = [
             one,
@@ -704,6 +709,8 @@ document.getElementById("copyButton").onclick = function () {
         copyText(coppiedPacks);
     } else if (checkTeam4.checked == true) {
         this.innerHTML = "Copied!";
+        this.style.background = "var(--clr-highlight)";
+        this.style.color = "black";
 
         let coppiedPacks = [
             one,
@@ -730,7 +737,9 @@ document.getElementById("copyButton").onclick = function () {
 function addTeam() {
     // If the checkbox is checked, display the output text
     if (defaultTeams.checked == true) {
-        document.getElementById("copyButton").innerHTML = "Copy to clipboard";
+        copyButton.innerHTML = "Copy to clipboard";
+        copyButton.style.background = "var(--clr-primary)";
+        copyButton.style.color = "white";
         // this hides the scroll bar for only 2 teams
         wrapWrap.style.overflowY = "hidden";
 
@@ -741,7 +750,9 @@ function addTeam() {
     }
 
     if (checkTeam3.checked == true) {
-        document.getElementById("copyButton").innerHTML = "Copy to clipboard";
+        copyButton.innerHTML = "Copy to clipboard";
+        copyButton.style.background = "var(--clr-primary)";
+        copyButton.style.color = "white";
         cardCount();
         team3.style.display = "block";
         wrapWrap.style.overflow = "scroll";
@@ -759,7 +770,9 @@ function addTeam() {
     }
 
     if (checkTeam4.checked == true) {
-        document.getElementById("copyButton").innerHTML = "Copy to clipboard";
+        copyButton.innerHTML = "Copy to clipboard";
+        copyButton.style.background = "var(--clr-primary)";
+        copyButton.style.color = "white";
         cardCount();
         team3.style.display = "block";
         team4.style.display = "block";
@@ -1385,7 +1398,9 @@ function makePacks(pack, arr1, arr2) {
 
 // this shuffles the cube array and outputs the new random arrays to the webpage
 function outputPacks() {
-    document.getElementById("copyButton").innerHTML = "Copy to clipboard";
+    copyButton.innerHTML = "Copy to clipboard";
+    copyButton.style.background = "var(--clr-primary)";
+    copyButton.style.color = "white";
     totalCards.style.display = "block";
     cardCount();
     // this hides the generate button and reveals the reset button (also reveals the team name)

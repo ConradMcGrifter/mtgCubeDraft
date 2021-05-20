@@ -303,13 +303,13 @@ header {
     cursor: pointer;
     font-size: 1rem;
     letter-spacing: 2px;
+    margin-bottom: 0.25em;
+
     /* border-radius: 999px; */
 }
 
-#copyButton:active {
-    background: var(--clr-secondary);
-
-    box-shadow: inset 0px 0px 5px #c1c1c1;
+#copyButton:hover {
+    box-shadow: inset 0px 0px 5px #e6e6e6;
 }
 
 @keyframes glow {
