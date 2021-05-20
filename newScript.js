@@ -1218,8 +1218,10 @@ function shuffle(array) {
 
     return array;
 }
-
-// this function takes parameters
+//----------------------------------------------------------------------------------------------------------
+// this function takes parameters -- it shuffles the cube array and partner array then takes 14 cards from the
+// cube and 1 pair of partner cards and outputs them to the new pack array (pack1, pack2, pack3....etc)
+//----------------------------------------------------------------------------------------------------------
 function makePacks(pack, arr1, arr2) {
     const shuffledCube = shuffle(arr1);
     const shuffledPairs = shuffle(arr2);
