@@ -1245,12 +1245,15 @@ function makePacks(pack, arr1, arr2) {
 // -----------------------------------------------------------------------------------------------------------
 
 // this is the copy text function used when the copyButton is clicked
-function copyText(htmlElement) {
+function copyText(htmlElementArray) {
     let combinedText = "";
     let inputElement = document.createElement("textarea");
 
-    for (let i = 0; i < htmlElement.length; i++) {
-        combinedText += htmlElement[i].innerText;
+    // this loop goes through the array of the html elements that hold the packs from the outputPacks
+    // function. it copies the inner text of each element and adds it to the combinedText variable then prints
+    // the total of all the visible packs to the text area so they can be copied to clipboard
+    for (let i = 0; i < htmlElementArray.length; i++) {
+        combinedText += htmlElementArray[i].innerText;
     }
 
     inputElement.value = combinedText;
@@ -1262,20 +1265,28 @@ function copyText(htmlElement) {
     inputElement.select();
     document.execCommand("copy");
 }
-
+// ---------------------------------------------------------------------------
+// COPY TO CLIPBOARD ONCLICK FUNCTION
+// ---------------------------------------------------------------------------
 // this code gets executed when the copyButton is clicked
 copyButton.onclick = function () {
     if (defaultTeams.checked == true) {
         this.innerHTML = "Copied!";
         this.style.background = "var(--clr-highlight)";
         this.style.color = "black";
+
+        // this is an array of the HTML elements that hold the text for the packs after they have been
+        // randomized and dealt out
         let coppiedPacks = [one, two, three, four, five, six, seven, eight];
+
         copyText(coppiedPacks);
     } else if (checkTeam3.checked == true) {
         this.innerHTML = "Copied!";
         this.style.background = "var(--clr-highlight)";
         this.style.color = "black";
 
+        // this is an array of the HTML elements that hold the text for the packs after they have been
+        // randomized and dealt out
         let coppiedPacks = [
             one,
             two,
@@ -1296,6 +1307,8 @@ copyButton.onclick = function () {
         this.style.background = "var(--clr-highlight)";
         this.style.color = "black";
 
+        // this is an array of the HTML elements that hold the text for the packs after they have been
+        // randomized and dealt out
         let coppiedPacks = [
             one,
             two,
