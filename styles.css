@@ -588,6 +588,7 @@ img {
 
 .page-tint.display {
     z-index:998;
+    /* display:flex; */
     opacity:1;
 }
 
