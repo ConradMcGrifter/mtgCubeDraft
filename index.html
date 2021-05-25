@@ -13,83 +13,92 @@
         <title>u wot m8?</title>
     </head>
     <body>
+        <div class="page-tint"></div>
         <header>
-        <div class="info-wrap">
-            <div class="buttonAndTeams-wrap">
-                <div id="generate">Generate Booster Packs</div>
-                <div id="reset">Generate Booster Packs</div>
+           
+            <div class="info-wrap">
+                <button id="hamburger" onclick="revealMenu()"><div class="middle-line"></div></button>
+                <div class="buttonAndTeams-wrap">
+                    <div id="generate">Generate Booster Packs</div>
+                    <div id="reset">Generate Booster Packs</div>
+
+                    
+                    <div class="checkboxes">
+                        <label for"checkbox" class="numberOfTeams">Number of Teams:</label>
+                        <div class="checkbox-container">
+                            <div class="label-wrap">
+                                <label for"checkbox" class="label2">Two</label>
+                                <input type="radio" id="revealTeam" name = "addTeam" onclick="addTeam()" />
+                            </div>
+                                
+                            <div class="label-wrap">
+                                <label for"checkbox" class="label3">Three</label>
+                                <input type="radio" id="revealTeam3" name = "addTeam" onclick="addTeam()" />
+                            </div>
+                        
+                            <div class="label-wrap">
+                                <label for"checkbox" class="label4">Four </label>
+                                <input type="radio" id="revealTeam4" name = "addTeam" onclick="addTeam()" />
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <h3 id="totalCards">Card Count:<span id="cardCount"></span></h3>
+            
 
                 
-                <div class="checkboxes">
-                    <label for"checkbox" class="numberOfTeams">Number of Teams:</label>
-                    <div class="checkbox-container">
-                        <div class="label-wrap">
-                            <label for"checkbox" class="label2">Two</label>
-                            <input type="radio" id="revealTeam" name = "addTeam" onclick="addTeam()" />
-                        </div>
-                            
-                        <div class="label-wrap">
-                            <label for"checkbox" class="label3">Three</label>
-                            <input type="radio" id="revealTeam3" name = "addTeam" onclick="addTeam()" />
-                        </div>
-                    
-                        <div class="label-wrap">
-                            <label for"checkbox" class="label4">Four </label>
-                            <input type="radio" id="revealTeam4" name = "addTeam" onclick="addTeam()" />
-                        </div>
-                    </div>
-                    
-                </div>
             </div>
 
-            <h3 id="totalCards">Card Count:<span id="cardCount"></span></h3>
-        
-
-          
-        </div>
-        <div class="removed">
-            <p>
-                <a
-                href="https://onlyontuesdays27.com/2020/06/10/tuesdaytastics-2-headed-giant-cube/"
-                target="_blank"
-                >- Link To Cube - </a
-            >
-
-                <span>Removed cards: </span>
-                <a
-                    href="https://gatherer.wizards.com/pages/Card/Details.aspx?multiverseid=439544"
-                    >Modular monstrosity</a
-                >
-                /
-                <a
-                    href="https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=479427"
-                    >Booster tutor</a
-                >
-                /
-                <a
-                    href="https://gatherer.wizards.com/pages/Card/Details.aspx?multiverseid=439547"
-                    >Split screen</a
-                >
-                /
-                <a
-                    href="https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=479465"
-                    >Entirely Normal Armchair</a
-                >
-                /
-                <a
-                    href="https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=382233"
-                    >Cogwork librarian</a
-                >
-                /
-                <a
-                    href="https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=382298"
-                    >Lore seeker </a
-                >
-                /
-         
-            </p>
-        </div>
         </header>
+
+        <div class="removed">
+            <button id="inner-hamburger" onclick="revealMenu()"><div class="middle-line"></div></button>
+                
+                <div class="removed-wrap">
+                    <a
+                    class="cube-link"
+                    href="https://onlyontuesdays27.com/2020/06/10/tuesdaytastics-2-headed-giant-cube/"
+                    target="_blank"
+                    >Link To Cube</a
+                >
+
+                    <h2>Removed cards:</h2>
+                    <a
+                        href="https://gatherer.wizards.com/pages/Card/Details.aspx?multiverseid=439544"
+                        >Modular monstrosity</a
+                    >
+                    
+                    <a
+                        href="https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=479427"
+                        >Booster tutor</a
+                    >
+                    
+                    <a
+                        href="https://gatherer.wizards.com/pages/Card/Details.aspx?multiverseid=439547"
+                        >Split screen</a
+                    >
+                    
+                    <a
+                        href="https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=479465"
+                        >Entirely Normal Armchair</a
+                    >
+                    
+                    <a
+                        href="https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=382233"
+                        >Cogwork librarian</a
+                    >
+                    
+                    <a
+                        href="https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=382298"
+                        >Lore seeker </a
+                    >
+                    
+            
+                </div>
+        
+        </div>
 
      
 
@@ -192,5 +201,6 @@
         </div> -->
 
         <script src="newScript.js"></script>
+        <script src="navBar.js"></script>
     </body>
 </html>

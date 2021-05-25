@@ -673,6 +673,11 @@ body.style.backgroundSize = shuffledWallpapers[0][1]; // this accesses the value
 
 // this is the event listener for the generate button that runs the shuffleCube function
 generate.addEventListener("click", outputPacks);
+// this toggles the height adjust for the body when the generate button is clicked. normally the body height
+// is 100% but for smaller screens the background image wasnt filling properly with the expanding container 
+generate.addEventListener("click", ()=> {
+    body.classList.toggle("height-adjust");
+})
 
 // this code runs when the reset button is click - it resets the cube and partner arrays then runs the output
 // packs function again
