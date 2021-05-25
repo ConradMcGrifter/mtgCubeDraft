@@ -664,9 +664,8 @@ defaultTeams.checked = true;
 // this sets the label color for default team selection to be highlighted
 label2.style.color = "var(--clr-highlight)";
 let shuffledWallpapers = shuffle(wallpapers);
-body.style.background = shuffledWallpapers[0][0];
-body.style.backgroundSize = shuffledWallpapers[0][1];
-
+body.style.background = shuffledWallpapers[0][0]; // this accesses the [linear gradient / url / no-repeat fixed top] value of the wallpapers array
+body.style.backgroundSize = shuffledWallpapers[0][1]; // this accesses the value in the array to set the size of the image
 //------------------------------------
 // EVENT LISTENERS
 //------------------------------------
@@ -1226,13 +1225,14 @@ function makePacks(pack, arr1, arr2) {
     const shuffledCube = shuffle(arr1);
     const shuffledPairs = shuffle(arr2);
 
-    pack = shuffledCube.splice(0, 14);
+    pack = shuffledCube.splice(0, 14); //this takes the top 14 cards from the shuffled cube array and puts it into the pack array
 
-    let partners = shuffledPairs.shift([0]);
+    let partners = shuffledPairs.shift([0]); // this takes the first pair of partner cards from the partner array and stores it in a variable
 
-    let partner1 = partners[0];
-    let partner2 = partners[1];
+    let partner1 = partners[0]; // this stores the first partner card from the partners array in its own variable
+    let partner2 = partners[1]; // this stores the second partner card from the partners array in its own variable
 
+    // this pushes the partner pair cards into the pack array
     pack.push(partner1);
     pack.push(partner2);
 
@@ -1240,7 +1240,7 @@ function makePacks(pack, arr1, arr2) {
 }
 
 // ----------------------------------------------------------------------------------------------------------
-// COPY TEXT -- copies the text of the displayed packs and changes the text / style of the copy the clipboard
+// COPY TEXT -- copies the text of the displayed packs and changes the text / style of the copy to clipboard
 // button
 // -----------------------------------------------------------------------------------------------------------
 
@@ -1375,8 +1375,8 @@ function addTeam() {
         copyButton.innerHTML = "Copy to clipboard";
         copyButton.style.background = "var(--clr-primary)";
         copyButton.style.color = "white";
-        cardCount();
-        team3.style.display = "block";
+
+        team3.style.display = "block"; // this reveals team 3
         wrapWrap.style.overflow = "scroll";
         wrapWrap.style.overflowY = "scroll";
         wrapWrap.style.overflowX = "hidden";
@@ -1385,9 +1385,9 @@ function addTeam() {
         label2.style.color = "white";
         label3.style.color = "var(--clr-highlight)";
         label4.style.color = "white";
+        cardCount();
     } else {
-        team3.style.display = "none";
-
+        team3.style.display = "none"; //this hides team 3
         cardCount();
     }
 
@@ -1396,9 +1396,8 @@ function addTeam() {
         copyButton.innerHTML = "Copy to clipboard";
         copyButton.style.background = "var(--clr-primary)";
         copyButton.style.color = "white";
-        cardCount();
-        team3.style.display = "block";
-        team4.style.display = "block";
+        team3.style.display = "block"; // this reveals team 3
+        team4.style.display = "block"; // this reveals team 4
         wrapWrap.style.overflow = "scroll";
         wrapWrap.style.overflowY = "scroll";
         wrapWrap.style.overflowX = "hidden";
@@ -1407,9 +1406,9 @@ function addTeam() {
         label2.style.color = "white";
         label3.style.color = "white";
         label4.style.color = "var(--clr-highlight)";
+        cardCount();
     } else {
-        team4.style.display = "none";
-
+        team4.style.display = "none"; //this hides team 4
         cardCount();
     }
 }
@@ -1427,16 +1426,16 @@ function outputPacks() {
     copyButton.style.color = "white";
     totalCards.style.display = "block";
     cardCount();
-    // this hides the generate button and reveals the reset button (also reveals the team name)
+    // this hides the generate button and reveals the reset button
     reset.classList.add("display");
     generate.classList.add("hide");
     //   team1header.classList.add("display");
     //   team2header.classList.add("display");
     //   team3header.classList.add("display");
     //   team4header.classList.add("display");
-    wrap.style.opacity = "1";
+    wrap.style.opacity = "1"; // this reveals the wrap that makes the background darker
     wrap.style.transition = ".5s";
-    container.style.opacity = "1";
+    // container.style.opacity = "1";
 
     // generate the packs
     pack1 = makePacks(pack1, cube, partners);
