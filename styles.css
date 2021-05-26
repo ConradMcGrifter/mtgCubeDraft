@@ -274,7 +274,7 @@ header {
     width: 1000px;
     /* max-width: 1000px; */
 }
-
+/* 
 .darken {
     position: absolute;
     background: rgba(0, 0, 0, 1);
@@ -296,7 +296,7 @@ header {
 .darken.display {
     visibility: visible;
     opacity: 1;
-}
+} */
 
 .team1 {
     color: #c93434;
