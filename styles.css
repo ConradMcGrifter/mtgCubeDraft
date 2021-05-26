@@ -37,12 +37,10 @@ body {
     color: white;
     /* overflow: hidden; */
 }
-
+/* 
 body.display {
     overflow:hidden;
-}
-
-
+} */
 
 a {
     margin: 0;
@@ -110,7 +108,7 @@ header {
     align-items: center;
     justify-content: center;
     box-shadow: 0px 5px 10px black;
-    position:relative;
+    position: relative;
 }
 
 .info-wrap a {
@@ -165,22 +163,19 @@ header {
     user-select: none;
     background: var(--clr-secondary);
     width: 300px;
-    height:100%;
+    height: 100%;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.74);
-    position:absolute;
-    left:-300px;
-    transition: .5s;
-    z-index:999;
-   
-    
-   
+    position: absolute;
+    left: -300px;
+    transition: 0.5s;
+    z-index: 999;
 }
 
 .removed.display {
-    display:flex;
-    flex-direction:column;
-    left:0;
-    z-index:999;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    z-index: 999;
 }
 
 /*                                                        MAIN CONTENT
@@ -435,14 +430,13 @@ header {
 @media only screen and (max-width: 1440px) {
     body {
         overflow: unset;
-        
     }
 
     /* this gets toggled in the javaScript with an event listener. by unsetting the height from 100%,
     the background image will cover the entire screen at this screen size. before there was a bar at the bottom */
-    body.height-adjust {
+    /* body.height-adjust {
         height: unset;
-    }
+    } */
 
     hr {
         margin: 1em 0 0 0;
@@ -501,119 +495,111 @@ header {
     }
 }
 
-
 #hamburger {
-    width:40px;
-    height:40px;
-    position:absolute;
-    padding:0;
-    background:none;
-    border:none;
-    left:25px;
-
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    padding: 0;
+    background: none;
+    border: none;
+    left: 25px;
+    cursor: pointer;
 }
 
 #inner-hamburger {
-    width:40px;
-    height:40px;
-    position:absolute;
-    padding:0;
-    background:none;
-    border:none;
-    right:5px;
-    
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    padding: 0;
+    background: none;
+    border: none;
+    right: 5px;
+    cursor: pointer;
 }
 
-
 img {
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
 .middle-line {
-    width:100%;
-    height:5px;
-    background:white;
-    position:absolute;
-    left:0;
-    right:0;
-    top:17px;
-    
+    width: 100%;
+    height: 5px;
+    background: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 17px;
 }
 
 .middle-line::before {
-    content:"";
-    height:5px;
-    background:white;
-    position:absolute;
-    top:10px;
-    left:0;
-    right:0;
-
+    content: "";
+    height: 5px;
+    background: white;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
 }
 .middle-line::after {
-    content:"";
-    height:5px;
-    background:white;
-    position:absolute;
-    top:-10px;
-    left:0;
-    right:0;
-
+    content: "";
+    height: 5px;
+    background: white;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
 }
 
 .removed p {
-    padding:1em;
+    padding: 1em;
 }
 
 .removed a {
-    display:block;
+    display: block;
 }
 
 .page-tint {
-    position:absolute;
-    background:rgba(33,33,33,.75);
-    left:0;
-    top:0;
-    right:0;
-    bottom:0;
-    z-index:997;
+    position: absolute;
+    background: rgba(33, 33, 33, 0.75);
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 997;
     /* display:none; */
-    opacity:0;
-    transition:.5s;
-    
+    opacity: 0;
+    transition: 0.5s;
 }
 
 .page-tint.display {
-    z-index:998;
+    z-index: 998;
     /* display:flex; */
-    opacity:1;
+    opacity: 1;
 }
 
 .removed-wrap {
-    margin-top:4em;
+    margin-top: 4em;
     /* outline:solid red 1px; */
-    display:flex;
-    padding-left:1em;
+    display: flex;
+    padding-left: 1em;
     flex-direction: column;
-    
 }
 
 .removed-wrap h2 {
-    margin: .5em 0 0 0;
-    color: var(--clr-highlight)
+    margin: 0.5em 0 0 0;
+    color: var(--clr-highlight);
 }
 
 .removed-wrap a {
     /* font-size:1.2rem; */
-    margin-top:.25em;
+    margin-top: 0.25em;
     text-decoration: underline;
 }
 
 .cube-link {
-    font-size:1.5rem;
-    color:white;
-    
+    font-size: 1.5rem;
+    color: white;
 }
