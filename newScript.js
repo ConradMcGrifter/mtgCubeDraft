@@ -1,3 +1,6 @@
+//to do:
+// make glossary to find sections easier
+
 let cube = [
     "Crush of Tentacles",
     "Fall of the Titans",
@@ -673,11 +676,10 @@ body.style.backgroundSize = shuffledWallpapers[0][1]; // this accesses the value
 
 // this is the event listener for the generate button that runs the shuffleCube function
 generate.addEventListener("click", outputPacks);
-// this toggles the height adjust for the body when the generate button is clicked. normally the body height
-// is 100% but for smaller screens the background image wasnt filling properly with the expanding container 
-generate.addEventListener("click", ()=> {
-    body.classList.toggle("height-adjust");
-})
+// this removes the no cheating tint when the reset button is clicked
+reset.addEventListener("click", () => {
+    document.querySelector(".darken").classList.remove("display");
+});
 
 // this code runs when the reset button is click - it resets the cube and partner arrays then runs the output
 // packs function again
@@ -1275,6 +1277,8 @@ function copyText(htmlElementArray) {
 // ---------------------------------------------------------------------------
 // this code gets executed when the copyButton is clicked
 copyButton.onclick = function () {
+    document.querySelector(".darken").classList.add("display"); // this toggles the no cheating tint
+
     if (defaultTeams.checked == true) {
         this.innerHTML = "Copied!";
         this.style.background = "var(--clr-highlight)";
