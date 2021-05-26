@@ -662,70 +662,76 @@ header {
 .modularMonstrosity:hover:before {
     content: "";
     background: url(images/modularMonstrosity.png) no-repeat;
-    width: 225px;
-    height: 310px;
-
+    width: 220px;
+    height: 305px;
+    /* outline: solid var(--clr-links1) 2px; */
     position: absolute;
     right: -175px;
     top: 125px;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.5);
 }
 
 .boosterTutor:hover:before {
     content: "";
     background: url(images/boosterTutor.png) no-repeat;
     background-size: contain;
-    width: 225px;
-    height: 310px;
+    width: 220px;
+    height: 305px;
 
     position: absolute;
     right: -175px;
     top: 145px;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.5);
 }
 
 .splitScreen:hover:before {
     content: "";
     background: url(images/splitScreen.png) no-repeat;
     background-size: contain;
-    width: 225px;
-    height: 310px;
+    width: 220px;
+    height: 305px;
 
     position: absolute;
     right: -175px;
     top: 165px;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.5);
 }
 
 .EntirelyNormalArmchair:hover:before {
     content: "";
     background: url(images/EntirelyNormalArmchair.png) no-repeat;
     background-size: contain;
-    width: 225px;
-    height: 310px;
+    width: 220px;
+    height: 305px;
 
     position: absolute;
     right: -175px;
     top: 185px;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.5);
 }
 
 .cogworkLibrarian:hover:before {
     content: "";
     background: url(images/CogworkLibrarian.png) no-repeat;
     background-size: contain;
-    width: 225px;
-    height: 310px;
+    width: 220px;
+    height: 305px;
 
     position: absolute;
     right: -175px;
     top: 205px;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.5);
 }
 
 .loreSeeker:hover:before {
     content: "";
     background: url(images/LoreSeeker.png) no-repeat;
     background-size: contain;
-    width: 225px;
-    height: 310px;
+    width: 220px;
+    height: 305px;
 
     position: absolute;
     right: -175px;
     top: 225px;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.5);
 }
