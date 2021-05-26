@@ -617,7 +617,7 @@ header {
     margin-top: 4em;
 
     display: flex;
-    padding-left: 1em;
+
     flex-direction: column;
     justify-content: space-between;
     height: 90%;
@@ -637,7 +637,7 @@ header {
     /* font-size:1.2rem; */
 
     margin-top: 0.25em;
-
+    width: max-content;
     padding: 0;
 }
 
@@ -648,6 +648,11 @@ header {
 .cube-link {
     font-size: 1.5rem;
     color: white;
+    padding-left: 1.4em;
+}
+
+.removed-cards--wrap {
+    padding-left: 2em;
 }
 
 /*--------------------------- 
