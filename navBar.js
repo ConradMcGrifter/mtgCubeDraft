@@ -8,7 +8,7 @@ function revealMenu() {
     pageTint.classList.toggle("display");
 }
 
-// pageTint.addEventListener("click", ()=>{
-//     pageTint.classList.toggle("display")
-//     navMenu.classList.toggle("display");
-// })
+pageTint.addEventListener("click", () => {
+    pageTint.classList.toggle("display");
+    navMenu.classList.toggle("display");
+});

@@ -563,20 +563,20 @@ img {
 
 .page-tint {
     position: absolute;
-    background: rgba(33, 33, 33, 0.75);
+    background: rgba(5, 5, 5, 0.75);
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
     z-index: 997;
-    /* display:none; */
+    visibility: hidden;
     opacity: 0;
     transition: 0.5s;
 }
 
 .page-tint.display {
     z-index: 998;
-    /* display:flex; */
+    visibility: visible;
     opacity: 1;
 }
 
