@@ -66,7 +66,7 @@ p {
     line-height: 1.2rem;
 
     /* text-shadow: 0px 0px 10px  rgb(20, 20, 20); */
-    margin: 0.25em;
+    /* margin: 0.25em; */
 }
 
 h3 {
@@ -514,19 +514,20 @@ header {
     background: none;
     border: none;
     right: 5px;
+    top: 5px;
     cursor: pointer;
 }
 
-img {
+/* img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-}
+} */
 
 .middle-line {
     width: 100%;
-    height: 5px;
+    height: 3px;
     background: white;
     position: absolute;
     left: 0;
@@ -536,7 +537,7 @@ img {
 
 .middle-line::before {
     content: "";
-    height: 5px;
+    height: 3px;
     background: white;
     position: absolute;
     top: 10px;
@@ -545,13 +546,36 @@ img {
 }
 .middle-line::after {
     content: "";
-    height: 5px;
+    height: 3px;
     background: white;
     position: absolute;
     top: -10px;
     left: 0;
     right: 0;
 }
+
+.close-button {
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.342);
+    color: white;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.close-button:active {
+    background: var(--clr-highlight);
+}
+
+/* .middle-line:hover:after,
+.middle-line:hover:before,
+.middle-line:hover {
+    background: var(--clr-highlight);
+} */
 
 .removed p {
     padding: 1em;
@@ -582,24 +606,112 @@ img {
 
 .removed-wrap {
     margin-top: 4em;
-    /* outline:solid red 1px; */
+
     display: flex;
     padding-left: 1em;
     flex-direction: column;
+    justify-content: space-between;
+    height: 90%;
+    /* display: none; */
 }
 
+/* .removed-wrap.display {
+    display: flex;
+} */
+
 .removed-wrap h2 {
-    margin: 0.5em 0 0 0;
+    margin: 0.5em 0;
     color: var(--clr-highlight);
 }
 
-.removed-wrap a {
+.removed-wrap p {
     /* font-size:1.2rem; */
+
     margin-top: 0.25em;
-    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+}
+
+.removed-wrap p:hover {
+    color: var(--clr-highlight);
 }
 
 .cube-link {
     font-size: 1.5rem;
     color: white;
+}
+
+/*--------------------------- 
+    card hover tooltips
+----------------------------*/
+
+.modularMonstrosity:hover:before {
+    content: "";
+    background: url(images/modularMonstrosity.png) no-repeat;
+    width: 225px;
+    height: 310px;
+
+    position: absolute;
+    right: -175px;
+    top: 125px;
+}
+
+.boosterTutor:hover:before {
+    content: "";
+    background: url(images/boosterTutor.png) no-repeat;
+    background-size: contain;
+    width: 225px;
+    height: 310px;
+
+    position: absolute;
+    right: -175px;
+    top: 145px;
+}
+
+.splitScreen:hover:before {
+    content: "";
+    background: url(images/splitScreen.png) no-repeat;
+    background-size: contain;
+    width: 225px;
+    height: 310px;
+
+    position: absolute;
+    right: -175px;
+    top: 165px;
+}
+
+.EntirelyNormalArmchair:hover:before {
+    content: "";
+    background: url(images/EntirelyNormalArmchair.png) no-repeat;
+    background-size: contain;
+    width: 225px;
+    height: 310px;
+
+    position: absolute;
+    right: -175px;
+    top: 185px;
+}
+
+.cogworkLibrarian:hover:before {
+    content: "";
+    background: url(images/CogworkLibrarian.png) no-repeat;
+    background-size: contain;
+    width: 225px;
+    height: 310px;
+
+    position: absolute;
+    right: -175px;
+    top: 205px;
+}
+
+.loreSeeker:hover:before {
+    content: "";
+    background: url(images/LoreSeeker.png) no-repeat;
+    background-size: contain;
+    width: 225px;
+    height: 310px;
+
+    position: absolute;
+    right: -175px;
+    top: 225px;
 }
